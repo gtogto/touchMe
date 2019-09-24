@@ -1,0 +1,160 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
+                    "from": {
+                        "startLines": "20,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "656,724",
+                        "endColumns": "67,67",
+                        "endOffsets": "719,787"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,123",
+                        "endColumns": "67,67",
+                        "endOffsets": "118,186"
+                    }
+                },
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "from": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "621",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "861"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "191",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "431"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\res\\merged\\debug\\values-v21_values-v21.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
+                    "from": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "677",
+                        "endLines": "21",
+                        "endColumns": "12",
+                        "endOffsets": "753"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "12",
+                        "endOffsets": "131"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values\\template-styles.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,45",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "1672,1723,1783,1836,1863,2059",
+                        "endLines": "37,38,39,40,44,50",
+                        "endColumns": "50,59,52,26,12,12",
+                        "endOffsets": "1718,1778,1831,1858,2054,2332"
+                    }
+                },
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "36,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "1606,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "endColumns": "39,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "endOffsets": "1641,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,11,12,13,14,25,26,27,28,29,30,31,32,33,34,35,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,503,570,618,672,1031,1076,1141,1188,1237,1292,1335,1378,1422,1480,1554,1612",
+                        "endColumns": "39,66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
+                        "endOffsets": "90,565,613,667,750,1071,1136,1183,1232,1287,1330,1373,1417,1475,1549,1607,1667"
+                    }
+                },
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values\\base-strings.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "10,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "450,755",
+                        "endLines": "10,24",
+                        "endColumns": "52,13",
+                        "endOffsets": "498,1026"
+                    }
+                },
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values\\template-dimens.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "95,165,208,252,297,340,382",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "160,203,247,292,335,377,445"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\res\\merged\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values-v11\\template-styles.xml",
+                    "from": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "650",
+                        "endColumns": "65",
+                        "endOffsets": "711"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "64",
+                        "endOffsets": "115"
+                    }
+                }
+            ]
+        }
+    ]
+}

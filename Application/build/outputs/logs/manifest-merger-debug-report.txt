@@ -1,0 +1,95 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
+	package
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:21:5-50
+	android:versionName
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:23:5-30
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:11-69
+	android:versionCode
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:22:5-28
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+uses-feature#android.hardware.bluetooth_le
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:31:5-89
+	android:required
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:31:64-87
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:31:19-63
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:33:5-67
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:33:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:34:5-73
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:34:22-71
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:35:5-80
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:35:22-78
+uses-permission#android.permission.INTERNET
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:37:5-67
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:37:22-64
+application
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:40:5-59:19
+	android:label
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:40:18-47
+	android:configChanges
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:43:9-59
+	android:icon
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:41:9-43
+	android:theme
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:42:9-62
+activity#com.example.android.bluetoothlegatt.com.DeviceScanActivity
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:44:9-50:20
+	android:label
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:45:13-41
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:44:19-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:46:13-49:29
+action#android.intent.action.MAIN
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:47:17-68
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:47:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:48:17-76
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:48:27-74
+activity#com.example.android.bluetoothlegatt.com.DeviceControlActivity
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:52:9-55:25
+	android:clearTaskOnLaunch
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:54:13-45
+	android:launchMode
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:53:13-48
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:52:19-60
+service#com.example.android.bluetoothlegatt.com.BluetoothLeService
+ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:57:9-81
+	android:enabled
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:57:57-79
+	android:name
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:57:18-56
+uses-sdk
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml

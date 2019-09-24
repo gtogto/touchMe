@@ -1,0 +1,4 @@
+#Wed May 08 16:46:04 KST 2019
+base.0=E\:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+path.0=classes.dex
+renamed.0=classes.dex
