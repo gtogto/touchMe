@@ -471,116 +471,33 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
                 //TODO : FRONT Action
                 case LEFT:
-                    sb.append(" ←←← LEFT \n");
-
-                    //change_img.setImageResource(R.drawable.hugh_after);
-
-                    Runtime runtime0 = Runtime.getRuntime();
-                    Process process0;
-                    String res0 = "input swipe 1400 400 1000 400 40";     // display swipe action event (right -> left)
-                    //String res0 = "input keyevent 66";
-                    try {
-                        process0 = runtime0.exec(res0); //2번 실행해야 되는 경우가 있음
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        Log.e("Process Manager", "Unable to execute top command");
-                    }
 
                     break;
 
                 case RIGHT:
-                    sb.append (" RIGHT →→→ \n");
-
-                    //change_img.setImageResource(R.drawable.hugh_before);
-
-                    Runtime runtime1 = Runtime.getRuntime();
-                    Process process1;
-                    String res1 = "input swipe 1000 400 1400 400 40";     // display swipe action event (left -> right)
-                    try {
-                        process1 = runtime1.exec(res1); //2번 실행해야 되는 경우가 있음
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        Log.e("Process Manager", "Unable to execute top command");
-                    }
 
                     break;
 
                 //TODO : CLOCK Action
                 case FRONT:
-                    sb.append (" |||| FRONT |||| \n");
 
-                    Runtime runtime2 = Runtime.getRuntime();
-                    Process process2;
-                    String res2 = "input keyevent 85";     // display swipe action event (left -> right)
-                    try {
-                        process2 = runtime2.exec(res2); //2번 실행해야 되는 경우가 있음
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        Log.e("Process Manager", "Unable to execute top command");
-                    }
-
-                    break;
+		    break;
 
                 //TODO : SIDE Action
                 case UP:
-                    sb.append (" ↑↑↑ UP ↑↑↑ \n");
-
-                    Runtime runtime3 = Runtime.getRuntime();
-                    Process process3;
-                    String res3 = "input keyevent 24";
-                    try {
-
-                        process3 = runtime3.exec(res3); //2번 실행해야 되는 경우가 있음
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        Log.e("Process Manager", "Unable to execute top command");
-                    }
-
 
                     break;
 
                 case CLOCK:
-                    sb.append(" CLOCK⟳⟳⟳ \n");
-
-                    Runtime runtime4 = Runtime.getRuntime();
-                    Process process4;
-                    String res4 = "input keyevent 24";
-                    try {
-
-                        process4 = runtime4.exec(res4); //2번 실행해야 되는 경우가 있음
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        Log.e("Process Manager", "Unable to execute top command");
-                    }
 
                     break;
 
                 //TODO : UP Action
                 case ANTI_CLOCK:
-                    sb.append (" AntiClcok⟲⟲⟲ \n");
-
-                    Runtime runtime5 = Runtime.getRuntime();
-                    Process process5;
-                    String res5 = "input keyevent 25";
-                    try {
-
-                        process5 = runtime5.exec(res5); //2번 실행해야 되는 경우가 있음
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        Log.e("Process Manager", "Unable to execute top command");
-                    }
-
 
                     break;
 
                 default:
-                    sb.append(" ??? Can't Detect ??? \n");
 
                     break;
 
