@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
+                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
                     "from": {
                         "startLines": "20,21",
                         "startColumns": "4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "E:\\forPartronGestureDB_newBand_inLG\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
                     "from": {
                         "startLines": "18",
                         "startColumns": "4",

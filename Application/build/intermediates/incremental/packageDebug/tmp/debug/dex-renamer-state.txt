@@ -1,4 +1,4 @@
-#Wed May 08 16:46:04 KST 2019
-base.0=E\:\\forPartronGestureDB_newBand_inLG\\Application\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Fri Jan 03 16:10:01 KST 2020
+base.0=E\:\\touch_Me_BLE\\Application\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

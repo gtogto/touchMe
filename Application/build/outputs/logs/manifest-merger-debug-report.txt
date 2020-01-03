@@ -1,95 +1,111 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:1-61:12
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-59:12
 	package
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:21:5-50
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:3:5-58
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:23:5-30
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:20:11-69
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:22:5-28
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 uses-feature#android.hardware.bluetooth_le
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:31:5-89
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:13:5-15:35
 	android:required
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:31:64-87
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-32
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:31:19-63
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:14:9-53
 uses-permission#android.permission.BLUETOOTH
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:33:5-67
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:17:5-68
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:33:22-65
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:17:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:34:5-73
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:5-74
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:34:22-71
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:22-71
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:35:5-80
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-81
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:35:22-78
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-78
 uses-permission#android.permission.INTERNET
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:37:5-67
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-67
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:37:22-64
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-64
 application
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:40:5-59:19
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:22:5-57:19
 	android:label
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:40:18-47
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:25:9-38
 	android:configChanges
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:43:9-59
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:9-59
 	android:icon
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:41:9-43
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:24:9-43
 	android:theme
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:42:9-62
-activity#com.example.android.bluetoothlegatt.com.DeviceScanActivity
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:44:9-50:20
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:26:9-62
+activity#com.example.android.bluetoothlegatt_touchMe.com.start_Activity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:28:9-36:20
 	android:label
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:45:13-41
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:44:19-57
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:29:13-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:46:13-49:29
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:47:17-68
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:47:25-66
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:48:17-76
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:48:27-74
-activity#com.example.android.bluetoothlegatt.com.DeviceControlActivity
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:52:9-55:25
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:34:27-74
+activity#com.example.android.bluetoothlegatt_touchMe.com.DeviceScanActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:39:9-42:20
+	android:label
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:41:13-41
+	android:name
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:40:13-51
+activity#com.example.android.bluetoothlegatt_touchMe.com.LoginActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:44:9-47:20
+	android:label
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:46:13-57
+	android:name
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:45:13-46
+activity#com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:49:9-52:51
 	android:clearTaskOnLaunch
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:54:13-45
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:51:13-45
 	android:launchMode
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:53:13-48
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:52:13-48
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:52:19-60
-service#com.example.android.bluetoothlegatt.com.BluetoothLeService
-ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:57:9-81
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:50:13-54
+service#com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:54:9-56:38
 	android:enabled
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:57:57-79
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:56:13-35
 	android:name
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml:57:18-56
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:55:13-51
 uses-sdk
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-		ADDED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
-		INJECTED from E:\forPartronGestureDB_newBand_inLG\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
+		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml

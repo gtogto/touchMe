@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- Copyright 2013 The Android Open Source Project
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.bluetoothlegatt"
+    package="com.example.android.bluetoothlegatt_touchMe"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="27" />
-
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
-
-
     <!--
-    Declare this required feature if you want to make the app available to BLE-capable
+ Declare this required feature if you want to make the app available to BLE-capable
     devices only.  If you want to make your app available to devices that don't support BLE,
     you should omit this in the manifest.  Instead, determine BLE capability by using
     PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
@@ -44,13 +26,13 @@
     <application
         android:configChanges="orientation|keyboardHidden"
         android:debuggable="true"
-        android:icon="@drawable/logo_icon"
+        android:icon="@drawable/ubio_logo"
         android:label="keti_BLE_test"
         android:testOnly="true"
         android:theme="@android:style/Theme.Holo.NoActionBar" >
         <activity
-            android:name="com.example.android.bluetoothlegatt.com.DeviceScanActivity"
-            android:label="GTO test_app" >
+            android:name="com.example.android.bluetoothlegatt_touchMe.com.start_Activity"
+            android:label="Sigh In" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,12 +40,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.bluetoothlegatt.com.DeviceControlActivity"
+            android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceScanActivity"
+            android:label="GTO touch Me" >
+        </activity>
+        <activity
+            android:name="com.example.android.bluetoothlegatt_touchMe.com.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity"
             android:clearTaskOnLaunch="true"
             android:launchMode="singleInstance" />
 
         <service
-            android:name="com.example.android.bluetoothlegatt.com.BluetoothLeService"
+            android:name="com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService"
             android:enabled="true" />
     </application>
 
