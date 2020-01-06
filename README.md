@@ -21,3 +21,4 @@ characteristics supported by the devices.
 Screenshots
 -------------
 
+<img src="https://user-images.githubusercontent.com/30851459/71795610-649f4100-308a-11ea-8f21-1dbadc1a555e.PNG">
