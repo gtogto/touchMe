@@ -28,12 +28,12 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\back_icon.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_translate.xml.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\anim\\translate.xml"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\menu_menu_login.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\menu\\menu_login.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_translate.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\anim\\translate.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_rotate.xml.flat",

@@ -61,13 +61,14 @@
 
     </LinearLayout>
 
+
     <RelativeLayout
-        android:layout_width="171dp"
-        android:layout_height="81dp"
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="72dp"
-        android:layout_marginEnd="544dp"
+        android:layout_marginEnd="0dp"
         android:orientation="horizontal">
 
         <TextView
@@ -83,21 +84,12 @@
             android:layout_width="5dp"
             android:layout_height="wrap_content" />
 
-        <ImageView
-            android:id="@+id/imageView_1"
-            android:layout_width="wrap_content"
-            android:layout_height="495dp"
-            android:layout_alignBottom="@+id/sd_scroll"
-            android:layout_marginBottom="-494dp"
-            android:src="@drawable/linie_albastra_v"
-            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView_1" />
+            android:layout_alignParentTop="true" />
 
         <ScrollView
             android:id="@+id/sd_scroll"
@@ -117,19 +109,34 @@
                 android:textSize="20dp" />
         </ScrollView>
 
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="308dp"
+                    android:layout_height="224dp"
+                    android:src="@drawable/ubio_logo_black">
+
+                </ImageView>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
 
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/change_img"
-        android:layout_width="284dp"
-        android:layout_height="244dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="133dp"
-        android:layout_marginBottom="301dp"
-        android:src="@drawable/ic_launcher1"
-        android:visibility="gone" />
-
 
 </RelativeLayout>

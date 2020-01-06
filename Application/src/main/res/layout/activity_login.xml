@@ -1,24 +1,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="wrap_content" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/white"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".com.LoginActivity">
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        android:id="@+id/tableLayout">
+        android:background="@color/white">
 
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="350dp"
             android:paddingBottom="10dp">
 
             <TextView
@@ -30,13 +32,14 @@
                 android:background="#25fedd"
                 android:gravity="center_horizontal"
                 android:text="ID"
-                android:textSize="50dp" />
+                android:textSize="30dp" />
 
             <EditText
+                android:id="@+id/editText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/editText"
                 android:layout_column="1"
+                android:hint="Email Address"
                 android:layout_weight="1" />
         </TableRow>
 
@@ -49,27 +52,28 @@
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
+                android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:background="#25fedd"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="PASSWORD"
-                android:textSize="20dp" />
+                android:text="PW"
+                android:textSize="30dp" />
 
             <EditText
+                android:id="@+id/editText2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/editText2"
                 android:layout_column="1"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="****"
+                android:inputType="textPassword" />
         </TableRow>
     </TableLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tableLayout"
@@ -77,6 +81,45 @@
         android:layout_marginTop="21dp"
         android:layout_marginBottom="-7dp"
         android:text="Login"
-        android:textSize="50dp" />
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/ubio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="171dp"
+        android:layout_marginBottom="55dp"
+        android:autoText="false"
+        android:text="UBIO"
+        android:textAllCaps="false"
+        android:textSize="84sp"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/login_ubio_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_x="100px"
+        android:layout_y="100px"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ubio_logo_blue" />
+
+    <TextView
+        android:id="@+id/inno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="45dp"
+        android:text="Innovation"
+        android:textSize="32sp"
+        android:textStyle="bold|italic" />
 
 </RelativeLayout>

@@ -18,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,26 +42,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     private TextView mDataTextView;
     private ScrollView mDataScrollView;
-
-    //TODO: GTO code
-    public static String b_gyro1;
-    public static String b_gyro2;
-    public static String b_gyro3;
-
-    public static String b_acc1;
-    public static String b_acc2;
-    public static String b_acc3;
-
-    public static int b_ac_x;
-    public static int b_ac_y;
-    public static int b_ac_z;
-
-    public static int b_gy_x;
-    public static int b_gy_y;
-    public static int b_gy_z;
-
-    private ImageView change_img;
-    private ImageView change_img2;
 
 
     private String mDeviceName;
