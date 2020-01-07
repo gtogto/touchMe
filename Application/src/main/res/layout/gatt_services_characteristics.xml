@@ -119,8 +119,10 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/ubio_logo"
                     android:layout_width="308dp"
                     android:layout_height="224dp"
+                    android:layout_marginLeft="150dip"
                     android:src="@drawable/ubio_logo_black">
 
                 </ImageView>
