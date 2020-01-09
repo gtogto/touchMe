@@ -37,7 +37,7 @@ public class LoginActivity extends Activity {
                 setResult(RESULT_OK, intent);
 
                 Intent intent_1 = new Intent(getApplicationContext(),DeviceScanActivity.class);
-                startActivity(intent_1);
+                startActivityForResult(intent_1, 201);
 
                 //finish();
 

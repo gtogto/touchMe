@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt_touchMe.R;
+import com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -149,6 +151,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gatt_services_characteristics);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
@@ -285,7 +288,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
             hex_value += Integer.toString(b & 0x0F, 16);
         }
 
-        //System.out.println(b_ac_x + " " + b_ac_y + " " + b_ac_z + " " + b_gy_x + " " + b_gy_y + " " + b_gy_z + " ");
+        System.out.println(hex_value);
 
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
@@ -374,6 +377,13 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
             mGattCharacteristics.add(charas);
             gattCharacteristicData.add(gattCharacteristicGroupData);
         }
+    }
+
+    public void onClick_setup(View v) {        //Map info Activity     //Map Button
+
+        final Intent i = new Intent(this, SetupActivity.class);
+        startActivityForResult(i, 201);
+
     }
 
     private static IntentFilter makeGattUpdateIntentFilter() {

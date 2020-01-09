@@ -44,6 +44,10 @@
             android:label="GTO touch Me" >
         </activity>
         <activity
+            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity"
+            android:label="GTO touch Me" >
+        </activity>
+        <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
