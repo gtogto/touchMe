@@ -2,14 +2,12 @@ package com.example.android.bluetoothlegatt_touchMe.com;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.example.android.bluetoothlegatt_touchMe.R;
 
@@ -22,13 +20,6 @@ public class LoginActivity extends Activity {
 
         final EditText idText = (EditText) findViewById(R.id.editText);
         final EditText passwordText= (EditText) findViewById(R.id.editText2);
-
-        Drawable logo_blue = getResources().getDrawable(R.drawable.ubio_logo_blue);
-        Drawable logo_red = getResources().getDrawable(R.drawable.ubio_logo);
-        Drawable logo_black = getResources().getDrawable(R.drawable.ubio_logo_black);
-
-
-        final ImageView ubio_logo = (ImageView) findViewById(R.id.login_ubio_logo);
 
         Button button2 = (Button) findViewById(R.id.login_btn);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -50,14 +41,6 @@ public class LoginActivity extends Activity {
 
             }
         });
-
-        ImageView s = (ImageView) findViewById(R.id.login_ubio_logo);
-
-        s.setX(100);
-        s.setY(100);
-        s.setImageDrawable(logo_red);
-
-
 
     }
 

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/white"
-    >
+    android:orientation="vertical" >
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="579dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
         android:orientation="vertical">
 
         <TextView
@@ -58,17 +59,36 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
+        <ScrollView
+            android:id="@+id/sd_scroll"
+            android:layout_width="165dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/send_data_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:focusableInTouchMode="true"
+                android:textSize="20dp" />
+        </ScrollView>
+
 
     </LinearLayout>
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="215dp"
+        android:layout_width="575dp"
+        android:layout_height="43dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="774dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="3dp"
         android:orientation="horizontal">
 
         <TextView
@@ -91,54 +111,65 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true" />
 
-        <ScrollView
-            android:id="@+id/sd_scroll"
-            android:layout_width="165dp"
-            android:layout_height="76dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginBottom="376dp">
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/send_data_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:focusableInTouchMode="true"
-                android:textSize="20dp" />
-        </ScrollView>
 
-        
+    <LinearLayout
+        android:id="@+id/linearLayout_main"
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical">
+
         <LinearLayout
+            android:id="@+id/linearLayout_1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="177dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="417dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/ubio_logo"
-                    android:layout_width="308dp"
-                    android:layout_height="224dp"
-                    android:layout_marginLeft="150dip"
-                    android:src="@drawable/ubio_logo_black">
-
-                </ImageView>
-
-
-            </LinearLayout>
-
-
-
+            <ImageView
+                android:id="@+id/ubio_logo"
+                android:layout_width="299dp"
+                android:layout_height="164dp"
+                android:layout_marginLeft="150dip"
+                android:src="@drawable/ubio_logo_black"></ImageView>
 
         </LinearLayout>
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/setup_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="97dp"
+            android:layout_marginBottom="186dp"
+            android:src="@drawable/set_up">
 
 
+        </ImageButton>
 
-    </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
