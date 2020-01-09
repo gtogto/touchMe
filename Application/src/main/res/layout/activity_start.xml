@@ -43,7 +43,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="120dp"
+            android:layout_gravity="center"
             android:src="@drawable/ubio_logo" />
 
         <Button
@@ -77,7 +77,6 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="230dp"
-
             android:layout_marginBottom="23dp"
             android:text="UBIO"
             android:textAllCaps="false"
@@ -91,7 +90,6 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="99dp"
-
             android:src="@drawable/ubio_logo_blue" />
 
         <TextView
@@ -101,7 +99,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="168dp"
-
             android:text="Innovation"
             android:textSize="32sp"
             android:textStyle="bold|italic" />

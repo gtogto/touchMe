@@ -2,6 +2,7 @@ package com.example.android.bluetoothlegatt_touchMe.com;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         final EditText idText = (EditText) findViewById(R.id.editText);
         final EditText passwordText= (EditText) findViewById(R.id.editText2);

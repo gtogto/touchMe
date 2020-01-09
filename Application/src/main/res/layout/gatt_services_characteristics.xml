@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="#cdc9c9"
     android:orientation="vertical" >
 
 
@@ -15,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="2dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,101 +76,128 @@
                 android:focusableInTouchMode="true"
                 android:textSize="20dp" />
         </ScrollView>
-
-
     </LinearLayout>
 
-
-    <RelativeLayout
-        android:layout_width="575dp"
-        android:layout_height="43dp"
-        android:layout_alignParentTop="true"
+    <LinearLayout
+        android:id="@+id/linearLayout_1"
+        android:layout_width="597dp"
+        android:layout_height="902dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="774dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_data"
-            android:textSize="18sp"
-            android:visibility="gone" />
-
-        <Space
-            android:id="@+id/space3"
-            android:layout_width="5dp"
-            android:layout_height="wrap_content" />
-
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true" />
-
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout_main"
-        android:layout_width="match_parent"
-        android:layout_height="750dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="24dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ubio_logo_black"
+            android:layout_width="313dp"
+            android:layout_height="197dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ubio_logo_black">
+
+        </ImageView>
+
+        <Button
+            android:id="@+id/setup_btn"
+            android:layout_width="406dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#ffefd5"
+            android:onClick="onClick"
+            android:text="Set-up Device"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/scan_btn"
+            android:layout_width="406dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#add8e6"
+            android:onClick="onClick"
+            android:text="Node Scanning"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/mapping_btn"
+            android:layout_width="406dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#66cdaa"
+            android:onClick="onClick"
+            android:text="Device Mapping"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/report_btn"
+            android:layout_width="406dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#e6e6fa"
+            android:onClick="onClick"
+            android:text="Report/Analysis"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/run_btn"
+            android:layout_width="406dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#ffc0cb"
+            android:onClick="onClick"
+            android:text="RUN"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"></Button>
 
         <LinearLayout
-            android:id="@+id/linearLayout_1"
-            android:layout_width="wrap_content"
-            android:layout_height="177dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="417dp">
+            android:layout_width="499dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ubio_logo"
-                android:layout_width="299dp"
-                android:layout_height="164dp"
-                android:layout_marginLeft="150dip"
-                android:src="@drawable/ubio_logo_black"></ImageView>
+                android:id="@+id/bottom_logo"
+                android:layout_width="119dp"
+                android:layout_height="89dp"
+                android:src="@drawable/ubio_logo"></ImageView>
+
+            <TextView
+                android:id="@+id/ubio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UBIO"
+                android:textColor="#FFFFFF"
+                android:textSize="60sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/inno_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Innovation"
+                android:textColor="#ffff00"
+                android:textSize="40sp"
+                android:textStyle="bold|italic" />
+
 
         </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageButton
-            android:id="@+id/setup_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="97dp"
-            android:layout_marginBottom="186dp"
-            android:src="@drawable/set_up">
-
-
-        </ImageButton>
-
 
     </LinearLayout>
 

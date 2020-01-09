@@ -17,10 +17,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -177,13 +174,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                 }
             }
         });
-
-        final ImageView ubio_logo = (ImageView) findViewById(R.id.ubio_logo);
-
-        ubio_logo.setImageResource(R.drawable.ubio_logo);
-        ViewGroup.MarginLayoutParams margin = new ViewGroup.MarginLayoutParams(ubio_logo.getLayoutParams());
-        margin.setMargins(100, 100, 100, 5);
-        ubio_logo.setLayoutParams(new LinearLayout.LayoutParams(margin));
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
