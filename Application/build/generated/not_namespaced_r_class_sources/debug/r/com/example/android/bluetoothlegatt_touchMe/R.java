@@ -37,17 +37,18 @@ public final class R {
     public static final int ic_launcher_round=0x7f040005;
     public static final int keti=0x7f040006;
     public static final int left_line=0x7f040007;
-    public static final int linie_albastra_v=0x7f040008;
-    public static final int logo_icon=0x7f040009;
-    public static final int report_analysis=0x7f04000a;
-    public static final int scanning=0x7f04000b;
-    public static final int set_up=0x7f04000c;
-    public static final int set_up_text=0x7f04000d;
-    public static final int start_icon=0x7f04000e;
-    public static final int tile=0x7f04000f;
-    public static final int ubio_logo=0x7f040010;
-    public static final int ubio_logo_black=0x7f040011;
-    public static final int ubio_logo_blue=0x7f040012;
+    public static final int linie_albastra_lr=0x7f040008;
+    public static final int linie_albastra_v=0x7f040009;
+    public static final int logo_icon=0x7f04000a;
+    public static final int report_analysis=0x7f04000b;
+    public static final int scanning=0x7f04000c;
+    public static final int set_up=0x7f04000d;
+    public static final int set_up_text=0x7f04000e;
+    public static final int start_icon=0x7f04000f;
+    public static final int tile=0x7f040010;
+    public static final int ubio_logo=0x7f040011;
+    public static final int ubio_logo_black=0x7f040012;
+    public static final int ubio_logo_blue=0x7f040013;
   }
   public static final class id {
     public static final int RelativeLayout_3=0x7f050000;
@@ -94,9 +95,13 @@ public final class R {
     public static final int activity_login=0x7f060001;
     public static final int activity_main=0x7f060002;
     public static final int activity_start=0x7f060003;
-    public static final int gatt_services_characteristics=0x7f060004;
-    public static final int listitem_device=0x7f060005;
-    public static final int set_up=0x7f060006;
+    public static final int device_mapping=0x7f060004;
+    public static final int gatt_services_characteristics=0x7f060005;
+    public static final int listitem_device=0x7f060006;
+    public static final int node_scanning=0x7f060007;
+    public static final int report_analysis=0x7f060008;
+    public static final int run_main=0x7f060009;
+    public static final int set_up=0x7f06000a;
   }
   public static final class menu {
     public static final int gatt_services=0x7f070000;

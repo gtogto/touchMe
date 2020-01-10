@@ -8,6 +8,10 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\left_line.bmp"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_run_main.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\run_main.xml"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_keti.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-mdpi\\keti.png"
     },
@@ -38,6 +42,10 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_rotate.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\anim\\rotate.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_node_scanning.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\node_scanning.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
@@ -74,6 +82,14 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ubio_logo_blue.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\ubio_logo_blue.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_device_mapping.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\device_mapping.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_linie_albastra_lr.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\linie_albastra_lr.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_set_up.xml.flat",
@@ -134,6 +150,10 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_set_up_text.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\set_up_text.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_report_analysis.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\report_analysis.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_listitem_device.xml.flat",

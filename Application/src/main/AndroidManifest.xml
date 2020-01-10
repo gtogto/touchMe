@@ -30,7 +30,6 @@
             android:label="Sigh In">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -38,11 +37,6 @@
 
         <activity
             android:name=".com.DeviceScanActivity"
-            android:label="GTO touch Me">
-        </activity>
-
-        <activity
-            android:name=".com.main_menu.SetupActivity"
             android:label="GTO touch Me">
         </activity>
 
@@ -55,6 +49,36 @@
             android:name=".com.DeviceControlActivity"
             android:clearTaskOnLaunch="true"
             android:launchMode="singleInstance" />
+
+        <activity
+            android:name=".com.main_menu.SetupActivity"
+            android:launchMode="singleInstance"
+            android:label="GTO touch Me">
+        </activity>
+
+        <activity
+            android:name=".com.main_menu.NodeScanningActivity"
+            android:launchMode="singleInstance"
+            android:label="GTO touch Me">
+        </activity>
+
+        <activity
+            android:name=".com.main_menu.DeviceMappingActivity"
+            android:launchMode="singleInstance"
+            android:label="GTO touch Me">
+        </activity>
+
+        <activity
+            android:name=".com.main_menu.ReportAnalysisActivity"
+            android:launchMode="singleInstance"
+            android:label="GTO touch Me">
+        </activity>
+
+        <activity
+            android:name=".com.main_menu.RunActivity"
+            android:launchMode="singleInstance"
+            android:label="GTO touch Me">
+        </activity>
 
         <service
             android:name=".com.BluetoothLeService"

@@ -24,6 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt_touchMe.R;
+import com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity;
+import com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity;
+import com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisActivity;
+import com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity;
 
 import java.text.SimpleDateFormat;
@@ -382,6 +386,34 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     public void onClick_setup(View v) {        //Map info Activity     //Map Button
 
         final Intent i = new Intent(this, SetupActivity.class);
+        startActivityForResult(i, 201);
+
+    }
+
+    public void onClick_scan(View v) {        //Map info Activity     //Map Button
+
+        final Intent i = new Intent(this, NodeScanningActivity.class);
+        startActivityForResult(i, 201);
+
+    }
+
+    public void onClick_mapping(View v) {        //Map info Activity     //Map Button
+
+        final Intent i = new Intent(this, DeviceMappingActivity.class);
+        startActivityForResult(i, 201);
+
+    }
+
+    public void onClick_report(View v) {        //Map info Activity     //Map Button
+
+        final Intent i = new Intent(this, ReportAnalysisActivity.class);
+        startActivityForResult(i, 201);
+
+    }
+
+    public void onClick_run(View v) {        //Map info Activity     //Map Button
+
+        final Intent i = new Intent(this, RunActivity.class);
         startActivityForResult(i, 201);
 
     }
