@@ -12,6 +12,9 @@ This sample shows a list of available Bluetooth LE devices and provides
 an interface to connect, display data and display GATT services and
 characteristics supported by the devices.
 
+Ambient Lightning Control System.
+This application is a vehicle application that controls the ambient lighting in the vehicle.
+
 --------------
 
 - Android SDK 25
