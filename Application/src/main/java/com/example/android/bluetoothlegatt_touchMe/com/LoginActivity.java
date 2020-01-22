@@ -9,8 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.example.android.bluetoothlegatt_touchMe.R;
+
+/**
+ * Created by GTO on 2020-01-22.
+ */
 
 public class LoginActivity extends Activity {
 

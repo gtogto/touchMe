@@ -1,7 +1,7 @@
 package com.example.android.bluetoothlegatt_touchMe.com;
 
 /**
- * Created by Ine on 2017-08-17.
+ * Created by gto on 2018-08-17.
  */
 
 import android.util.Log;

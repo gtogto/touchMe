@@ -36,6 +36,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Created by GTO on 2020-01-22.
+ */
+
 public class DeviceControlActivity extends Activity implements View.OnClickListener {
     private final static String TAG = "DCA";
 
@@ -44,7 +48,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     private TextView mConnectionState;
     private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
-    public static final int DUMP = -1;
 
     private TextView mDataTextView;
     private ScrollView mDataScrollView;
@@ -60,6 +63,8 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
+
+    public static byte[] packet;
 
     AccSlidingCollection asc = new AccSlidingCollection();
 
@@ -121,7 +126,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
                     } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
 
-                        byte[] packet = intent.getByteArrayExtra(BluetoothLeService.EXTRA_DATA);
+                        packet = intent.getByteArrayExtra(BluetoothLeService.EXTRA_DATA);
                         displayData(packet);
                     }
              }
@@ -292,7 +297,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
             hex_value += Integer.toString(b & 0x0F, 16);
         }
 
-        System.out.println(hex_value);
+        System.out.println("By. Device control activity : "+ hex_value);
 
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
@@ -428,19 +433,5 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         intentFilter.addAction(BluetoothLeService.ACTION_SEND_PACKET);
         return intentFilter;
     }
-
-    public static final int FRONT = 0;
-    public static final int BACK = FRONT + 1;	//1
-    public static final int RIGHT = BACK + 1;   //2
-    public static final int LEFT = RIGHT + 1;	//3
-    public static final int UP = LEFT + 1;	//4
-    public static final int DOWN = UP + 1;	//5
-    public static final int	CLOCK = DOWN + 1;	//6
-    public static final int ANTI_CLOCK = CLOCK + 1;	//7
-    public static final int LOW_CLOCK = ANTI_CLOCK + 1;	//8
-    public static final int LOW_ANTI = LOW_CLOCK + 1;	//9
-    public static final int UNKNOWN_ = 99;
-
-    public static final int GESTURE_NUM = LOW_ANTI + 1;	//10
 
 }

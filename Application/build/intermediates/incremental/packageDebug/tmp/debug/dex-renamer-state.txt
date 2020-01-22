@@ -1,4 +1,4 @@
-#Thu Jan 09 19:35:47 KST 2020
+#Wed Jan 22 14:00:24 KST 2020
 base.0=E\:\\touch_Me_BLE\\Application\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
