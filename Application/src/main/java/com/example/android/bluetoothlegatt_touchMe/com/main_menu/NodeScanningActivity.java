@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt_touchMe.R;
@@ -50,7 +51,6 @@ public class NodeScanningActivity extends Activity {
         setContentView(R.layout.node_scanning);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        //final ImageView back_btn = (ImageView) findViewById(R.id.back_btn);
 
     }
 

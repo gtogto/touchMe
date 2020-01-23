@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="100dp"
+            android:fontFamily="sans-serif"
             android:text="Touch Me"
             android:textAlignment="center"
             android:textSize="92sp"
@@ -48,15 +49,18 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="241dp"
-            android:layout_height="95dp"
+            android:layout_width="232dp"
+            android:layout_height="84dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="172dp"
             android:layout_marginBottom="241dp"
-            android:text="로그인"
-            android:textSize="40sp" />
+            android:background="#FFFFCC"
+            android:text="START"
+            android:textColor="#990000"
+            android:textSize="40sp"
+            android:textStyle="bold|italic" />
 
     </LinearLayout>
 

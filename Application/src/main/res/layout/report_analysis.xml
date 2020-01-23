@@ -19,7 +19,7 @@ Applications for Health care
         <LinearLayout
             android:id="@+id/linearLayout_1"
             android:layout_width="match_parent"
-            android:layout_height="132dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
@@ -63,7 +63,7 @@ Applications for Health care
             android:layout_height="70dp"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 

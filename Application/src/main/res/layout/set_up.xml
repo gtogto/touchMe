@@ -21,43 +21,42 @@ Applications for Health care
         <LinearLayout
             android:id="@+id/linearLayout_1"
             android:layout_width="match_parent"
-            android:layout_height="132dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickBack"
+                android:scaleType="fitXY"
+                android:src="@drawable/back_icon"></ImageView>
+
+            <RelativeLayout
+                android:id="@+id/linearLayout_1_1"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
                 <ImageView
-                    android:id="@+id/back_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:onClick="onClickBack"
-                    android:src="@drawable/back_icon"></ImageView>
+                    android:id="@+id/setup_btn"
+                    android:layout_width="106dp"
+                    android:layout_height="57dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginBottom="-3dp"
+                    android:src="@drawable/set_up"></ImageView>
 
-                    <RelativeLayout
-                        android:id="@+id/linearLayout_1_1"
-                        android:layout_width="196dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center">
-
-                        <ImageView
-                            android:id="@+id/setup_btn"
-                            android:layout_width="106dp"
-                            android:layout_height="90dp"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginBottom="-3dp"
-                            android:src="@drawable/set_up"></ImageView>
-
-                    </RelativeLayout>
+            </RelativeLayout>
 
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@id/linearLayout_2"
@@ -65,7 +64,7 @@ Applications for Health care
             android:layout_height="70dp"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 
@@ -85,11 +84,429 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:scaleType="center"
                 android:src="@drawable/linie_albastra_lr">
-
-
             </ImageView>
 
+        </LinearLayout>
 
+        <LinearLayout
+        android:id="@id/linearLayout_2"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@id/linearLayout_1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/age_txt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="사용연령 : "
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/age_value_out"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/age_txt"
+                android:ems="10"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="30sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/age_txt2"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/age_value_out"
+                android:ems="10"
+                android:text="세"
+                android:textSize="30sp"></TextView>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/age_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:max="100"></SeekBar>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sex_txt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="성          별"
+                android:textSize="30sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radio_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="30sp"
+                        android:text="남자"
+                        android:checked="true">
+                    </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="100dp"
+                    android:text="여자"
+                    android:textSize="30sp"></RadioButton>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/weight_txt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="가 중 치  : "
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/weight_value_out"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/age_txt"
+                android:ems="10"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="30sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/weight_txt2"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/age_value_out"
+                android:ems="10"
+                android:text="%"
+                android:textSize="30sp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/weight_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:max="100"></SeekBar>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/act_mode_txt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="동 작 모 드"
+                android:textSize="30sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="30sp"
+                    android:text="자동"
+                    android:checked="true">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_manual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="100dp"
+                    android:text="수동"
+                    android:textSize="30sp"></RadioButton>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/auto_mode_txt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="자 동 모 드"
+                android:textSize="30sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="30sp"
+                    android:text="랜덤"
+                    android:checked="true">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_sequential"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="100dp"
+                    android:text="여자"
+                    android:textSize="30sp"></RadioButton>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="30sp"
+                    android:text="센터"
+                    android:checked="true">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_dispersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="100dp"
+                    android:text="분산"
+                    android:textSize="30sp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_scenario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="100dp"
+                    android:text="시나리오"
+                    android:textSize="30sp"></RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/voice_txt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="음 성 모 드"
+                android:textSize="30sp" />
+
+            <Switch
+                android:id="@+id/switch_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="200dp"
+                android:textSize="30sp"
+                 />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
         </LinearLayout>
 
 
