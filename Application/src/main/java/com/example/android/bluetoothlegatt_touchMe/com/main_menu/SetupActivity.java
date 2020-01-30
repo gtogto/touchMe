@@ -48,6 +48,14 @@ public class SetupActivity extends Activity {
 
     public static Switch OnOff;
 
+    public static int color_flag;
+
+    public static int sensitive_flag;
+
+    public static SeekBar seekBar_timer;
+    public static TextView output_timer;
+    public static int timer_number;
+
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -90,7 +98,23 @@ public class SetupActivity extends Activity {
         RadioButton radio_dispersion = (RadioButton) findViewById(R.id.radio_dispersion);
         RadioButton radio_scenario = (RadioButton) findViewById(R.id.radio_scenario);
 
+        RadioButton radio_rand_color = (RadioButton) findViewById(R.id.radio_random_color);
+        RadioButton radio_one_color = (RadioButton) findViewById(R.id.radio_one_color);
+
+        RadioButton red_color = (RadioButton) findViewById(R.id.radio_red);
+        RadioButton green_color = (RadioButton) findViewById(R.id.radio_green);
+        RadioButton blue_color = (RadioButton) findViewById(R.id.radio_blue);
+        RadioButton yellow_color = (RadioButton) findViewById(R.id.radio_yellow);
+        RadioButton pink_color = (RadioButton) findViewById(R.id.radio_pink);
+        RadioButton sky_color = (RadioButton) findViewById(R.id.radio_sky);
+
         OnOff = (Switch)findViewById(R.id.switch_voice);
+
+        RadioButton radio_contact = (RadioButton) findViewById(R.id.radio_contact);
+        RadioButton radio_nearing = (RadioButton) findViewById(R.id.radio_nearing);
+
+        seekBar_timer = (SeekBar)findViewById(R.id.timer_seekbar);
+        output_timer = (TextView)findViewById(R.id.timer_value_out);
 
         //TODO Age selection SeekBar menu
         seekBar_age.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -262,6 +286,134 @@ public class SetupActivity extends Activity {
             }
         });
 
+        //TODO color mode selection Radio menu
+        radio_rand_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "남 자", Toast.LENGTH_SHORT).show();
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  랜   덤  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+                color_flag = 0;
+            }
+        });
+
+        radio_one_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "여 자", Toast.LENGTH_SHORT).show();
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  단   색  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+                color_flag = 1;
+            }
+        });
+
+        red_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  R  E  D  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+            }
+        });
+
+        green_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  G R E E N  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+            }
+        });
+
+        blue_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  B L U E  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+            }
+        });
+
+        yellow_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  Y E L L O W  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+            }
+        });
+        pink_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  P I N K  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+            }
+        });
+
+        sky_color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  S K Y  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+            }
+        });
+
+
+        //TODO Sensitivity mode selection Radio menu
+        radio_contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "남 자", Toast.LENGTH_SHORT).show();
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  접   촉  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+                sensitive_flag = 0;
+            }
+        });
+
+        radio_nearing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "여 자", Toast.LENGTH_SHORT).show();
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  근   접  ", Toast.LENGTH_SHORT);
+                tMsg.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout view = (LinearLayout) tMsg.getView();
+                tMsg.show();
+                sensitive_flag = 1;
+            }
+        });
+
+
+        //TODO timer selection SeekBar menu
+        seekBar_timer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                timer_number = seekBar_timer.getProgress();
+                update_timer();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                timer_number = seekBar_timer.getProgress();
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                timer_number = seekBar_timer.getProgress();
+            }
+        });
+
     }
 
     public void update_age() {
@@ -271,6 +423,11 @@ public class SetupActivity extends Activity {
 
     public void update_weight() {
         output_weight.setText(new StringBuilder().append(weight_number));
+        // seekbar의 이동 값에 따라 TextView에 리턴
+    }
+
+    public void update_timer() {
+        output_timer.setText(new StringBuilder().append(timer_number));
         // seekbar의 이동 값에 따라 TextView에 리턴
     }
 

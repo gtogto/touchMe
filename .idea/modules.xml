@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Application/Application.iml" filepath="$PROJECT_DIR$/Application/Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-debug/library-debug.iml" filepath="$PROJECT_DIR$/library-debug/library-debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-release/library-release.iml" filepath="$PROJECT_DIR$/library-release/library-release.iml" />
       <module fileurl="file://$PROJECT_DIR$/touch_Me_BLE.iml" filepath="$PROJECT_DIR$/touch_Me_BLE.iml" />
     </modules>
   </component>
