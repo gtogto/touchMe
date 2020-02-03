@@ -22,6 +22,13 @@ This application is a vehicle application that controls the ambient lighting in 
 - Android Support Repository
 - Target divices : LG G-pad 3
 
+- 5 menus(.activity)
+  * Set-up Device 
+  * Node Scanning
+  * Device Mapping
+  * Report & Analysis
+  * Run 
+
 Screenshots
 -------------
 
