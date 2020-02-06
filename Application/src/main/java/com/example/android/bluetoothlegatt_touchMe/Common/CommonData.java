@@ -136,12 +136,17 @@ public class CommonData {
     public static final int OTA_REQ_TIMER					=	1;
     public static final int OTA_REQ_TIMER_INTERVAL		    =	500;
 
+    public static final int touch_test1       =   0x31;
+
+    public static final int TOUCH_GTO_TEST1                  =   0x59;
+
     public static byte[] SendData(int msgReq, int msgLen, byte[] payloadData) {
         int index = 0, checkSum = 0;
         byte[] value = null;
         value = new byte[7+msgLen];
 
-        value[index++] = (byte) 0xAA;
+        //value[index++] = (byte) 0xAA;
+        value[index++] = (byte) 0xBB;
         value[index++] = (byte) msgReq;
         value[index++] = (byte) msgLen;
 
@@ -157,6 +162,12 @@ public class CommonData {
         value[index++] = (byte) 0xA5;
         value[index++] = (byte) 0x5A;
         value[index++] = (byte) 0x7E;
+        /*
+        value[index++] = (byte) checkSum;
+        value[index++] = (byte) 0xFE;
+        value[index++] = (byte) 0xFE;
+        value[index++] = (byte) 0xFF;*/
+
         return value;
     }
 

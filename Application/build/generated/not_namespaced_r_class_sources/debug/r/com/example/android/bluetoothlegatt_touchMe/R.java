@@ -138,21 +138,22 @@ public final class R {
     public static final int sex_txt=0x7f06003a;
     public static final int switch_voice=0x7f06003b;
     public static final int tableLayout=0x7f06003c;
-    public static final int textView=0x7f06003d;
-    public static final int textView2=0x7f06003e;
-    public static final int textView5=0x7f06003f;
-    public static final int timer_seekbar=0x7f060040;
-    public static final int timer_txt=0x7f060041;
-    public static final int timer_txt2=0x7f060042;
-    public static final int timer_value_out=0x7f060043;
-    public static final int ubio_blue=0x7f060044;
-    public static final int ubio_logo_black=0x7f060045;
-    public static final int ubio_text=0x7f060046;
-    public static final int voice_txt=0x7f060047;
-    public static final int weight_seekbar=0x7f060048;
-    public static final int weight_txt=0x7f060049;
-    public static final int weight_txt2=0x7f06004a;
-    public static final int weight_value_out=0x7f06004b;
+    public static final int test_Btn=0x7f06003d;
+    public static final int textView=0x7f06003e;
+    public static final int textView2=0x7f06003f;
+    public static final int textView5=0x7f060040;
+    public static final int timer_seekbar=0x7f060041;
+    public static final int timer_txt=0x7f060042;
+    public static final int timer_txt2=0x7f060043;
+    public static final int timer_value_out=0x7f060044;
+    public static final int ubio_blue=0x7f060045;
+    public static final int ubio_logo_black=0x7f060046;
+    public static final int ubio_text=0x7f060047;
+    public static final int voice_txt=0x7f060048;
+    public static final int weight_seekbar=0x7f060049;
+    public static final int weight_txt=0x7f06004a;
+    public static final int weight_txt2=0x7f06004b;
+    public static final int weight_value_out=0x7f06004c;
   }
   public static final class layout {
     public static final int actionbar_indeterminate_progress=0x7f070000;

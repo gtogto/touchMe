@@ -85,42 +85,13 @@ public class BluetoothLeService extends Service {
     public final static UUID JDY_RX_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.JDY_RX_MEASUREMENT);
 
-    public int mManboTotalDataLen;
-    public int mManboPacketCnt;
-    public int mManboRemindDataLen;
     public int mManboSendCnt;
 
-    public int mPPGTotalDataLen;
-    public int mPPGPacketCnt;
-    public int mPPGRemindDataLen;
     public int mPPGSendCnt;
 
-    public int mSleepTotalDataLen;
-    public int mSleepPacketCnt;
-    public int mSleepRemindDataLen;
     public int mSleepSendCnt;
-    public int mSleepStartTime;
-
-    public int mExerciseInterval;
-    public int mExerciseHRMTotalDataLen;
-    public int mExerciseHRMPacketCnt;
-    public int mExerciseHRMRemindDataLen;
     public int mExerciseHRMSendCnt;
-    public int mExerciseAltitudeTotalDataLen;
-    public int mExerciseAltitudePacketCnt;
-    public int mExerciseAltitudeRemindDataLen;
     public int mExerciseAltitudeSendCnt;
-
-    public int   mWalkingStep;
-    public int   mWalkingCalories;
-    public int   mWalkingTime;
-    public int   mWalkingAltitude;
-    public float mWalkingDistance;
-    public float mWalkingSpeed;
-
-
-    private ArrayAdapter<String> listAdapter;
-
 
     public int mCustomSendCnt;
 
@@ -190,14 +161,10 @@ public class BluetoothLeService extends Service {
         sendBroadcast(intent);
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void broadcastUpdate(final String action,
                                  final BluetoothGattCharacteristic characteristic) {
         final Intent intent = new Intent(action);
 
-        // This is special handling for the Heart Rate Measurement profile.  Data parsing is
-        // carried out as per profile specifications:
-        // http://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml
         if (FFF4_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
            // Log.w(TAG, String.format("FFF4_RATE_MEASUREMENT"));
 
@@ -206,7 +173,7 @@ public class BluetoothLeService extends Service {
         }
 
         if (JDY_TX_MEASUREMENT.equals(characteristic.getUuid())) {
-            // Log.w(TAG, String.format("JDY_RATE_MEASUREMENT"));
+            Log.w(TAG, String.format("JDY_RATE_MEASUREMENT"));
 
             intent.putExtra(EXTRA_DATA, characteristic.getValue());
             // LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
@@ -251,7 +218,7 @@ public class BluetoothLeService extends Service {
      *
      * @return Return true if the initialization is successful.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     public boolean initialize() {
         // For API level 18 and above, get a reference to BluetoothAdapter through
         // BluetoothManager.
@@ -281,7 +248,7 @@ public class BluetoothLeService extends Service {
      * {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
      * callback.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     public boolean connect(final String address) {
 
         if (mBluetoothAdapter == null || address == null) {
@@ -328,7 +295,7 @@ public class BluetoothLeService extends Service {
      * {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
      * callback.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     public void disconnect() {
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
             Log.w(TAG, "BluetoothAdapter not initialized");
@@ -357,7 +324,7 @@ public class BluetoothLeService extends Service {
      *
      * @param characteristic The characteristic to read from.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     public void readCharacteristic(BluetoothGattCharacteristic characteristic) {
 
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
@@ -466,7 +433,7 @@ public class BluetoothLeService extends Service {
      *
      * @return A {@code List} of supported services.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     public List<BluetoothGattService> getSupportedGattServices() {
         if (mBluetoothGatt == null) return null;
 
@@ -822,6 +789,7 @@ public class BluetoothLeService extends Service {
             }
             break;
 
+
             case CommonData.CUSTOM_CONTENTS_DATA_REQ: {
                 byte[] pData = new byte[13];
                 if (mCustomSendCnt == 0)
@@ -869,6 +837,18 @@ public class BluetoothLeService extends Service {
             }
             break;
 
+            //TODO #.Touch Me BLE Data Packet #.Day 2020.02.06
+            case CommonData.TOUCH_GTO_TEST1: {
+                byte[] pData = new byte[4];
+                pData[0] = 0x31;
+                pData[1] = 0x32;
+                pData[2] = 0x33;
+                pData[3] = 0x34;
+                bSendData = CommonData.SendData(CommonData.SLEEP_TIME_REQ, 4, pData);
+                characteristic.setValue(bSendData);
+            }
+            break;
+
             default:
                 Log.d(TAG, "Send MSGType = " + type);
                 break;
@@ -891,7 +871,6 @@ public class BluetoothLeService extends Service {
     }
 
     Handler mRefreshHandler = new Handler(new Handler.Callback() {
-        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         public boolean handleMessage(Message msg){
             Log.d(TAG, "msgTimeExpired [ " + msg.what + " ]");
             switch(msg.what){
@@ -932,8 +911,6 @@ public class BluetoothLeService extends Service {
     });
 
 
-
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void enableTXNotification()
     {
 

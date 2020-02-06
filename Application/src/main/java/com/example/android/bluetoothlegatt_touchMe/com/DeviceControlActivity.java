@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ import java.util.List;
 
 import static android.bluetooth.BluetoothProfile.STATE_CONNECTED;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_RX_MEASUREMENT;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_TX_MEASUREMENT;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_CHAR_UUID;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_SERVICE_UUID;
@@ -49,19 +51,19 @@ import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
  */
 
 public class DeviceControlActivity extends Activity implements View.OnClickListener {
+
+    public static final int touch_test1       =   0x31;
+
     private final static String TAG = "DCA";
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
-
-    private BluetoothGatt mBluetoothGatt;
 
     private TextView mConnectionState;
     private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
 
     private TextView mDataTextView;
     private ScrollView mDataScrollView;
-
 
     private String mDeviceName;
     private String mDeviceAddress;
@@ -75,6 +77,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     private final String LIST_UUID = "UUID";
 
     public static byte[] packet;
+    public static byte[] send_packet;
 
     AccSlidingCollection asc = new AccSlidingCollection();
 
@@ -98,6 +101,11 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
             mBluetoothLeService = null;
         }
     };
+
+
+    public void onClick(View v) {
+
+    }
 
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
@@ -185,11 +193,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 
     private void showMessage(String msg) {
@@ -420,42 +423,14 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         //final Intent i = new Intent(this, RunActivity.class);
         //startActivityForResult(i, 201);
 
-    }
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
 
-    public void onServicesDiscovered(BluetoothGatt gatt, int status)
-    {
-        if (status == BluetoothGatt.GATT_SUCCESS) {
-            BluetoothGattCharacteristic writeChar = mBluetoothGatt.getService(JDY_TX_MEASUREMENT)
-                    .getCharacteristic(JDY_TX_MEASUREMENT);
-            byte[] data = new byte[10];
-            writeChar.setValue(data);
-            gatt.writeCharacteristic(writeChar);
-        }
-    }
 
-    private void writeCharacteristic(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic)
-    {
 
-        byte[] byteData = hexToBytes("6fd362e40ebcd0945bf58dc4");
-        byte[] writeData = new byte[byteData.length];
-        for (int i = 0; i < byteData.length; i++) {
-            writeData[i] = byteData[i];
-        }
-        characteristic.setValue(writeData);
-        gatt.writeCharacteristic(characteristic);
+        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
 
-    }
+        System.out.println("clicked run btn");
 
-    public static byte[] hexToBytes(String hexRepresentation) {
-        int len = hexRepresentation.length();
-        byte[] data = new byte[len / 2];
-
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(hexRepresentation.charAt(i), 16) << 4)
-                    + Character.digit(hexRepresentation.charAt(i + 1), 16));
-        }
-
-        return data;
     }
 
 
