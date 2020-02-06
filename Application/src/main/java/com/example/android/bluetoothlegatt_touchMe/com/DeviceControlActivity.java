@@ -2,6 +2,7 @@ package com.example.android.bluetoothlegatt_touchMe.com;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
 import android.content.BroadcastReceiver;
@@ -23,6 +24,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.bluetoothlegatt_touchMe.Common.CommonData;
 import com.example.android.bluetoothlegatt_touchMe.R;
 import com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity;
@@ -36,6 +38,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.bluetooth.BluetoothProfile.STATE_CONNECTED;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_TX_MEASUREMENT;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_CHAR_UUID;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_SERVICE_UUID;
+
 /**
  * Created by GTO on 2020-01-22.
  */
@@ -45,6 +53,8 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
+
+    private BluetoothGatt mBluetoothGatt;
 
     private TextView mConnectionState;
     private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
@@ -96,7 +106,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     // ACTION_DATA_AVAILABLE: received data from the device.  This can be a result of read
     //                        or notification operations.
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
-        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         @Override
         public void onReceive(Context context, Intent intent) {
                  String action = intent.getAction();
@@ -125,23 +134,11 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                         }
 
                     } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
-
-                        packet = intent.getByteArrayExtra(BluetoothLeService.EXTRA_DATA);
+                        packet = intent.getByteArrayExtra(EXTRA_DATA);
                         displayData(packet);
                     }
              }
     };
-
-    public static String stringToHex(String s) {
-        String result = "";
-
-        for (int i = 0; i < s.length(); i++) {
-            result += String.format("%02X ", (int) s.charAt(i));
-        }
-
-        return result;
-    }
-
 
     // 헥사 접두사 "0x" 붙이는 버전
     public static String stringToHex0x(String s) {
@@ -153,7 +150,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
         return result;
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -235,7 +231,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         return true;
     }
 
-    @TargetApi(Build.VERSION_CODES.ECLAIR)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
@@ -276,7 +271,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private void autoScrollView(String text) {
         if (!text.isEmpty())
             mDataTextView.append(text);
@@ -305,7 +299,6 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         return sb.toString();
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private BluetoothGattCharacteristic getNottifyCharacteristic(){
 
         BluetoothGattCharacteristic notifyCharacteristic = null;
@@ -318,12 +311,14 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                 if(notifyCharacteristic.getUuid().equals(BluetoothLeService.FFF4_RATE_MEASUREMENT)){
                     return notifyCharacteristic;
                 }
+                else if(notifyCharacteristic.getUuid().equals(BluetoothLeService.JDY_TX_MEASUREMENT)){
+                    return notifyCharacteristic;
+                }
             }
         }
         return null;
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private BluetoothGattCharacteristic getWriteGattCharacteristic(){
 
         BluetoothGattCharacteristic writeGattCharacteristic = null;
@@ -337,6 +332,10 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                 if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.FFF3_RATE_MEASUREMENT)){
                     return writeGattCharacteristic;
                 }
+
+                if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
+                    return writeGattCharacteristic;
+                }
             }
         }
         return null;
@@ -345,7 +344,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     // Demonstrates how to iterate through the supported GATT Services/Characteristics.
     // In this sample, we populate the data structure that is bound to the ExpandableListView
     // on the UI.
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     private void displayGattServices(List<BluetoothGattService> gattServices) {
 
         if (gattServices == null) return;
@@ -418,10 +417,48 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     public void onClick_run(View v) {        //Map info Activity     //Map Button
 
-        final Intent i = new Intent(this, RunActivity.class);
-        startActivityForResult(i, 201);
+        //final Intent i = new Intent(this, RunActivity.class);
+        //startActivityForResult(i, 201);
 
     }
+
+    public void onServicesDiscovered(BluetoothGatt gatt, int status)
+    {
+        if (status == BluetoothGatt.GATT_SUCCESS) {
+            BluetoothGattCharacteristic writeChar = mBluetoothGatt.getService(JDY_TX_MEASUREMENT)
+                    .getCharacteristic(JDY_TX_MEASUREMENT);
+            byte[] data = new byte[10];
+            writeChar.setValue(data);
+            gatt.writeCharacteristic(writeChar);
+        }
+    }
+
+    private void writeCharacteristic(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic)
+    {
+
+        byte[] byteData = hexToBytes("6fd362e40ebcd0945bf58dc4");
+        byte[] writeData = new byte[byteData.length];
+        for (int i = 0; i < byteData.length; i++) {
+            writeData[i] = byteData[i];
+        }
+        characteristic.setValue(writeData);
+        gatt.writeCharacteristic(characteristic);
+
+    }
+
+    public static byte[] hexToBytes(String hexRepresentation) {
+        int len = hexRepresentation.length();
+        byte[] data = new byte[len / 2];
+
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(hexRepresentation.charAt(i), 16) << 4)
+                    + Character.digit(hexRepresentation.charAt(i + 1), 16));
+        }
+
+        return data;
+    }
+
+
 
     private static IntentFilter makeGattUpdateIntentFilter() {
 

@@ -31,7 +31,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.android.bluetoothlegatt_touchMe"
-        minSdkVersion 17
+        minSdkVersion 18
         targetSdkVersion 27
     }
 

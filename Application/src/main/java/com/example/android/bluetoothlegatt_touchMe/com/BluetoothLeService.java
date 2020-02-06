@@ -16,6 +16,7 @@
 
 package com.example.android.bluetoothlegatt_touchMe.com;
 
+import android.annotation.TargetApi;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,6 +30,7 @@ import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -77,6 +79,12 @@ public class BluetoothLeService extends Service {
     public final static UUID FFF3_RATE_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.FFF3_RATE_MEASUREMENT);
 
+    public final static UUID JDY_TX_MEASUREMENT =
+            UUID.fromString(SampleGattAttributes.JDY_TX_MEASUREMENT);
+
+    public final static UUID JDY_RX_MEASUREMENT =
+            UUID.fromString(SampleGattAttributes.JDY_RX_MEASUREMENT);
+
     public int mManboTotalDataLen;
     public int mManboPacketCnt;
     public int mManboRemindDataLen;
@@ -124,6 +132,7 @@ public class BluetoothLeService extends Service {
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         @Override
         public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
             String intentAction;
@@ -155,6 +164,7 @@ public class BluetoothLeService extends Service {
             }
         }
 
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         @Override
         public void onCharacteristicRead(BluetoothGatt gatt,
                                          BluetoothGattCharacteristic characteristic,
@@ -180,6 +190,7 @@ public class BluetoothLeService extends Service {
         sendBroadcast(intent);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void broadcastUpdate(final String action,
                                  final BluetoothGattCharacteristic characteristic) {
         final Intent intent = new Intent(action);
@@ -193,6 +204,14 @@ public class BluetoothLeService extends Service {
             intent.putExtra(EXTRA_DATA, characteristic.getValue());
            // LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
         }
+
+        if (JDY_TX_MEASUREMENT.equals(characteristic.getUuid())) {
+            // Log.w(TAG, String.format("JDY_RATE_MEASUREMENT"));
+
+            intent.putExtra(EXTRA_DATA, characteristic.getValue());
+            // LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+        }
+
         else if (TX_CHAR_UUID.equals(characteristic.getUuid())) {
 
             // Log.w(TAG, String.format("Received TX:" ));
@@ -232,6 +251,7 @@ public class BluetoothLeService extends Service {
      *
      * @return Return true if the initialization is successful.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public boolean initialize() {
         // For API level 18 and above, get a reference to BluetoothAdapter through
         // BluetoothManager.
@@ -261,6 +281,7 @@ public class BluetoothLeService extends Service {
      * {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
      * callback.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public boolean connect(final String address) {
 
         if (mBluetoothAdapter == null || address == null) {
@@ -307,6 +328,7 @@ public class BluetoothLeService extends Service {
      * {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
      * callback.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void disconnect() {
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
             Log.w(TAG, "BluetoothAdapter not initialized");
@@ -319,6 +341,7 @@ public class BluetoothLeService extends Service {
      * After using a given BLE device, the app must call this method to ensure resources are
      * released properly.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void close() {
         if (mBluetoothGatt == null) {
             return;
@@ -334,6 +357,7 @@ public class BluetoothLeService extends Service {
      *
      * @param characteristic The characteristic to read from.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void readCharacteristic(BluetoothGattCharacteristic characteristic) {
 
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
@@ -349,6 +373,7 @@ public class BluetoothLeService extends Service {
      * @param characteristic Characteristic to act on.
      * @param enabled        If true, enable notification.  False otherwise.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic,
                                               boolean enabled) {
 
@@ -374,7 +399,21 @@ public class BluetoothLeService extends Service {
             mBluetoothGatt.writeDescriptor(descriptor);
         }
 
+        if (JDY_TX_MEASUREMENT.equals(characteristic.getUuid())) {
+            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
+                    UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
+            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            mBluetoothGatt.writeDescriptor(descriptor);
+        }
+
         if (RX_CHAR_UUID.equals(characteristic.getUuid())) {
+            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
+                    UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
+            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            mBluetoothGatt.writeDescriptor(descriptor);
+        }
+
+        if (TouchMe_DATA_UUID.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
@@ -388,12 +427,12 @@ public class BluetoothLeService extends Service {
             mBluetoothGatt.writeDescriptor(descriptor);
         }
 
-        if (RX_CHAR_UUID.equals(characteristic.getUuid())) {
+        if (TouchMe_DATA_UUID.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             mBluetoothGatt.writeDescriptor(descriptor);
-        }
+        }//TouchMe_DATA_UUID
 
         if (CCCD.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
@@ -427,6 +466,7 @@ public class BluetoothLeService extends Service {
      *
      * @return A {@code List} of supported services.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public List<BluetoothGattService> getSupportedGattServices() {
         if (mBluetoothGatt == null) return null;
 
@@ -434,7 +474,6 @@ public class BluetoothLeService extends Service {
     }
 
     public boolean writeGattCharacteristic(BluetoothGattCharacteristic characteristic, int type) {
-
 
         byte[] bSendData;
         switch (type) {
@@ -852,6 +891,7 @@ public class BluetoothLeService extends Service {
     }
 
     Handler mRefreshHandler = new Handler(new Handler.Callback() {
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         public boolean handleMessage(Message msg){
             Log.d(TAG, "msgTimeExpired [ " + msg.what + " ]");
             switch(msg.what){
@@ -893,6 +933,7 @@ public class BluetoothLeService extends Service {
 
 
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void enableTXNotification()
     {
 
@@ -925,7 +966,6 @@ public class BluetoothLeService extends Service {
 
     }
 
-
     public void writeRXCharacteristic(byte[] value)
     {
 
@@ -955,13 +995,17 @@ public class BluetoothLeService extends Service {
         Log.e(TAG, msg);
     }
 
-    public static final UUID CCCD = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
-    public static final UUID RX_SERVICE_UUID = UUID.fromString("6e400001-b5a3-f393-e0a9-e50e24dcca9e");
-    public static final UUID RX_CHAR_UUID = UUID.fromString("6e400002-b5a3-f393-e0a9-e50e24dcca9e");
-    public static final UUID TX_CHAR_UUID = UUID.fromString("6e400003-b5a3-f393-e0a9-e50e24dcca9e");
+    public static final UUID CCCD = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"); // band
+    public static final UUID RX_SERVICE_UUID = UUID.fromString("6e400001-b5a3-f393-e0a9-e50e24dcca9e"); // band
+    //public static final UUID RX_CHAR_UUID = UUID.fromString("6e400002-b5a3-f393-e0a9-e50e24dcca9e"); // band
+    public static final UUID RX_CHAR_UUID = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb"); // band
+    //public static final UUID TX_CHAR_UUID = UUID.fromString("6e0400003-b5a3-f393-e0a9-e50e24dcca9e"); // band
+    public static final UUID TX_CHAR_UUID = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb"); //jdy bt
 
-    public static final UUID HEALTH_DATA_UUID = UUID.fromString("0000FFC1-0000-1000-8000-00805f9b34fb");
-    public static final UUID StopSLEEP_DATA_UUID = UUID.fromString("0000FFC3-0000-1000-8000-00805f9b34fb");
+    public static final UUID HEALTH_DATA_UUID = UUID.fromString("0000FFC1-0000-1000-8000-00805f9b34fb"); // band
+    public static final UUID StopSLEEP_DATA_UUID = UUID.fromString("0000FFC3-0000-1000-8000-00805f9b34fb"); // band
+
+    public static final UUID TouchMe_DATA_UUID = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb"); //jdy bt
 
 
 

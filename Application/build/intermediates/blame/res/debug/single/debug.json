@@ -236,16 +236,16 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\anim\\translate_up.xml"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_yellow_2.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\yellow_2.png"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_set_up_text.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\set_up_text.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_report_analysis.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\report_analysis.xml"
-    },
-    {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_yellow_2.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\yellow_2.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_green_1.png.flat",
