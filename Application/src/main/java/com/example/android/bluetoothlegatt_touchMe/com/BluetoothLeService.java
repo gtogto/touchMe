@@ -36,6 +36,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt_touchMe.Common.CommonData;
 
@@ -69,6 +70,9 @@ public class BluetoothLeService extends Service {
             "com.example.bluetooth.le.ACTION_SEND_PACKET";
     public final static String SEND_PACKET =
             "com.example.bluetooth.le.SEND_PACKET";
+
+    public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
+    public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
 
     public final static UUID UUID_HEART_RATE_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
@@ -120,6 +124,7 @@ public class BluetoothLeService extends Service {
                 intentAction = ACTION_GATT_DISCONNECTED;
                 mConnectionState = STATE_DISCONNECTED;
                 Log.i(TAG, "Disconnected from GATT server.");
+                Toast.makeText(getApplication(), "Disconnected from GATT server.", Toast.LENGTH_SHORT).show();
                 broadcastUpdate(intentAction);
             }
         }
@@ -839,12 +844,19 @@ public class BluetoothLeService extends Service {
 
             //TODO #.Touch Me BLE Data Packet #.Day 2020.02.06
             case CommonData.TOUCH_GTO_TEST1: {
-                byte[] pData = new byte[4];
-                pData[0] = 0x31;
-                pData[1] = 0x32;
-                pData[2] = 0x33;
-                pData[3] = 0x34;
-                bSendData = CommonData.SendData(CommonData.SLEEP_TIME_REQ, 4, pData);
+                byte[] pData = new byte[10];
+                pData[0] = 0x30;
+                pData[1] = 0x31;
+                pData[2] = 0x32;
+                pData[3] = 0x33;
+                pData[4] = 0x34;
+                pData[5] = 0x35;
+                pData[6] = 0x36;
+                pData[7] = 0x37;
+                pData[8] = 0x38;
+                pData[9] = 0x39;
+
+                bSendData = CommonData.touch_Data(CommonData.TOUCH_GTO_TEST1, 10, pData);
                 characteristic.setValue(bSendData);
             }
             break;

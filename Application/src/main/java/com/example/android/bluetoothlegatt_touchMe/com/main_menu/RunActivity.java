@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt_touchMe.R;
 import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
@@ -25,6 +28,16 @@ public class RunActivity extends Activity {
     private TextView mConnectionState;
     private BluetoothLeService mBluetoothLeService;
     private String mDeviceAddress;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.run_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        //final ImageView back_btn = (ImageView) findViewById(R.id.back_btn);
+
+    }
 
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
@@ -83,13 +96,41 @@ public class RunActivity extends Activity {
             hex_value += Integer.toString(b & 0x0F, 16);
         }
 
-        System.out.println("By. RUN activity : "+ hex_value);
-
+        System.out.println("By. Device control activity : "+ hex_value);
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
+        System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
+
+        Toast tMsg = Toast.makeText(RunActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
+        tMsg.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout view = (LinearLayout) tMsg.getView();
+        tMsg.show();
 
         return sb.toString();
     }
+
+    private static String hexToASCII(String hexValue)
+    {
+        StringBuilder output = new StringBuilder("");
+        for (int i = 0; i < hexValue.length(); i += 2)
+        {
+            String str = hexValue.substring(i, i + 2);
+            output.append((char) Integer.parseInt(str, 16));
+        }
+        return output.toString();
+    }
+
+    private static String asciiToHex(String asciiValue)
+    {
+        char[] chars = asciiValue.toCharArray();
+        StringBuffer hex = new StringBuffer();
+        for (int i = 0; i < chars.length; i++)
+        {
+            hex.append(Integer.toHexString((int) chars[i]));
+        }
+        return hex.toString();
+    }
+
 
     private static IntentFilter makeGattUpdateIntentFilter() {
         final IntentFilter intentFilter = new IntentFilter();
@@ -101,15 +142,6 @@ public class RunActivity extends Activity {
         return intentFilter;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.run_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        //final ImageView back_btn = (ImageView) findViewById(R.id.back_btn);
-
-    }
 
     public void onClickBack (View v) {
         onBackPressed();

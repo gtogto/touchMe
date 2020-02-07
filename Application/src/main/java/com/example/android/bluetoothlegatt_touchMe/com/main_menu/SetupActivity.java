@@ -471,12 +471,39 @@ public class SetupActivity extends Activity {
             hex_value += Integer.toString(b & 0x0F, 16);
         }
 
-        System.out.println("By. Setup Device activity : "+ hex_value);
-
+        System.out.println("By. Device control activity : "+ hex_value);
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
+        System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
+
+        Toast tMsg = Toast.makeText(SetupActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
+        tMsg.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout view = (LinearLayout) tMsg.getView();
+        tMsg.show();
 
         return sb.toString();
+    }
+
+    private static String hexToASCII(String hexValue)
+    {
+        StringBuilder output = new StringBuilder("");
+        for (int i = 0; i < hexValue.length(); i += 2)
+        {
+            String str = hexValue.substring(i, i + 2);
+            output.append((char) Integer.parseInt(str, 16));
+        }
+        return output.toString();
+    }
+
+    private static String asciiToHex(String asciiValue)
+    {
+        char[] chars = asciiValue.toCharArray();
+        StringBuffer hex = new StringBuffer();
+        for (int i = 0; i < chars.length; i++)
+        {
+            hex.append(Integer.toHexString((int) chars[i]));
+        }
+        return hex.toString();
     }
 
     private static IntentFilter makeGattUpdateIntentFilter() {

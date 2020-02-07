@@ -171,6 +171,38 @@ public class CommonData {
         return value;
     }
 
+    public static byte[] touch_Data(int msgReq, int msgLen, byte[] payloadData) {
+        int index = 0, checkSum = 0;
+        byte[] value = null;
+        value = new byte[7+msgLen];
+
+        value[index++] = (byte) 0x5B;   // header char '['
+        value[index++] = (byte) msgReq; // Net ID
+
+        value[index++] = (byte) 0x54;   // 'T' Command
+        value[index++] = (byte) 0x53;   // 'S' Source
+        value[index++] = (byte) 0x4D;   // 'M' Master
+
+        for (int i=0; i<msgLen; i++) {
+            value[index++] = payloadData[i];
+        }
+
+        for (int i = 1; i < index; i++) {
+            checkSum += value[i];
+        }
+
+        //value[index++] = (byte) checkSum;
+        //value[index++] = (byte) 0x7E;
+        value[index++] = (byte) 0x5D;   // tail char ']'
+        /*
+        value[index++] = (byte) checkSum;
+        value[index++] = (byte) 0xFE;
+        value[index++] = (byte) 0xFE;
+        value[index++] = (byte) 0xFF;*/
+
+        return value;
+    }
+
     public static byte[] DecToBCDArray(long num) {
         //Log.d(TAG, "num : " + num);
         if(num == 0){

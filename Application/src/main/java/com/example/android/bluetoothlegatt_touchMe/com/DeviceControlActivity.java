@@ -16,11 +16,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,9 +35,14 @@ import com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisA
 import com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity;
 
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Formatter;
 import java.util.HashMap;
 import java.util.List;
 
@@ -65,8 +72,8 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     private TextView mDataTextView;
     private ScrollView mDataScrollView;
 
-    private String mDeviceName;
-    private String mDeviceAddress;
+    public String mDeviceName;
+    public String mDeviceAddress;
     private BluetoothLeService mBluetoothLeService;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
@@ -295,12 +302,18 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         }
 
         System.out.println("By. Device control activity : "+ hex_value);
-
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
+        System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
+
+        Toast tMsg = Toast.makeText(DeviceControlActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
+        tMsg.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout view = (LinearLayout) tMsg.getView();
+        tMsg.show();
 
         return sb.toString();
     }
+
 
     private BluetoothGattCharacteristic getNottifyCharacteristic(){
 
@@ -433,6 +446,27 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     }
 
+    private static String hexToASCII(String hexValue)
+    {
+        StringBuilder output = new StringBuilder("");
+        for (int i = 0; i < hexValue.length(); i += 2)
+        {
+            String str = hexValue.substring(i, i + 2);
+            output.append((char) Integer.parseInt(str, 16));
+        }
+        return output.toString();
+    }
+
+    private static String asciiToHex(String asciiValue)
+    {
+        char[] chars = asciiValue.toCharArray();
+        StringBuffer hex = new StringBuffer();
+        for (int i = 0; i < chars.length; i++)
+        {
+            hex.append(Integer.toHexString((int) chars[i]));
+        }
+        return hex.toString();
+    }
 
 
     private static IntentFilter makeGattUpdateIntentFilter() {

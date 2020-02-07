@@ -58,34 +58,188 @@ Applications for Health care
 
 
         <LinearLayout
+        android:id="@id/linearLayout_2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/linearLayout_1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/setup_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Node Scanning"
+            android:textSize="45sp"
+            android:textStyle="bold|italic" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/linie_albastra_lr">
+        </ImageView>
+
+    </LinearLayout>
+
+        <RelativeLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/masterBtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="320dp"
+                android:background="@drawable/orange_circle_button"
+                android:text="MASTER" />
+
             <TextView
-                android:id="@+id/setup_txt"
+                android:id="@+id/node1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Node Scanning"
-                android:textSize="45sp"
-                android:textStyle="bold|italic" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="65dp"
+                android:text="node1 %"
+                android:textSize="24sp" />
 
-            <ImageView
+            <TextView
+                android:id="@+id/node2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="center"
-                android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr">
-            </ImageView>
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="165dp"
+                android:text="node2 %"
+                android:textSize="24sp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/node3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="265dp"
+                android:text="node3 %"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/node4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="425dp"
+                android:text="node4 %"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/node5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="525dp"
+                android:text="node5 %"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/node6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="625dp"
+                android:text="node6 %"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/nodeBtn1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="55dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 1" />
+
+            <Button
+                android:id="@+id/nodeBtn2"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="140dp"
+                android:layout_marginEnd="55dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 2" />
+
+            <Button
+                android:id="@+id/nodeBtn3"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="240dp"
+                android:layout_marginEnd="55dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 3" />
+
+            <Button
+                android:id="@+id/nodeBtn4"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="400dp"
+                android:layout_marginEnd="55dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 4" />
+
+            <Button
+                android:id="@+id/nodeBtn5"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="500dp"
+                android:layout_marginEnd="55dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 5" />
+
+            <Button
+                android:id="@+id/nodeBtn6"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="600dp"
+                android:layout_marginEnd="55dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 6" />
+
+        </RelativeLayout>
 
 
 
