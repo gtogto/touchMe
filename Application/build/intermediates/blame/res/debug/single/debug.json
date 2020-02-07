@@ -116,6 +116,10 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\animator\\green_button.xml"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_green_circle_button1.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\green_circle_button1.png"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\animator_master_button.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\animator\\master_button.xml"
     },
@@ -256,6 +260,10 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\red_0.png"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_border.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable\\border.xml"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_green_circle_button.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\green_circle_button.png"
     },
@@ -294,5 +302,9 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher1.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\ic_launcher1.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clicked_green_circle_button1.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\clicked_green_circle_button1.png"
     }
 ]
