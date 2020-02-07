@@ -30,6 +30,8 @@ public class NodeScanningActivity extends Activity {
     private BluetoothLeService mBluetoothLeService;
     private String mDeviceAddress;
 
+    public static TextView node1_txt, node2_txt, node3_txt, node4_txt, node5_txt, node6_txt;
+
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -54,6 +56,12 @@ public class NodeScanningActivity extends Activity {
         setContentView(R.layout.node_scanning);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        node1_txt = (TextView)findViewById(R.id.node1);
+        node2_txt = (TextView)findViewById(R.id.node2);
+        node3_txt = (TextView)findViewById(R.id.node3);
+        node4_txt = (TextView)findViewById(R.id.node4);
+        node5_txt = (TextView)findViewById(R.id.node5);
+        node6_txt = (TextView)findViewById(R.id.node6);
 
     }
 
@@ -97,15 +105,29 @@ public class NodeScanningActivity extends Activity {
             hex_value += Integer.toString(b & 0x0F, 16);
         }
 
-        System.out.println("By. Device control activity : "+ hex_value);
+        System.out.println("By. NodeScanning activity : "+ hex_value);
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
-        System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
+        System.out.println("By. NodeScanning HEX To ASCII : "+ hexToASCII(hex_value));
 
         Toast tMsg = Toast.makeText(NodeScanningActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
         tMsg.setGravity(Gravity.CENTER, 0, 0);
         LinearLayout view = (LinearLayout) tMsg.getView();
         tMsg.show();
+
+        String sub_node1 = hexToASCII(hex_value).substring(7,8);
+        String sub_node2 = hexToASCII(hex_value).substring(8,9);
+        String sub_node3 = hexToASCII(hex_value).substring(9,10);
+        String sub_node4 = hexToASCII(hex_value).substring(10,11);
+        String sub_node5 = hexToASCII(hex_value).substring(11,12);
+        String sub_node6 = hexToASCII(hex_value).substring(12,13);
+
+        node1_txt.setText(sub_node1);
+        node2_txt.setText(sub_node2);
+        node3_txt.setText(sub_node3);
+        node4_txt.setText(sub_node4);
+        node5_txt.setText(sub_node5);
+        node6_txt.setText(sub_node6);
 
         return sb.toString();
     }

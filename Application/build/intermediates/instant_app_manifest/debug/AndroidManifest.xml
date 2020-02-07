@@ -8,6 +8,7 @@
     <uses-sdk
         android:minSdkVersion="18"
         android:targetSdkVersion="27" />
+
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
     <!--
  Declare this required feature if you want to make the app available to BLE-capable
@@ -42,12 +43,10 @@
         </activity>
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceScanActivity"
-            android:label="GTO touch Me" >
-        </activity>
+            android:label="GTO touch Me" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
+            android:label="@string/title_activity_login" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity"
             android:clearTaskOnLaunch="true"
@@ -55,28 +54,23 @@
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity"
             android:label="GTO touch Me"
-            android:launchMode="singleInstance" >
-        </activity>
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity"
             android:label="GTO touch Me"
-            android:launchMode="singleInstance" >
-        </activity>
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity"
             android:label="GTO touch Me"
-            android:launchMode="singleInstance" >
-        </activity>
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisActivity"
             android:label="GTO touch Me"
-            android:launchMode="singleInstance" >
-        </activity>
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity"
             android:label="GTO touch Me"
-            android:launchMode="singleInstance" >
-        </activity>
+            android:launchMode="singleInstance" />
 
         <service
             android:name="com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService"

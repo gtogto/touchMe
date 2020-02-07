@@ -471,10 +471,10 @@ public class SetupActivity extends Activity {
             hex_value += Integer.toString(b & 0x0F, 16);
         }
 
-        System.out.println("By. Device control activity : "+ hex_value);
+        System.out.println("By. SetUp activity : "+ hex_value);
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
-        System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
+        System.out.println("By. SetUp HEX To ASCII : "+ hexToASCII(hex_value));
 
         Toast tMsg = Toast.makeText(SetupActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
         tMsg.setGravity(Gravity.CENTER, 0, 0);

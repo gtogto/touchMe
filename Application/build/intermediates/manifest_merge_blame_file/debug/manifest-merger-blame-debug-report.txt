@@ -9,136 +9,130 @@
 8-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="27" />
 9-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
-10    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
-11    <!--
-12 Declare this required feature if you want to make the app available to BLE-capable
-13    devices only.  If you want to make your app available to devices that don't support BLE,
-14    you should omit this in the manifest.  Instead, determine BLE capability by using
-15    PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
-16    -->
-17    <uses-feature
-17-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:13:5-15:35
-18        android:name="android.hardware.bluetooth_le"
-18-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:14:9-53
-19        android:required="true" />
-19-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-32
-20
-21    <uses-permission android:name="android.permission.BLUETOOTH" />
-21-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:17:5-68
-21-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:17:22-65
-22    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:5-74
-22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:22-71
-23    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-81
-23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-78
-24    <uses-permission android:name="android.permission.INTERNET" />
-24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-67
-24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-64
-25
-26    <application
-26-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:22:5-86:19
-27        android:configChanges="orientation|keyboardHidden"
-27-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:9-59
-28        android:debuggable="true"
-29        android:icon="@drawable/ubio_logo"
-29-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:24:9-43
-30        android:label="keti_BLE_test"
-30-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:25:9-38
-31        android:testOnly="true"
-32        android:theme="@android:style/Theme.Holo.NoActionBar" >
-32-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:26:9-62
-33        <activity
-33-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:28:9-35:20
-34            android:name="com.example.android.bluetoothlegatt_touchMe.com.start_Activity"
-34-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:29:13-47
-35            android:label="Sigh In" >
-35-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:30:13-36
-36            <intent-filter>
-36-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:31:13-34:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:17-69
-37-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:17-77
-39-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:27-74
-40            </intent-filter>
-41        </activity>
-42        <activity
-42-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:38:9-41:20
-43            android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceScanActivity"
-43-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:39:13-51
-44            android:label="GTO touch Me" >
-44-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:40:13-41
-45        </activity>
+10
+11    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+12    <!--
+13 Declare this required feature if you want to make the app available to BLE-capable
+14    devices only.  If you want to make your app available to devices that don't support BLE,
+15    you should omit this in the manifest.  Instead, determine BLE capability by using
+16    PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
+17    -->
+18    <uses-feature
+18-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:14:5-16:35
+19        android:name="android.hardware.bluetooth_le"
+19-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-53
+20        android:required="true" />
+20-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:16:9-32
+21
+22    <uses-permission android:name="android.permission.BLUETOOTH" />
+22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:5-68
+22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:22-65
+23    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-74
+23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-71
+24    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-81
+24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-78
+25    <uses-permission android:name="android.permission.INTERNET" />
+25-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:5-67
+25-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-64
+26
+27    <application
+27-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-72:19
+28        android:configChanges="orientation|keyboardHidden"
+28-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:24:9-59
+29        android:debuggable="true"
+30        android:icon="@drawable/ubio_logo"
+30-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:25:9-43
+31        android:label="keti_BLE_test"
+31-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:26:9-38
+32        android:testOnly="true"
+33        android:theme="@android:style/Theme.Holo.NoActionBar" >
+33-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:27:9-62
+34        <activity
+34-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:29:9-37:20
+35            android:name="com.example.android.bluetoothlegatt_touchMe.com.start_Activity"
+35-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:30:13-47
+36            android:label="Sigh In" >
+36-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:31:13-36
+37            <intent-filter>
+37-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:13-36:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:17-69
+38-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:35:17-77
+40-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:35:27-74
+41            </intent-filter>
+42        </activity>
+43        <activity
+43-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:38:9-40:53
+44            android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceScanActivity"
+44-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:39:13-51
+45            android:label="GTO touch Me" />
+45-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:40:13-41
 46        <activity
-46-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:43:9-46:20
+46-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:41:9-43:69
 47            android:name="com.example.android.bluetoothlegatt_touchMe.com.LoginActivity"
-47-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:44:13-46
-48            android:label="@string/title_activity_login" >
-48-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:45:13-57
-49        </activity>
-50        <activity
-50-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:48:9-51:51
-51            android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity"
-51-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:49:13-54
-52            android:clearTaskOnLaunch="true"
-52-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:50:13-45
-53            android:launchMode="singleInstance" />
-53-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:51:13-48
-54        <activity
-54-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:53:9-57:20
-55            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity"
-55-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:54:13-56
-56            android:label="GTO touch Me"
-56-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:56:13-41
-57            android:launchMode="singleInstance" >
-57-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:55:13-48
-58        </activity>
-59        <activity
-59-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:59:9-63:20
-60            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity"
-60-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:60:13-63
-61            android:label="GTO touch Me"
-61-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:62:13-41
-62            android:launchMode="singleInstance" >
-62-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:61:13-48
-63        </activity>
-64        <activity
-64-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:9-69:20
-65            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity"
-65-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-64
-66            android:label="GTO touch Me"
-66-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:68:13-41
-67            android:launchMode="singleInstance" >
-67-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:67:13-48
-68        </activity>
+47-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:42:13-46
+48            android:label="@string/title_activity_login" />
+48-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:43:13-57
+49        <activity
+49-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:44:9-47:51
+50            android:name="com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity"
+50-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:45:13-54
+51            android:clearTaskOnLaunch="true"
+51-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:46:13-45
+52            android:launchMode="singleInstance" />
+52-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:47:13-48
+53        <activity
+53-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:48:9-51:60
+54            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity"
+54-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:49:13-56
+55            android:label="GTO touch Me"
+55-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:50:13-41
+56            android:launchMode="singleInstance" />
+56-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:51:13-48
+57        <activity
+57-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:52:9-55:60
+58            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity"
+58-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:53:13-63
+59            android:label="GTO touch Me"
+59-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:54:13-41
+60            android:launchMode="singleInstance" />
+60-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:55:13-48
+61        <activity
+61-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:56:9-59:60
+62            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity"
+62-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:57:13-64
+63            android:label="GTO touch Me"
+63-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:58:13-41
+64            android:launchMode="singleInstance" />
+64-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:59:13-48
+65        <activity
+65-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:60:9-63:60
+66            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisActivity"
+66-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:61:13-65
+67            android:label="GTO touch Me"
+67-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:62:13-41
+68            android:launchMode="singleInstance" />
+68-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:63:13-48
 69        <activity
-69-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:9-75:20
-70            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisActivity"
-70-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:72:13-65
+69-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-67:60
+70            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity"
+70-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:13-54
 71            android:label="GTO touch Me"
-71-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:74:13-41
-72            android:launchMode="singleInstance" >
-72-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:73:13-48
-73        </activity>
-74        <activity
-74-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:77:9-81:20
-75            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity"
-75-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:78:13-54
-76            android:label="GTO touch Me"
-76-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:80:13-41
-77            android:launchMode="singleInstance" >
-77-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:79:13-48
-78        </activity>
-79
-80        <service
-80-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:83:9-85:38
-81            android:name="com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService"
-81-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:84:13-51
-82            android:enabled="true" />
-82-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:85:13-35
-83    </application>
-84
-85</manifest>
+71-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-41
+72            android:launchMode="singleInstance" />
+72-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:67:13-48
+73
+74        <service
+74-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:69:9-71:38
+75            android:name="com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService"
+75-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:13-51
+76            android:enabled="true" />
+76-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-35
+77    </application>
+78
+79</manifest>

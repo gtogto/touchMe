@@ -426,23 +426,21 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     public void onClick_report(View v) {        //Map info Activity     //Map Button
 
-        final Intent i = new Intent(this, ReportAnalysisActivity.class);
-        startActivityForResult(i, 201);
+        //final Intent i = new Intent(this, ReportAnalysisActivity.class);
+        //startActivityForResult(i, 201);
+
+        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+
+        System.out.println("clicked Mapping btn");
 
     }
 
     public void onClick_run(View v) {        //Map info Activity     //Map Button
 
-        //final Intent i = new Intent(this, RunActivity.class);
-        //startActivityForResult(i, 201);
+        final Intent i = new Intent(this, RunActivity.class);
+        startActivityForResult(i, 201);
 
         //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
-
-
-
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
-
-        System.out.println("clicked run btn");
 
     }
 

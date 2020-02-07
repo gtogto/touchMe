@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked= "false"
+        android:drawable = "@drawable/green_circle_button">
+    </item>
+
+    <item android:state_checked= "true"
+        android:drawable = "@drawable/clicked_green_circle_button">
+    </item>
+</selector>
+

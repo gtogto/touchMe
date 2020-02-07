@@ -36,12 +36,20 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\actionbar_indeterminate_progress.xml"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clicked_pink_circle_button.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\clicked_pink_circle_button.png"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_green_0.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\green_0.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_device_mapping.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\layout\\device_mapping.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clicked_green_circle_button.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\clicked_green_circle_button.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_blue_2.png.flat",
@@ -106,6 +114,10 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\animator_green_button.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\animator\\green_button.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\animator_master_button.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\animator\\master_button.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_blue_1.png.flat",
@@ -274,6 +286,10 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_pink_1.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\pink_1.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\animator_node_button.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\animator\\node_button.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher1.png.flat",

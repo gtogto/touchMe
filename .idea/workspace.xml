@@ -11,8 +11,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db35a5f5-e765-4a97-861c-d3e6157ff084" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/main/res/animator/master_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/main/res/animator/node_button.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/generated/not_namespaced_r_class_sources/debug/r/com/example/android/bluetoothlegatt_touchMe/R.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/4NjV3gDfA6LN9BY814L+cD+s1Ig=" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/4NjV3gDfA6LN9BY814L+cD+s1Ig=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/processDebugResources/resources-list-for-resources-debug.ap_.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/processDebugResources/resources-list-for-resources-debug.ap_.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/LoginActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/LoginActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/processed_res/debug/processDebugResources/out/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/layout_node_scanning.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/layout_node_scanning.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/layout_run_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/layout_run_main.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$id.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$id.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$layout.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$layout.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$menu.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$menu.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$string.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$string.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$style.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/R$style.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/LoginActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/LoginActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/outputs/apk/debug/Application-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/outputs/apk/debug/Application-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" afterDir="false" />
@@ -20,6 +91,7 @@
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -39,20 +111,10 @@
         <state>
           <leaf>
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml">
-                <provider editor-type-id="text-editor">
-                  <state relative-caret-position="314">
-                    <caret line="171" column="45" selection-start-line="171" selection-start-column="45" selection-end-line="171" selection-end-column="45" />
-                  </state>
-                </provider>
-                <provider selected="true" editor-type-id="android-designer2" />
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="416">
-                    <caret line="298" column="72" lean-forward="true" selection-start-line="298" selection-start-column="72" selection-end-line="298" selection-end-column="72" />
+                  <state relative-caret-position="701">
+                    <caret line="442" column="108" selection-start-line="442" selection-start-column="108" selection-end-line="442" selection-end-column="108" />
                     <folding>
                       <element signature="imports" expanded="true" />
                     </folding>
@@ -61,12 +123,32 @@
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java">
+              <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="552">
-                    <caret line="124" column="54" lean-forward="true" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
+                  <state relative-caret-position="587">
+                    <caret line="122" column="66" selection-start-line="122" selection-start-column="66" selection-end-line="122" selection-end-column="66" />
                   </state>
                 </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1007">
+                    <caret line="53" column="61" selection-start-line="47" selection-start-column="9" selection-end-line="53" selection-end-column="61" />
+                  </state>
+                </provider>
+                <provider editor-type-id="android-designer2" />
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1093">
+                    <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+                  </state>
+                </provider>
+                <provider editor-type-id="android-designer2" />
               </entry>
             </file>
           </leaf>
@@ -89,11 +171,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="478" column="49" selection-start-line="478" selection-start-column="49" selection-end-line="478" selection-end-column="49" />
+            <state relative-caret-position="380">
+              <caret line="321" column="11" selection-start-line="321" selection-start-column="11" selection-end-line="321" selection-end-column="11" />
               <folding>
                 <element signature="e#15528#16022#0" expanded="true" />
                 <element signature="e#16021#16022#0" expanded="true" />
@@ -105,11 +187,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/set_up.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="647" selection-start-line="647" selection-end-line="647" />
+            <state relative-caret-position="309">
+              <caret line="612" column="58" lean-forward="true" selection-start-line="612" selection-start-column="20" selection-end-line="612" selection-end-column="58" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/node_button.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/blue_button.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/master_button.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/green_button.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -123,68 +241,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="258" column="40" selection-start-line="258" selection-start-column="40" selection-end-line="258" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#9743#0" expanded="true" />
-                <element signature="e#9641#9642#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/start_Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="103" column="57" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="104" column="56" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="200" column="39" lean-forward="true" selection-start-line="200" selection-start-column="39" selection-end-line="200" selection-end-column="39" />
+            <state relative-caret-position="326">
+              <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -193,7 +253,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>receive</find>
       <find>isConnected</find>
       <find>Connected</find>
       <find>writeGattCharacteristic</find>
@@ -223,6 +282,7 @@
       <find>Disconnected from GATT server.</find>
       <find>Disconnected</find>
       <find>disconnected from</find>
+      <find>pink</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -234,7 +294,6 @@
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_start.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/report_analysis.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/Application/src/main/res/values/red_button_0.xml" />
@@ -250,15 +309,19 @@
         <option value="$PROJECT_DIR$/Application/build.gradle" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/SampleGattAttributes.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/gatt_services_characteristics.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/animator/node_button.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/animator/master_button.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" />
       </list>
     </option>
   </component>
@@ -324,6 +387,12 @@
               <item name="touch_Me_BLE" type="1abcf292:AndroidViewProjectNode" />
               <item name="Application" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="animator" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="touch_Me_BLE" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Application" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
@@ -339,7 +408,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ble-oad-android-source-code-master/ble-oad-android-source-code-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Application/src/main/res/animator" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -459,7 +528,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49840087" visible="true" weight="0.39339018" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49840087" visible="true" weight="0.30916846" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32942432" />
       <window_info anchor="bottom" id="Android Profiler" order="3" />
       <window_info anchor="bottom" id="Debug" order="4" />
@@ -517,14 +586,6 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1235">
-          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1235">
@@ -560,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/blue_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/yellow_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -574,24 +628,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/pink_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/sky_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/green_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="52" lean-forward="true" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -625,14 +665,6 @@
           <caret line="1575" selection-start-line="1575" selection-end-line="1575" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/content/Intent.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -678,28 +710,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/set_up.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="647" selection-start-line="647" selection-end-line="647" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="200" column="39" lean-forward="true" selection-start-line="200" selection-start-column="39" selection-end-line="200" selection-end-column="39" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/gatt_services_characteristics.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -733,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="171" column="45" selection-start-line="171" selection-start-column="45" selection-end-line="171" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/start_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -750,36 +758,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="103" column="57" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="104" column="56" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+        <state relative-caret-position="174">
+          <caret line="101" column="45" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+        <state relative-caret-position="307">
+          <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="122" column="66" selection-start-line="122" selection-start-column="66" selection-end-line="122" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/gatt_services_characteristics.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="442" column="108" selection-start-line="442" selection-start-column="108" selection-end-line="442" selection-end-column="108" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/xml/run_master.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="478" column="49" selection-start-line="478" selection-start-column="49" selection-end-line="478" selection-end-column="49" />
+        <state relative-caret-position="380">
+          <caret line="321" column="11" selection-start-line="321" selection-start-column="11" selection-end-line="321" selection-end-column="11" />
           <folding>
             <element signature="e#15528#16022#0" expanded="true" />
             <element signature="e#16021#16022#0" expanded="true" />
@@ -787,15 +816,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/node_button.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="298" column="72" lean-forward="true" selection-start-line="298" selection-start-column="72" selection-end-line="298" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="171">
+          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/set_up.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="612" column="58" lean-forward="true" selection-start-line="612" selection-start-column="20" selection-end-line="612" selection-end-column="58" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/pink_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/green_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/blue_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/animator/master_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="61" selection-start-line="47" selection-start-column="9" selection-end-line="53" selection-end-column="61" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1093">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>

@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
 	package
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:3:5-58
 		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
@@ -22,119 +22,119 @@ INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 uses-feature#android.hardware.bluetooth_le
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:13:5-15:35
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:14:5-16:35
 	android:required
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-32
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:16:9-32
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:14:9-53
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-53
 uses-permission#android.permission.BLUETOOTH
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:17:5-68
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:5-68
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:17:22-65
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:5-74
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-74
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:22-71
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-71
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-81
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-81
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-78
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-78
 uses-permission#android.permission.INTERNET
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-67
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-64
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-64
 application
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:22:5-86:19
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-72:19
 	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:25:9-38
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:26:9-38
 	android:configChanges
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:9-59
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:24:9-59
 	android:icon
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:24:9-43
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:25:9-43
 	android:theme
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:26:9-62
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:27:9-62
 activity#com.example.android.bluetoothlegatt_touchMe.com.start_Activity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:28:9-35:20
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:29:9-37:20
 	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:30:13-36
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:31:13-36
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:29:13-47
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:30:13-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:31:13-34:29
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:13-36:29
 action#android.intent.action.MAIN
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:17-69
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:25-66
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:17-77
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:27-74
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:35:27-74
 activity#com.example.android.bluetoothlegatt_touchMe.com.DeviceScanActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:38:9-41:20
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:38:9-40:53
 	android:label
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:40:13-41
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:39:13-51
 activity#com.example.android.bluetoothlegatt_touchMe.com.LoginActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:43:9-46:20
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:41:9-43:69
 	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:45:13-57
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:43:13-57
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:44:13-46
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:42:13-46
 activity#com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:48:9-51:51
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:44:9-47:51
 	android:clearTaskOnLaunch
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:50:13-45
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:46:13-45
+	android:launchMode
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:47:13-48
+	android:name
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:45:13-54
+activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:48:9-51:60
+	android:label
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:50:13-41
 	android:launchMode
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:51:13-48
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:49:13-54
-activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:53:9-57:20
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:49:13-56
+activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:52:9-55:60
 	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:56:13-41
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:54:13-41
 	android:launchMode
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:55:13-48
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:54:13-56
-activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:59:9-63:20
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:53:13-63
+activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:56:9-59:60
+	android:label
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:58:13-41
+	android:launchMode
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:59:13-48
+	android:name
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:57:13-64
+activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:60:9-63:60
 	android:label
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:62:13-41
 	android:launchMode
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:61:13-48
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:63:13-48
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:60:13-63
-activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.DeviceMappingActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:9-69:20
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:61:13-65
+activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-67:60
 	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:68:13-41
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-41
 	android:launchMode
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:67:13-48
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-64
-activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.ReportAnalysisActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:9-75:20
-	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:74:13-41
-	android:launchMode
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:73:13-48
-	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:72:13-65
-activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:77:9-81:20
-	android:label
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:80:13-41
-	android:launchMode
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:79:13-48
-	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:78:13-54
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:13-54
 service#com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:83:9-85:38
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:69:9-71:38
 	android:enabled
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:85:13-35
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-35
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:84:13-51
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:13-51
 uses-sdk
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
