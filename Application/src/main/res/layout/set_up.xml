@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Copyright (C) 2013 The Android Open Source Project sample
-
+<!-- Copyright
 This project was created by gto.
-Applications for Health care
-
+Applications for Health care use to BLE modules
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,20 +11,21 @@ Applications for Health care
     xmlns:custom="http://schemas.android.com/apk/res-auto">
 
 
+
     <LinearLayout
         android:id="@+id/set_up_main_Linear"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linearLayout_1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/back_btn"
@@ -34,24 +33,19 @@ Applications for Health care
                 android:layout_height="wrap_content"
                 android:onClick="onClickBack"
                 android:scaleType="fitXY"
-                android:src="@drawable/back_icon"></ImageView>
-
-            <RelativeLayout
-                android:id="@+id/linearLayout_1_1"
-                android:layout_width="196dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-            </RelativeLayout>
+                android:src="@drawable/back_icon"
+                android:visibility="gone">
+            </ImageView>
 
             <ImageView
                 android:id="@+id/setup_btn"
                 android:layout_width="106dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="-3dp"
-                android:src="@drawable/set_up"></ImageView>
+                android:gravity="center"
+                android:src="@drawable/set_up">
+            </ImageView>
+
 
         </LinearLayout>
 
@@ -86,40 +80,40 @@ Applications for Health care
         </LinearLayout>
 
         <LinearLayout
-        android:id="@id/linearLayout_2"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_below="@id/linearLayout_1"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="16dp">
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp">
 
             <TextView
                 android:id="@+id/age_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="사용연령 : "
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/age_value_out"
-                android:layout_width="195dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/age_txt"
                 android:ems="10"
                 android:gravity="center"
                 android:text="0"
                 android:textSize="30sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold">
+            </TextView>
 
             <TextView
                 android:id="@+id/age_txt2"
-                android:layout_width="195dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/age_value_out"
                 android:ems="10"
                 android:text="세"
-                android:textSize="30sp"></TextView>
+                android:textSize="30sp">
+            </TextView>
 
     </LinearLayout>
 
@@ -138,7 +132,8 @@ Applications for Health care
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:max="100"></SeekBar>
+                android:max="100">
+            </SeekBar>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -146,7 +141,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
 
         </LinearLayout>
 
@@ -187,7 +183,8 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="여자"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
             </RadioGroup>
 
         </LinearLayout>
@@ -208,7 +205,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
         </LinearLayout>
 
 
@@ -237,7 +235,8 @@ Applications for Health care
                 android:gravity="center"
                 android:text="0"
                 android:textSize="30sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold">
+            </TextView>
 
             <TextView
                 android:id="@+id/weight_txt2"
@@ -246,7 +245,8 @@ Applications for Health care
                 android:layout_toRightOf="@+id/age_value_out"
                 android:ems="10"
                 android:text="%"
-                android:textSize="30sp"></TextView>
+                android:textSize="30sp">
+            </TextView>
 
         </LinearLayout>
 
@@ -265,7 +265,8 @@ Applications for Health care
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:max="100"></SeekBar>
+                android:max="100">
+            </SeekBar>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -273,7 +274,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
 
         </LinearLayout>
 
@@ -314,7 +316,8 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="수동"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
             </RadioGroup>
 
         </LinearLayout>
@@ -335,7 +338,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -375,7 +379,8 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="여자"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
             </RadioGroup>
 
         </LinearLayout>
@@ -396,7 +401,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -428,7 +434,8 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="분산"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
 
                 <RadioButton
                     android:id="@+id/radio_scenario"
@@ -436,7 +443,8 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="시나리오"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
             </RadioGroup>
         </LinearLayout>
 
@@ -456,7 +464,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -501,7 +510,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -541,8 +551,10 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="단색"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
             </RadioGroup>
+
         </LinearLayout>
 
         <LinearLayout
@@ -643,7 +655,8 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -683,8 +696,10 @@ Applications for Health care
                     android:layout_height="match_parent"
                     android:layout_marginLeft="100dp"
                     android:text="근접"
-                    android:textSize="30sp"></RadioButton>
+                    android:textSize="30sp">
+                </RadioButton>
             </RadioGroup>
+
         </LinearLayout>
 
         <LinearLayout
@@ -703,7 +718,9 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -731,7 +748,8 @@ Applications for Health care
                 android:gravity="center"
                 android:text="0"
                 android:textSize="30sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold">
+            </TextView>
 
             <TextView
                 android:id="@+id/timer_txt2"
@@ -740,14 +758,16 @@ Applications for Health care
                 android:layout_toRightOf="@+id/timer_value_out"
                 android:ems="10"
                 android:text="minute"
-                android:textSize="30sp"></TextView>
+                android:textSize="30sp">
+            </TextView>
 
             <SeekBar
                 android:id="@+id/timer_seekbar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:max="100"></SeekBar>
+                android:max="100">
+            </SeekBar>
 
         </LinearLayout>
 

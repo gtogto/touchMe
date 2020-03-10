@@ -184,6 +184,10 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_circie_button.xml.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-mdpi\\circie_button.xml"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_pink_2.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\pink_2.png"
     },
@@ -198,6 +202,10 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_scale_front.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\anim\\scale_front.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ubio_logo_main.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\ubio_logo_main.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_logo_icon.png.flat",
