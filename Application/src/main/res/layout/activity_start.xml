@@ -2,30 +2,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".com.start_Activity">
 
     <LinearLayout
         android:id="@+id/linearLayout_1"
-        android:layout_width="584dp"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/main_txt"
+            android:fontFamily="sans-serif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:text="Touch Me"
-            android:textAlignment="center"
-            android:textSize="92sp"
+            android:text="Touch Me "
             android:textStyle="bold|italic" />
 
     </LinearLayout>
@@ -33,9 +29,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout_2"
-        android:layout_width="584dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout_1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <ImageView
@@ -67,9 +66,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout_3"
-        android:layout_width="584dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout_2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <TextView
@@ -80,7 +82,6 @@
             android:gravity="center"
             android:text="UBIO "
             android:textAlignment="center"
-            android:textSize="84sp"
             android:textStyle="bold|italic" />
 
         <TextView
@@ -92,9 +93,31 @@
             android:gravity="center"
             android:text="Innovation "
             android:textAlignment="center"
-            android:textSize="32sp"
             android:textStyle="bold|italic" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout_3"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo_blue"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ubio_logo_blue" />
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>

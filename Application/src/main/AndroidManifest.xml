@@ -23,7 +23,7 @@
     <application
         android:configChanges="orientation|keyboardHidden"
         android:icon="@drawable/ubio_logo"
-        android:label="keti_BLE_test"
+        android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.NoActionBar">
 
         <activity

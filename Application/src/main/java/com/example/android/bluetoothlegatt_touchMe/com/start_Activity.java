@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.android.bluetoothlegatt_touchMe.R;
 
@@ -19,10 +22,33 @@ import com.example.android.bluetoothlegatt_touchMe.R;
 
 public class start_Activity extends Activity {
     InputMethodManager imm;
+
+    int standardSize_X, standardSize_Y;
+    float density;
+
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
+        getStandardSize();
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
@@ -34,6 +60,17 @@ public class start_Activity extends Activity {
                 startActivityForResult(intent, 201);
             }
         });
+
+        TextView main_txt = (TextView)findViewById(R.id.main_txt);
+
+        TextView ubio_text = (TextView)findViewById(R.id.ubio_text);
+        TextView inno_text = (TextView)findViewById(R.id.inno_text);
+
+        main_txt.setTextSize((float) (standardSize_X / 3)); main_txt.setTextSize((float) (standardSize_Y / 10));
+
+        ubio_text.setTextSize((float) (standardSize_X / 6)); ubio_text.setTextSize((float) (standardSize_Y / 16));
+        inno_text.setTextSize((float) (standardSize_X / 12)); inno_text.setTextSize((float) (standardSize_Y / 24));
+
     }
 
     @Override

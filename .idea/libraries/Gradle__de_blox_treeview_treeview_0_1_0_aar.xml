@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: de.blox.treeview:treeview:0.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9f4d94e925ff605b068e8375f3ee774/treeview-0.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9f4d94e925ff605b068e8375f3ee774/treeview-0.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.blox.treeview/treeview/0.1.0/f1e426b6947326ad75a3009846065324ad9b7b2c/treeview-0.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.blox.treeview/treeview/0.1.0/dcab647eaa0277ae5f981b02b17837f568fa8cf8/treeview-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

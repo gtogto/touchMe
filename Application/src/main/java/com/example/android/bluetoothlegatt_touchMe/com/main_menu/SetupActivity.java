@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -56,6 +58,26 @@ public class SetupActivity extends Activity {
     public static TextView output_timer;
     public static int timer_number;
 
+    int standardSize_X, standardSize_Y;
+    float density;
+
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
+    }
+
+
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -78,6 +100,8 @@ public class SetupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_up);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        getStandardSize();
 
         seekBar_age = (SeekBar)findViewById(R.id.age_seekbar);
         output_age = (TextView)findViewById(R.id.age_value_out);
@@ -115,6 +139,61 @@ public class SetupActivity extends Activity {
 
         seekBar_timer = (SeekBar)findViewById(R.id.timer_seekbar);
         output_timer = (TextView)findViewById(R.id.timer_value_out);
+
+        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
+        TextView age_txt = (TextView)findViewById(R.id.age_txt);
+        TextView age_txt2 = (TextView)findViewById(R.id.age_txt2);
+        TextView age_value_out = (TextView)findViewById(R.id.age_value_out);
+
+        TextView sex_txt = (TextView)findViewById(R.id.sex_txt);
+
+        TextView weight_value_out = (TextView)findViewById(R.id.weight_value_out);
+        TextView weight_txt2 = (TextView)findViewById(R.id.weight_txt2);
+        TextView weight_txt = (TextView)findViewById(R.id.weight_txt);
+
+        TextView act_mode_txt = (TextView)findViewById(R.id.act_mode_txt);
+
+        TextView auto_mode_txt = (TextView)findViewById(R.id.auto_mode_txt);
+
+        TextView voice_txt = (TextView)findViewById(R.id.voice_txt);
+
+        TextView radiation_mode_txt = (TextView)findViewById(R.id.radiation_mode_txt);
+
+        TextView Sensitivity_mode_txt = (TextView)findViewById(R.id.Sensitivity_mode_txt);
+
+        TextView timer_txt = (TextView)findViewById(R.id.timer_txt);
+        TextView timer_value_out = (TextView)findViewById(R.id.timer_value_out);
+        TextView timer_txt2 = (TextView)findViewById(R.id.timer_txt2);
+
+
+        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
+
+        age_txt.setTextSize((float) (standardSize_X / 15)); age_txt.setTextSize((float) (standardSize_Y / 25));
+        age_txt2.setTextSize((float) (standardSize_X / 12)); age_txt2.setTextSize((float) (standardSize_Y / 22));
+        age_value_out.setTextSize((float) (standardSize_X / 12)); age_value_out.setTextSize((float) (standardSize_Y / 22));
+
+        sex_txt.setTextSize((float) (standardSize_X / 12)); sex_txt.setTextSize((float) (standardSize_Y / 22));
+
+        weight_txt.setTextSize((float) (standardSize_X / 15)); weight_txt.setTextSize((float) (standardSize_Y / 25));
+        weight_txt2.setTextSize((float) (standardSize_X / 12)); weight_txt2.setTextSize((float) (standardSize_Y / 22));
+        weight_value_out.setTextSize((float) (standardSize_X / 12)); weight_value_out.setTextSize((float) (standardSize_Y / 22));
+
+        act_mode_txt.setTextSize((float) (standardSize_X / 15)); act_mode_txt.setTextSize((float) (standardSize_Y / 25));
+
+        auto_mode_txt.setTextSize((float) (standardSize_X / 15)); auto_mode_txt.setTextSize((float) (standardSize_Y / 25));
+
+        voice_txt.setTextSize((float) (standardSize_X / 15)); voice_txt.setTextSize((float) (standardSize_Y / 25));
+
+        radiation_mode_txt.setTextSize((float) (standardSize_X / 15)); radiation_mode_txt.setTextSize((float) (standardSize_Y / 25));
+
+        Sensitivity_mode_txt.setTextSize((float) (standardSize_X / 15)); Sensitivity_mode_txt.setTextSize((float) (standardSize_Y / 25));
+
+        timer_txt.setTextSize((float) (standardSize_X / 15)); timer_txt.setTextSize((float) (standardSize_Y / 25));
+        timer_value_out.setTextSize((float) (standardSize_X / 12)); timer_value_out.setTextSize((float) (standardSize_Y / 22));
+        timer_txt2.setTextSize((float) (standardSize_X / 12)); timer_txt2.setTextSize((float) (standardSize_Y / 22));
+
+        //System.out.println((float) standardSize_X / 8);
+        //System.out.println((float) standardSize_Y / 18);
 
         //TODO Age selection SeekBar menu
         seekBar_age.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

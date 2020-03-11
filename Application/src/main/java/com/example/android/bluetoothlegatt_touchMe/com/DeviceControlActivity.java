@@ -12,10 +12,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -86,7 +88,27 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     public static byte[] packet;
     public static byte[] send_packet;
 
+    int standardSize_X, standardSize_Y;
+    float density;
+
     AccSlidingCollection asc = new AccSlidingCollection();
+
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
+    }
+
 
     // Code to manage Service lifecycle.
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -172,6 +194,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         setContentView(R.layout.gatt_services_characteristics);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        getStandardSize();
 
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
@@ -180,6 +203,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         // Sets up UI references.
         ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         mConnectionState = (TextView) findViewById(R.id.connection_state);
+        /*
         mDataTextView = (TextView) findViewById(R.id.send_data_tv);
         mDataScrollView = (ScrollView) findViewById(R.id.sd_scroll);
 
@@ -196,7 +220,13 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                     }, 100);
                 }
             }
-        });
+        });*/
+
+        TextView ubio_text = (TextView)findViewById(R.id.ubio_text);
+        TextView inno_text = (TextView)findViewById(R.id.inno_text);
+
+        ubio_text.setTextSize((float) (standardSize_X / 6)); ubio_text.setTextSize((float) (standardSize_Y / 16));
+        inno_text.setTextSize((float) (standardSize_X / 12)); inno_text.setTextSize((float) (standardSize_Y / 24));
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
@@ -426,10 +456,10 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     public void onClick_report(View v) {        //Map info Activity     //Map Button
 
-        //final Intent i = new Intent(this, ReportAnalysisActivity.class);
-        //startActivityForResult(i, 201);
+        final Intent i = new Intent(this, ReportAnalysisActivity.class);
+        startActivityForResult(i, 201);
 
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
 
         System.out.println("clicked Mapping btn");
 

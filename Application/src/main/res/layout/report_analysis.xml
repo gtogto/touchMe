@@ -83,12 +83,24 @@ Applications for Health care
                 android:layout_gravity="center"
                 android:scaleType="center"
                 android:src="@drawable/linie_albastra_lr">
-
-
             </ImageView>
 
-
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_2">
+
+                <de.blox.treeview.TreeView
+                    android:id="@+id/treeview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true">
+                </de.blox.treeview.TreeView>
+
+
+        </RelativeLayout>
 
 
     </LinearLayout>

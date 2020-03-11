@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- Copyright
 This project was created by gto.
 Applications for Health care use to BLE modules
 -->
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:custom="http://schemas.android.com/apk/res-auto">
-
-
 
     <LinearLayout
         android:id="@+id/set_up_main_Linear"
@@ -33,6 +29,7 @@ Applications for Health care use to BLE modules
                 android:layout_height="wrap_content"
                 android:onClick="onClickBack"
                 android:scaleType="fitXY"
+                android:adjustViewBounds="true"
                 android:src="@drawable/back_icon"
                 android:visibility="gone">
             </ImageView>
@@ -42,6 +39,7 @@ Applications for Health care use to BLE modules
                 android:layout_width="106dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:gravity="center"
                 android:src="@drawable/set_up">
             </ImageView>
@@ -51,8 +49,8 @@ Applications for Health care use to BLE modules
 
         <LinearLayout
             android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -64,15 +62,215 @@ Applications for Health care use to BLE modules
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Set-up Device"
-                android:textSize="45sp"
+                android:text="Set-up Device "
                 android:textStyle="bold|italic" />
+            <!-- android:textSize="45sp"-->
 
             <ImageView
                 android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr"></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/age_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사용연령 : "
+                />
+
+            <TextView
+                android:id="@+id/age_value_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="2"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/age_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="세">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/age_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:max="100">
+            </SeekBar>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sex_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="성  별"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="남자"
+                    android:textSize="30sp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="여자"
+                    android:textSize="30sp"></RadioButton>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/linie_albastra_lr">
+            </ImageView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/weight_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가 중 치  : "
+                />
+
+            <TextView
+                android:id="@+id/weight_value_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/age_txt"
+                android:ems="2"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#00BCD4"
+                android:textSize="30sp"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/weight_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/age_value_out"
+                android:text="%"
+                android:textSize="30sp">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/weight_seekbar"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginLeft="16dp"
+                android:max="100">
+            </SeekBar>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
                 android:scaleType="center"
                 android:src="@drawable/linie_albastra_lr">
             </ImageView>
@@ -86,238 +284,39 @@ Applications for Health care use to BLE modules
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp">
-
-            <TextView
-                android:id="@+id/age_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="사용연령 : "
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/age_value_out"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="30sp"
-                android:textStyle="bold">
-            </TextView>
-
-            <TextView
-                android:id="@+id/age_txt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="세"
-                android:textSize="30sp">
-            </TextView>
-
-    </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:orientation="vertical">
-
-            <SeekBar
-                android:id="@+id/age_seekbar"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:max="100">
-            </SeekBar>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr">
-            </ImageView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/sex_txt"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="성          별"
-                android:textSize="30sp" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:orientation="horizontal">
-                    <RadioButton
-                        android:id="@+id/radio_male"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textSize="30sp"
-                        android:text="남자"
-                        android:checked="true">
-                    </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radio_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
-                    android:text="여자"
-                    android:textSize="30sp">
-                </RadioButton>
-            </RadioGroup>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr">
-            </ImageView>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp">
-
-            <TextView
-                android:id="@+id/weight_txt"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="가 중 치  : "
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/weight_value_out"
-                android:layout_width="195dp"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/age_txt"
-                android:ems="10"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="30sp"
-                android:textStyle="bold">
-            </TextView>
-
-            <TextView
-                android:id="@+id/weight_txt2"
-                android:layout_width="195dp"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/age_value_out"
-                android:ems="10"
-                android:text="%"
-                android:textSize="30sp">
-            </TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:orientation="vertical">
-
-            <SeekBar
-                android:id="@+id/weight_seekbar"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:max="100">
-            </SeekBar>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr">
-            </ImageView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
             android:layout_marginRight="16dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/act_mode_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="동 작 모 드"
-                android:textSize="30sp" />
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
+                android:gravity="center"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radio_auto"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textSize="30sp"
+                    android:checked="true"
                     android:text="자동"
-                    android:checked="true">
-                </RadioButton>
+                    android:textSize="30sp"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radio_manual"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="10dp"
                     android:text="수동"
-                    android:textSize="30sp">
-                </RadioButton>
+                    android:textSize="30sp"></RadioButton>
             </RadioGroup>
 
         </LinearLayout>
@@ -345,7 +344,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -354,15 +353,17 @@ Applications for Health care use to BLE modules
 
             <TextView
                 android:id="@+id/auto_mode_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="자 동 모 드"
-                android:textSize="30sp" />
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
                 <RadioButton
                     android:id="@+id/radio_random"
@@ -377,10 +378,8 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_sequential"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
-                    android:text="여자"
-                    android:textSize="30sp">
-                </RadioButton>
+                    android:text="순차"
+                    android:textSize="30sp"></RadioButton>
             </RadioGroup>
 
         </LinearLayout>
@@ -408,7 +407,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -418,12 +417,16 @@ Applications for Health care use to BLE modules
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radio_center"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="30sp"
+                    android:layout_marginLeft="10dp"
                     android:text="센터"
                     android:checked="true">
                 </RadioButton>
@@ -432,7 +435,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_dispersion"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
                     android:text="분산"
                     android:textSize="30sp">
                 </RadioButton>
@@ -441,7 +444,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_scenario"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
                     android:text="시나리오"
                     android:textSize="30sp">
                 </RadioButton>
@@ -471,7 +474,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -479,16 +482,16 @@ Applications for Health care use to BLE modules
 
             <TextView
                 android:id="@+id/voice_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="음 성 모 드"
-                android:textSize="30sp" />
+                />
 
             <Switch
                 android:id="@+id/switch_voice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="150dp"
                 android:textSize="30sp"
                  />
 
@@ -517,7 +520,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -526,33 +529,34 @@ Applications for Health care use to BLE modules
 
             <TextView
                 android:id="@+id/radiation_mode_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="발 광 모 드"
-                android:textSize="30sp" />
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radio_random_color"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textSize="30sp"
-                    android:text="랜덤"
-                    android:checked="true">
-                </RadioButton>
+                    android:checked="true"
+                    android:text="회전"
+                    android:textSize="30sp"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radio_one_color"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
-                    android:text="단색"
-                    android:textSize="30sp">
-                </RadioButton>
+                    android:layout_marginLeft="10dp"
+                    android:text="고정"
+                    android:textSize="30sp"></RadioButton>
             </RadioGroup>
 
         </LinearLayout>
@@ -560,7 +564,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -569,8 +573,10 @@ Applications for Health care use to BLE modules
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -578,7 +584,6 @@ Applications for Health care use to BLE modules
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:checked="true"
-                    android:layout_marginLeft="35dp"
                     android:scaleType="fitXY"
                     android:button="@animator/red_button">
                     </RadioButton>
@@ -587,7 +592,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_green"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
                     android:button="@animator/green_button"
                     >
@@ -598,7 +603,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_blue"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
                     android:button="@animator/blue_button"
                     >
@@ -609,7 +614,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_yellow"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
                     android:button="@animator/yellow_button"
                     >
@@ -620,7 +625,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_pink"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
                     android:button="@animator/pink_button"
                     >
@@ -631,7 +636,7 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_sky"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="55dp"
+                    android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
                     android:button="@animator/sky_button"
                     >
@@ -662,7 +667,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -671,31 +676,34 @@ Applications for Health care use to BLE modules
 
             <TextView
                 android:id="@+id/Sensitivity_mode_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="감           도"
-                android:textSize="30sp" />
+                android:text="모  드"
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radio_contact"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textSize="30sp"
-                    android:text="접촉"
-                    android:checked="true">
+                    android:checked="true"
+                    android:text="싱글"
+                    android:textSize="30sp">
                 </RadioButton>
 
                 <RadioButton
                     android:id="@+id/radio_nearing"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="100dp"
-                    android:text="근접"
+                    android:layout_marginLeft="10dp"
+                    android:text="듀얼"
                     android:textSize="30sp">
                 </RadioButton>
             </RadioGroup>
@@ -726,7 +734,7 @@ Applications for Health care use to BLE modules
         <LinearLayout
             android:id="@id/linearLayout_2"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
@@ -734,31 +742,29 @@ Applications for Health care use to BLE modules
 
             <TextView
                 android:id="@+id/timer_txt"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="동 작 시 간"
-                android:textSize="30sp" />
+                />
 
             <TextView
                 android:id="@+id/timer_value_out"
-                android:layout_width="67dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/timer_txt"
-                android:ems="10"
+                android:ems="2"
                 android:gravity="center"
                 android:text="0"
-                android:textSize="30sp"
+                android:textColor="#00BCD4"
                 android:textStyle="bold">
             </TextView>
 
             <TextView
                 android:id="@+id/timer_txt2"
-                android:layout_width="102dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/timer_value_out"
-                android:ems="10"
-                android:text="minute"
-                android:textSize="30sp">
+                android:text="분">
             </TextView>
 
             <SeekBar
@@ -766,7 +772,8 @@ Applications for Health care use to BLE modules
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:max="100">
+                android:layout_marginLeft="16dp"
+                android:max="200">
             </SeekBar>
 
         </LinearLayout>
@@ -774,4 +781,4 @@ Applications for Health care use to BLE modules
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
