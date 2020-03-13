@@ -44,7 +44,6 @@ Applications for Health care use to BLE modules
                 android:src="@drawable/set_up">
             </ImageView>
 
-
         </LinearLayout>
 
         <LinearLayout

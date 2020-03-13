@@ -136,7 +136,7 @@ public class CommonData {
     public static final int OTA_REQ_TIMER					=	1;
     public static final int OTA_REQ_TIMER_INTERVAL		    =	500;
 
-    public static final int touch_test1       =   0x31;
+    public static final int touch_test1       =   0x99;
 
     public static final int TOUCH_GTO_TEST1                  =   0x59;
 
@@ -193,6 +193,7 @@ public class CommonData {
 
         //value[index++] = (byte) checkSum;
         //value[index++] = (byte) 0x7E;
+        value[index++] = (byte) 0xFF;   // tail
         value[index++] = (byte) 0x5D;   // tail char ']'
         /*
         value[index++] = (byte) checkSum;

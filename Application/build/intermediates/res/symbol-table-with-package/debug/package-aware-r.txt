@@ -821,6 +821,8 @@ drawable ubio_logo
 drawable ubio_logo_black
 drawable ubio_logo_blue
 drawable ubio_logo_main
+drawable wifi
+drawable wifi1
 drawable yellow_0
 drawable yellow_1
 drawable yellow_2
@@ -920,16 +922,11 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView_1
 id info
 id inno_text
 id italic
 id item_touch_helper_previous_elevation
-id l1
-id l2
-id l3
-id l4
-id l5
-id l6
 id largeLabel
 id left
 id line1
@@ -942,19 +939,6 @@ id linearLayout_3
 id linearLayout_4
 id listMode
 id list_item
-id ll1
-id ll10
-id ll11
-id ll12
-id ll13
-id ll2
-id ll3
-id ll4
-id ll5
-id ll6
-id ll7
-id ll8
-id ll9
 id login_btn
 id logo_blue
 id logo_red
@@ -962,7 +946,6 @@ id main_txt
 id mapping_btn
 id masked
 id master
-id masterBtn
 id media_actions
 id menu_connect
 id menu_disconnect
@@ -1000,12 +983,6 @@ id parent_matrix
 id pin
 id progress_circular
 id progress_horizontal
-id r1
-id r2
-id r3
-id r4
-id r5
-id r6
 id radiation_mode_txt
 id radio
 id radio_auto
@@ -1028,6 +1005,7 @@ id radio_sequential
 id radio_sky
 id radio_yellow
 id realZoom
+id relativeLayout3
 id report_btn
 id right
 id right_icon
@@ -1049,6 +1027,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id sd_scroll
 id search_badge
 id search_bar
 id search_button
@@ -1060,6 +1039,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id send_data_tv
 id set_up_main_Linear
 id setup_btn
 id setup_txt
@@ -1072,6 +1052,7 @@ id smallLabel
 id snackbar_action
 id snackbar_text
 id snap
+id space3
 id spacer
 id split_action_bar
 id src_atop
@@ -1085,6 +1066,7 @@ id switch_voice
 id tabMode
 id tableLayout
 id tag_transition_group
+id test_btn
 id text
 id text2
 id textSpacerNoButtons
@@ -1092,6 +1074,7 @@ id textSpacerNoTitle
 id textView
 id textView2
 id textView_node
+id textView_root
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1203,6 +1186,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout report_analysis
+layout root
 layout run_main
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

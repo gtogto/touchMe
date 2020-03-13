@@ -89,6 +89,9 @@ public class BluetoothLeService extends Service {
     public final static UUID JDY_RX_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.JDY_RX_MEASUREMENT);
 
+    public final static UUID JDY_RX_MEASUREMENT1 =
+            UUID.fromString(SampleGattAttributes.JDY_RX_MEASUREMENT1);
+
     public int mManboSendCnt;
 
     public int mPPGSendCnt;
@@ -197,7 +200,7 @@ public class BluetoothLeService extends Service {
     }
 
     public class LocalBinder extends Binder {
-        BluetoothLeService getService() {
+        public BluetoothLeService getService() {
             return BluetoothLeService.this;
         }
     }
@@ -566,13 +569,6 @@ public class BluetoothLeService extends Service {
                 break;
 
             // TODO: EXERCISE
-            case CommonData.EXERCISE_BtoA_START_CFM: {
-                byte[] pData = new byte[1];
-                pData[0] = (byte) mSleepSendCnt;
-                bSendData = CommonData.SendData(CommonData.EXERCISE_BtoA_START_CFM, 1, pData);
-                characteristic.setValue(bSendData);
-            }
-            break;
 
             case CommonData.EXERCISE_BtoA_STOP_CFM: {
                 byte[] pData = new byte[1];
@@ -844,17 +840,12 @@ public class BluetoothLeService extends Service {
 
             //TODO #.Touch Me BLE Data Packet #.Day 2020.02.06
             case CommonData.TOUCH_GTO_TEST1: {
-                byte[] pData = new byte[10];
+                byte[] pData = new byte[5];
                 pData[0] = 0x30;
                 pData[1] = 0x31;
                 pData[2] = 0x32;
                 pData[3] = 0x33;
                 pData[4] = 0x34;
-                pData[5] = 0x35;
-                pData[6] = 0x36;
-                pData[7] = 0x37;
-                pData[8] = 0x38;
-                pData[9] = 0x39;
 
                 bSendData = CommonData.touch_Data(CommonData.TOUCH_GTO_TEST1, 10, pData);
                 characteristic.setValue(bSendData);

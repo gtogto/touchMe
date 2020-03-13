@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -31,6 +33,25 @@ public class NodeScanningActivity extends Activity {
     private String mDeviceAddress;
 
     public static TextView node1_txt, node2_txt, node3_txt, node4_txt, node5_txt, node6_txt;
+
+    int standardSize_X, standardSize_Y;
+    float density;
+
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
+    }
 
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
@@ -62,6 +83,12 @@ public class NodeScanningActivity extends Activity {
         node4_txt = (TextView)findViewById(R.id.node4);
         node5_txt = (TextView)findViewById(R.id.node5);
         node6_txt = (TextView)findViewById(R.id.node6);
+        getStandardSize();
+
+        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
+
+        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
+
 
     }
 

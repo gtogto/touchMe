@@ -6,7 +6,8 @@ Applications for Health care use to BLE modules
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:id="@+id/set_up_main_Linear"
@@ -41,7 +42,7 @@ Applications for Health care use to BLE modules
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:gravity="center"
-                android:src="@drawable/set_up">
+                android:src="@drawable/scanning">
             </ImageView>
 
         </LinearLayout>
@@ -62,7 +63,7 @@ Applications for Health care use to BLE modules
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Set-up Device "
+                android:text="Node Scanning "
                 android:textStyle="bold|italic" />
                 <!-- android:textSize="45sp"-->
 
@@ -76,36 +77,92 @@ Applications for Health care use to BLE modules
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="696dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearLayout_1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/masterBtn"
+                android:id="@+id/master"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="320dp"
+                android:layout_gravity="center"
                 android:background="@drawable/orange_circle_button"
+                android:gravity="center"
                 android:text="MASTER"
                 android:textSize="22sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="1dp"
+                android:scaleType="center"
+                android:src="@drawable/wifi1"></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/nodeBtn1"
+                android:layout_width="88dp"
+                android:layout_height="85dp"
+                android:background="@drawable/green_circle_button"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="node 1" />
+
+            <Button
+                android:id="@+id/nodeBtn2"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="100dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/node1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="65dp"
+                android:layout_gravity="center"
+                android:ems="3"
+                android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -114,22 +171,68 @@ Applications for Health care use to BLE modules
                 android:id="@+id/node2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="165dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="100dp"
+                android:ems="3"
+                android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/nodeBtn3"
+                android:layout_width="88dp"
+                android:layout_height="85dp"
+                android:background="@drawable/green_circle_button"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="node 1" />
+
+            <Button
+                android:id="@+id/nodeBtn4"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="100dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/node3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="265dp"
+                android:layout_gravity="center"
+                android:ems="3"
+                android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -138,22 +241,68 @@ Applications for Health care use to BLE modules
                 android:id="@+id/node4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="425dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="100dp"
+                android:ems="3"
+                android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/nodeBtn5"
+                android:layout_width="88dp"
+                android:layout_height="85dp"
+                android:background="@drawable/green_circle_button"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="node 1" />
+
+            <Button
+                android:id="@+id/nodeBtn6"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="100dp"
+                android:background="@drawable/green_circle_button"
+                android:text="node 2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/linearLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout_1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/node5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="525dp"
+                android:layout_gravity="center"
+                android:ems="3"
+                android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -162,405 +311,15 @@ Applications for Health care use to BLE modules
                 android:id="@+id/node6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="625dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="100dp"
+                android:ems="3"
+                android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/r1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="65dp"
-                android:text="% →→→→→"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/r2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="165dp"
-                android:text="% →→→→→"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/r3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="265dp"
-                android:text="% →→→→→"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/r4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="425dp"
-                android:text="% →→→→→"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/r5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="525dp"
-                android:text="% →→→→→"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/r6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="625dp"
-                android:text="% →→→→→"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/l1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="65dp"
-                android:fontFamily="serif"
-                android:text="┌ ─ ─ ─ ─ ─ ─ ─"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/l2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="165dp"
-                android:fontFamily="serif"
-                android:text="   ─ ─ ─ ─ ─ ─ ─"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/l3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="265dp"
-                android:fontFamily="serif"
-                android:text="   ─ ─ ─ ─ ─ ─ ─"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="100dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="135dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="170dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="205dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="240dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="275dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="310dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="410dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="445dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="480dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ll11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="515dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@+id/ll12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="550dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@+id/ll13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="585dp"
-                android:fontFamily="serif"
-                android:text="│"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/l4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="425dp"
-                android:fontFamily="serif"
-                android:text="   ─ ─ ─ ─ ─ ─ ─"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/l5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="525dp"
-                android:fontFamily="serif"
-                android:text="   ─ ─ ─ ─ ─ ─ ─"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/l6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="625dp"
-                android:fontFamily="serif"
-                android:text="└ ─ ─ ─ ─ ─ ─ ─"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-
-            <Button
-                android:id="@+id/nodeBtn1"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="55dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 1" />
-
-            <Button
-                android:id="@+id/nodeBtn2"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="140dp"
-                android:layout_marginEnd="55dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 2" />
-
-            <Button
-                android:id="@+id/nodeBtn3"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="240dp"
-                android:layout_marginEnd="55dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 3" />
-
-            <Button
-                android:id="@+id/nodeBtn4"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="400dp"
-                android:layout_marginEnd="55dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 4" />
-
-            <Button
-                android:id="@+id/nodeBtn5"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="500dp"
-                android:layout_marginEnd="55dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 5" />
-
-            <Button
-                android:id="@+id/nodeBtn6"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="600dp"
-                android:layout_marginEnd="55dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 6" />
-
-        </RelativeLayout>
-
-
+        </LinearLayout>
 
     </LinearLayout>
 

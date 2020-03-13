@@ -38,7 +38,7 @@
 25-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-64
 26
 27    <application
-27-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-72:19
+27-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-73:19
 28        android:allowBackup="true"
 28-->[de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:12:9-35
 29        android:configChanges="orientation|keyboardHidden"
@@ -123,20 +123,21 @@
 70            android:launchMode="singleInstance" />
 70-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:63:13-48
 71        <activity
-71-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-67:60
+71-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-68:20
 72            android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity"
 72-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:13-54
 73            android:label="GTO touch Me"
 73-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-41
-74            android:launchMode="singleInstance" />
+74            android:launchMode="singleInstance" >
 74-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:67:13-48
-75
-76        <service
-76-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:69:9-71:38
-77            android:name="com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService"
-77-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:13-51
-78            android:enabled="true" />
-78-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-35
-79    </application>
-80
-81</manifest>
+75        </activity>
+76
+77        <service
+77-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:9-72:38
+78            android:name="com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService"
+78-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-51
+79            android:enabled="true" />
+79-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:72:13-35
+80    </application>
+81
+82</manifest>

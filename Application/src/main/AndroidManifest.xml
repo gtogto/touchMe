@@ -64,7 +64,8 @@
         <activity
             android:name=".com.main_menu.RunActivity"
             android:label="GTO touch Me"
-            android:launchMode="singleInstance"></activity>
+            android:launchMode="singleInstance">
+        </activity>
 
         <service
             android:name=".com.BluetoothLeService"

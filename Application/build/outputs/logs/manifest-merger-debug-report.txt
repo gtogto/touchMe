@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\e445618099ce43d4d038d61d6cf09951\design-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:2:1-17:12
 MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:2:1-17:12
@@ -23,9 +23,9 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\calic\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\15710bad692d7514ce221e254adcf49e\viewmodel-1.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\a29701de75fb599a6d5b46865fc4d183\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d1a0d104cb76491b0a79c0ad09abcfca\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
 	package
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:3:5-58
 		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
@@ -63,7 +63,7 @@ ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:5-67
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-64
 application
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-72:19
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-73:19
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:11:5-15:19
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:11:5-15:19
 MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:11:5-15:19
@@ -149,7 +149,7 @@ ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:60:9-63:60
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:61:13-65
 activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-67:60
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-68:20
 	android:label
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-41
 	android:launchMode
@@ -157,11 +157,11 @@ ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-67:60
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:13-54
 service#com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:69:9-71:38
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:9-72:38
 	android:enabled
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-35
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:72:13-35
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:13-51
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-51
 uses-sdk
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml

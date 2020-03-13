@@ -60,9 +60,6 @@ import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
  */
 
 public class DeviceControlActivity extends Activity implements View.OnClickListener {
-
-    public static final int touch_test1       =   0x31;
-
     private final static String TAG = "DCA";
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
@@ -70,14 +67,15 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     private TextView mConnectionState;
     private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
+    public static final int DUMP = -1;
 
     private TextView mDataTextView;
     private ScrollView mDataScrollView;
 
     public String mDeviceName;
     public String mDeviceAddress;
-    private BluetoothLeService mBluetoothLeService;
-    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
+    public static BluetoothLeService mBluetoothLeService;
+    public ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
     private boolean mConnected = false;
     private BluetoothGattCharacteristic mNotifyCharacteristic;
@@ -203,7 +201,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         // Sets up UI references.
         ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         mConnectionState = (TextView) findViewById(R.id.connection_state);
-        /*
+
         mDataTextView = (TextView) findViewById(R.id.send_data_tv);
         mDataScrollView = (ScrollView) findViewById(R.id.sd_scroll);
 
@@ -220,7 +218,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                     }, 100);
                 }
             }
-        });*/
+        });
 
         TextView ubio_text = (TextView)findViewById(R.id.ubio_text);
         TextView inno_text = (TextView)findViewById(R.id.inno_text);
@@ -255,7 +253,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
         unbindService(mServiceConnection);
-        mBluetoothLeService = null;
+        //mBluetoothLeService = null;
     }
 
     @Override
@@ -365,7 +363,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         return null;
     }
 
-    private BluetoothGattCharacteristic getWriteGattCharacteristic(){
+    public BluetoothGattCharacteristic getWriteGattCharacteristic(){
 
         BluetoothGattCharacteristic writeGattCharacteristic = null;
         if(mGattCharacteristics == null || mGattCharacteristics.size() == 0){
@@ -379,7 +377,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
                     return writeGattCharacteristic;
                 }
 
-                if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
+                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
                     return writeGattCharacteristic;
                 }
             }
@@ -438,6 +436,8 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         final Intent i = new Intent(this, SetupActivity.class);
         startActivityForResult(i, 201);
 
+        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
+
     }
 
     public void onClick_scan(View v) {        //Map info Activity     //Map Button
@@ -459,9 +459,9 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         final Intent i = new Intent(this, ReportAnalysisActivity.class);
         startActivityForResult(i, 201);
 
-        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
 
-        System.out.println("clicked Mapping btn");
+        //System.out.println("clicked Mapping btn");
 
     }
 
@@ -470,7 +470,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         final Intent i = new Intent(this, RunActivity.class);
         startActivityForResult(i, 201);
 
-        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
 
     }
 

@@ -17,6 +17,8 @@ public class SampleGattAttributes {
     public static String JDY_TX_MEASUREMENT = "0000FFE1-0000-1000-8000-00805F9B34FB"; //JDY_RATE_MEASUREMENT
     public static String JDY_RX_MEASUREMENT = "0000FFE1-0000-1000-8000-00805F9B34FB"; //JDY_RATE_MEASUREMENT
 
+    public static String JDY_RX_MEASUREMENT1 = "0000FFE1-0000-1000-8000-00805F9B34FB"; //JDY_RATE_MEASUREMENT
+
 
     static {
         // Sample Services.

@@ -58,7 +58,8 @@ public class ReportAnalysisActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_analysis);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로모드
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // 가로모드
 
         TreeView treeView = findViewById(R.id.treeview);
 
@@ -74,15 +75,32 @@ public class ReportAnalysisActivity extends Activity {
                 viewHolder.mTextView1.setText(data.toString());
             }
         };
-        treeView.setAdapter(adapter);
 
-        TreeNode rootNode = new TreeNode("Root");
-        TreeNode child1 = new TreeNode("Child 1");
-        TreeNode child2 = new TreeNode("Child 2");
-        TreeNode child3 = new TreeNode("C_3");
-        TreeNode child4 = new TreeNode("Child 4");
-        TreeNode child5 = new TreeNode("C_5");
-        TreeNode child6 = new TreeNode("C_6");
+        BaseTreeAdapter adapter1 = new BaseTreeAdapter<ViewHolder>(this, R.layout.root) {
+            @NonNull
+            @Override
+            public ViewHolder onCreateViewHolder(View view) {
+                return new ViewHolder(view);
+            }
+
+            @Override
+            public void onBindViewHolder(ViewHolder viewHolder, Object data, int position) {
+                viewHolder.mTextView2.setText(data.toString());
+            }
+        };
+
+
+        treeView.setAdapter(adapter1);
+
+        TreeNode rootNode = new TreeNode("MASTER");
+        TreeNode child1 = new TreeNode("node 1");
+        TreeNode child2 = new TreeNode("node 2");
+        TreeNode child3 = new TreeNode("node 3");
+        TreeNode child4 = new TreeNode("node 4");
+        TreeNode child5 = new TreeNode("node 5");
+        TreeNode child6 = new TreeNode("node 6");
+
+        /*
         TreeNode child7 = new TreeNode("C_7");
         TreeNode child8 = new TreeNode("C_8");
         TreeNode child9 = new TreeNode("Child 9");
@@ -90,12 +108,16 @@ public class ReportAnalysisActivity extends Activity {
         TreeNode child11 = new TreeNode("C_11");
         TreeNode child12 = new TreeNode("C_12");
         TreeNode child13 = new TreeNode("C_13");
-        TreeNode child14 = new TreeNode("C_14");
+        TreeNode child14 = new TreeNode("C_14");*/
 
         // Childs added to root
         rootNode.addChild(child1);
         rootNode.addChild(child2);
-
+        rootNode.addChild(child3);
+        rootNode.addChild(child4);
+        rootNode.addChild(child5);
+        rootNode.addChild(child6);
+        /*
         // Childs 3 & 4 added to Child 1
         child1.addChild(child3);
         child1.addChild(child4);
@@ -117,8 +139,8 @@ public class ReportAnalysisActivity extends Activity {
         child10.addChild(child12);
         child10.addChild(child13);
         child10.addChild(child14);
-
-        adapter.setRootNode(rootNode);
+        */
+        adapter1.setRootNode(rootNode);
     }
 
     //TODO BLE Packet receive
