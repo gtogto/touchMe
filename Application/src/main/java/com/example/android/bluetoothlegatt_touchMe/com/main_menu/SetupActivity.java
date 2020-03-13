@@ -50,7 +50,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     //TODO: BLE variable
     private boolean mConnected = false;
     private TextView mConnectionState;
-    //private BluetoothLeService mBluetoothLeService;
+    private BluetoothLeService mBluetoothLeService;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
     private String mDeviceAddress;
@@ -113,18 +113,18 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
 
-            DeviceControlActivity.mBluetoothLeService = ((BluetoothLeService.LocalBinder) service).getService();
-            if (!DeviceControlActivity.mBluetoothLeService.initialize()) {
+            mBluetoothLeService = ((BluetoothLeService.LocalBinder) service).getService();
+            if (!mBluetoothLeService.initialize()) {
                 Log.e(TAG, "Unable to initialize Bluetooth");
                 finish();
             }
             // Automatically connects to the device upon successful start-up initialization.
-            DeviceControlActivity.mBluetoothLeService.connect(mDeviceAddress);
+            mBluetoothLeService.connect(mDeviceAddress);
         }
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
-            DeviceControlActivity.mBluetoothLeService = null;
+            mBluetoothLeService = null;
         }
     };
 
@@ -148,7 +148,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     invalidateOptionsMenu();
                 } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
 
-                    displayGattServices(DeviceControlActivity.mBluetoothLeService.getSupportedGattServices());
+                    displayGattServices(mBluetoothLeService.getSupportedGattServices());
 
                     final BluetoothGattCharacteristic notifyCharacteristic = getNottifyCharacteristic();
                     if (notifyCharacteristic == null) {
@@ -158,13 +158,17 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     }
                     final int charaProp = notifyCharacteristic.getProperties();
                     if ((charaProp | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
-                        DeviceControlActivity.mBluetoothLeService.setCharacteristicNotification(
+                        mBluetoothLeService.setCharacteristicNotification(
                                 notifyCharacteristic, true);
                     }
 
                 } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
                     DeviceControlActivity.packet = intent.getByteArrayExtra(BluetoothLeService.EXTRA_DATA);
                     displayData(DeviceControlActivity.packet);
+                }
+
+                else if (BluetoothLeService.JDY_TX_MEASUREMENT.equals(action)) {
+                    Log.w(TAG, String.format("RECEIVE DATA BY JDY"));      // Receive data
                 }
         }
     };
@@ -267,7 +271,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         timer_txt2.setTextSize((float) (standardSize_X / 12)); timer_txt2.setTextSize((float) (standardSize_Y / 22));
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        //bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
         //TODO Age selection SeekBar menu
         seekBar_age.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -535,7 +539,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 tMsg.show();
                 //sensitive_flag = 0;
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.OTA_DATA_REQ);
-                DeviceControlActivity.mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
             }
         });
 
@@ -548,8 +552,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 //sensitive_flag = 1;
-                DeviceControlActivity.mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
-
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
             }
         });
 

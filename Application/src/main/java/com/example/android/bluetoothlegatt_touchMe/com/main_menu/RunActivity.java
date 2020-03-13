@@ -284,7 +284,7 @@ public class RunActivity extends Activity {
                     return writeGattCharacteristic;
                 }
 
-                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT1)){
+                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
                     return writeGattCharacteristic;
                 }
             }
@@ -338,7 +338,8 @@ public class RunActivity extends Activity {
 
         //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
         //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
+        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
+        //DeviceControlActivity.test_send();
 
     }
 

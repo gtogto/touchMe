@@ -872,6 +872,7 @@ id blocking
 id bottom
 id bottom_logo
 id button
+id button2
 id buttonPanel
 id cancel_action
 id center

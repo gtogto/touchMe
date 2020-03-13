@@ -143,7 +143,6 @@ public class BluetoothLeService extends Service {
             }
         }
 
-        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         @Override
         public void onCharacteristicRead(BluetoothGatt gatt,
                                          BluetoothGattCharacteristic characteristic,
@@ -181,7 +180,7 @@ public class BluetoothLeService extends Service {
         }
 
         if (JDY_TX_MEASUREMENT.equals(characteristic.getUuid())) {
-            Log.w(TAG, String.format("JDY_RATE_MEASUREMENT"));
+            Log.w(TAG, String.format("RECEIVE DATA BY JDY"));      // Receive data
 
             intent.putExtra(EXTRA_DATA, characteristic.getValue());
             // LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
@@ -348,7 +347,7 @@ public class BluetoothLeService extends Service {
      * @param characteristic Characteristic to act on.
      * @param enabled        If true, enable notification.  False otherwise.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+
     public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic,
                                               boolean enabled) {
 
@@ -378,6 +377,7 @@ public class BluetoothLeService extends Service {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            Log.w(TAG, String.format("JDY READY"));
             mBluetoothGatt.writeDescriptor(descriptor);
         }
 
@@ -393,6 +393,8 @@ public class BluetoothLeService extends Service {
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             mBluetoothGatt.writeDescriptor(descriptor);
+            Log.w(TAG, String.format("TouchMe Data READY"));
+
         }
 
         if (RX_SERVICE_UUID.equals(characteristic.getUuid())) {
@@ -407,6 +409,7 @@ public class BluetoothLeService extends Service {
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             mBluetoothGatt.writeDescriptor(descriptor);
+            Log.w(TAG, String.format("TouchMe Data READY"));
         }//TouchMe_DATA_UUID
 
         if (CCCD.equals(characteristic.getUuid())) {
@@ -840,15 +843,34 @@ public class BluetoothLeService extends Service {
 
             //TODO #.Touch Me BLE Data Packet #.Day 2020.02.06
             case CommonData.TOUCH_GTO_TEST1: {
-                byte[] pData = new byte[5];
+                byte[] pData = new byte[10];
                 pData[0] = 0x30;
                 pData[1] = 0x31;
                 pData[2] = 0x32;
                 pData[3] = 0x33;
                 pData[4] = 0x34;
+                pData[5] = 0x35;
+                pData[6] = 0x36;
+                pData[7] = 0x37;
+                pData[8] = 0x38;
+                pData[9] = 0x39;
 
-                bSendData = CommonData.touch_Data(CommonData.TOUCH_GTO_TEST1, 10, pData);
+                bSendData = CommonData.SendData(CommonData.TOUCH_GTO_TEST1, 10, pData);
                 characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SEND DATA TO JDY"));
+            }
+            break;
+
+            case CommonData.TOUCH_GTO_TEST2: {
+                byte[] pData = new byte[4];
+                pData[0] = 0x30;
+                pData[1] = 0x31;
+                pData[2] = 0x32;
+                pData[3] = 0x33;
+
+                bSendData = CommonData.SendData(CommonData.TOUCH_GTO_TEST2, 4, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SEND DATA TO JDY"));
             }
             break;
 
@@ -943,6 +965,24 @@ public class BluetoothLeService extends Service {
         descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
         mBluetoothGatt.writeDescriptor(descriptor);
 
+
+    }
+
+    public void writeCharacteristic(BluetoothGattCharacteristic characteristic,
+                                    byte[] data)
+    {
+        if (mBluetoothAdapter == null || mBluetoothGatt == null)
+        {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return;
+        }
+        Log.i(TAG, "characteristic " + characteristic.toString());
+        if(characteristic==null)
+        {
+            Log.d("characteristic null","bb");
+        }
+        characteristic.setValue(data);
+        mBluetoothGatt.writeCharacteristic(characteristic);
 
     }
 

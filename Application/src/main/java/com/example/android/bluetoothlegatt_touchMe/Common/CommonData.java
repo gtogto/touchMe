@@ -140,6 +140,9 @@ public class CommonData {
 
     public static final int TOUCH_GTO_TEST1                  =   0x59;
 
+    public static final int TOUCH_GTO_TEST2                  =   0xFE;
+
+
     public static byte[] SendData(int msgReq, int msgLen, byte[] payloadData) {
         int index = 0, checkSum = 0;
         byte[] value = null;

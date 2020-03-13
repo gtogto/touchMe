@@ -1,50 +1,135 @@
 package com.example.android.bluetoothlegatt_touchMe.com.main_menu;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattService;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.bluetoothlegatt_touchMe.Common.CommonData;
 import com.example.android.bluetoothlegatt_touchMe.R;
 import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity;
+import com.example.android.bluetoothlegatt_touchMe.com.SampleGattAttributes;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.packet;
 
 /**
  * Created by GTO on 2020-01-22.
  */
-
 public class DeviceMappingActivity extends Activity {
 
     //TODO: BLE variable
     private boolean mConnected = false;
     private TextView mConnectionState;
-    private BluetoothLeService mBluetoothLeService;
+    public BluetoothLeService mBluetoothLeService;
     private String mDeviceAddress;
+    private final static String TAG = "DCA";
+
+    public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
+    public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
+
+    private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
+    public static final int DUMP = -1;
+
+    private TextView mDataTextView;
+    private ScrollView mDataScrollView;
+
+    public String mDeviceName;
+    public ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
+            new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
+    private BluetoothGattCharacteristic mNotifyCharacteristic;
+
+    private final String LIST_NAME = "NAME";
+    private final String LIST_UUID = "UUID";
+
+    // Code to manage Service lifecycle.
+    private final ServiceConnection mServiceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder service) {
+
+            mBluetoothLeService = ((BluetoothLeService.LocalBinder) service).getService();
+            if (!mBluetoothLeService.initialize()) {
+                Log.e(TAG, "Unable to initialize Bluetooth");
+                finish();
+            }
+            // Automatically connects to the device upon successful start-up initialization.
+            mBluetoothLeService.connect(mDeviceAddress);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            mBluetoothLeService = null;
+        }
+    };
 
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            final String action = intent.getAction();
+            String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
                 updateConnectionState(R.string.connected);
                 invalidateOptionsMenu();
-            }
+            } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
+                mConnected = false;
+                updateConnectionState(R.string.disconnected);
+                invalidateOptionsMenu();
+            } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
 
-            else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
-                DeviceControlActivity.packet = intent.getByteArrayExtra(BluetoothLeService.EXTRA_DATA);
-                displayData(DeviceControlActivity.packet);
+                displayGattServices(mBluetoothLeService.getSupportedGattServices());
+                System.out.println("displayGattServices(mBluetoothLeService.getSupportedGattServices()); OK ");
+
+                final BluetoothGattCharacteristic notifyCharacteristic = getNottifyCharacteristic();
+                if (notifyCharacteristic == null) {
+                    Toast.makeText(getApplication(), "gatt_services can not supported", Toast.LENGTH_SHORT).show();
+                    mConnected = false;
+                    return;
+                }
+                final int charaProp = notifyCharacteristic.getProperties();
+                if ((charaProp | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
+                    mBluetoothLeService.setCharacteristicNotification(
+                            notifyCharacteristic, true);
+                }
+
+            } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
+                packet = intent.getByteArrayExtra(EXTRA_DATA);
+                displayData(packet);
             }
         }
     };
+
+    // 헥사 접두사 "0x" 붙이는 버전
+    public static String stringToHex0x(String s) {
+        String result = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            result += String.format("0x%02X ", (int) s.charAt(i));
+        }
+
+        return result;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +137,15 @@ public class DeviceMappingActivity extends Activity {
         setContentView(R.layout.device_mapping);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        System.out.println("mBluetoothLeService value map = " + mBluetoothLeService) ;
+
+        final Intent intent = getIntent();
+        mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
+        mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
+
         //final ImageView back_btn = (ImageView) findViewById(R.id.back_btn);
+        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
+        //bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
     }
 
@@ -107,6 +200,109 @@ public class DeviceMappingActivity extends Activity {
         tMsg.show();
 
         return sb.toString();
+    }
+
+    private BluetoothGattCharacteristic getNottifyCharacteristic(){
+
+        BluetoothGattCharacteristic notifyCharacteristic = null;
+        if(mGattCharacteristics == null || mGattCharacteristics.size() == 0){
+            return null;
+        }
+        for (int i = 0; i < mGattCharacteristics.size() ; i++) {
+            for (int j = 0; j < mGattCharacteristics.get(i).size() ; j++) {
+                notifyCharacteristic =  mGattCharacteristics.get(i).get(j);
+                if(notifyCharacteristic.getUuid().equals(BluetoothLeService.FFF4_RATE_MEASUREMENT)){
+                    return notifyCharacteristic;
+                }
+                else if(notifyCharacteristic.getUuid().equals(BluetoothLeService.JDY_TX_MEASUREMENT)){
+                    return notifyCharacteristic;
+                }
+            }
+        }
+        return null;
+    }
+
+    public BluetoothGattCharacteristic getWriteGattCharacteristic(){
+
+        BluetoothGattCharacteristic writeGattCharacteristic = null;
+        if(mGattCharacteristics == null || mGattCharacteristics.size() == 0){
+            return null;
+        }
+
+        for (int i = 0; i < mGattCharacteristics.size() ; i++) {
+            for (int j = 0; j < mGattCharacteristics.get(i).size() ; j++) {
+                writeGattCharacteristic =  mGattCharacteristics.get(i).get(j);
+                if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.FFF3_RATE_MEASUREMENT)){
+                    return writeGattCharacteristic;
+                }
+
+                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
+                    return writeGattCharacteristic;
+                }
+
+                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT1)){
+                    return writeGattCharacteristic;
+                }
+            }
+        }
+        return null;
+    }
+
+    private void displayGattServices(List<BluetoothGattService> gattServices) {
+
+        if (gattServices == null) return;
+        String uuid = null;
+        String unknownServiceString = getResources().getString(R.string.unknown_service);
+        String unknownCharaString = getResources().getString(R.string.unknown_characteristic);
+        ArrayList<HashMap<String, String>> gattServiceData = new ArrayList<HashMap<String, String>>();
+        ArrayList<ArrayList<HashMap<String, String>>> gattCharacteristicData
+                = new ArrayList<ArrayList<HashMap<String, String>>>();
+        mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
+
+        // Loops through available GATT Services.
+        for (BluetoothGattService gattService : gattServices) {
+            HashMap<String, String> currentServiceData = new HashMap<String, String>();
+            uuid = gattService.getUuid().toString();
+            currentServiceData.put(
+                    LIST_NAME, SampleGattAttributes.lookup(uuid, unknownServiceString));
+            currentServiceData.put(LIST_UUID, uuid);
+            gattServiceData.add(currentServiceData);
+
+            ArrayList<HashMap<String, String>> gattCharacteristicGroupData =
+                    new ArrayList<HashMap<String, String>>();
+            List<BluetoothGattCharacteristic> gattCharacteristics =
+                    gattService.getCharacteristics();
+            ArrayList<BluetoothGattCharacteristic> charas =
+                    new ArrayList<BluetoothGattCharacteristic>();
+
+            // Loops through available Characteristics.
+            for (BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics) {
+                charas.add(gattCharacteristic);
+                HashMap<String, String> currentCharaData = new HashMap<String, String>();
+                uuid = gattCharacteristic.getUuid().toString();
+                currentCharaData.put(
+                        LIST_NAME, SampleGattAttributes.lookup(uuid, unknownCharaString));
+                currentCharaData.put(LIST_UUID, uuid);
+                gattCharacteristicGroupData.add(currentCharaData);
+            }
+            mGattCharacteristics.add(charas);
+            gattCharacteristicData.add(gattCharacteristicGroupData);
+        }
+    }
+
+    public void onClick_Map_btn(View v) {        //Map info Activity     //Map Button
+
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+
+        //getWriteGattCharacteristic().setValue(cmd_bytes);
+        /*
+        byte[] cmd_bytes = new byte[4];
+        cmd_bytes[0] = 0x30;
+        cmd_bytes[1] = 0x31;
+        cmd_bytes[2] = 0x32;
+        cmd_bytes[3] = 0x33;
+        getWriteGattCharacteristic().setValue(cmd_bytes);*/
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST2);
     }
 
     private static String hexToASCII(String hexValue)
