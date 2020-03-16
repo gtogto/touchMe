@@ -6,7 +6,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="26"
+        android:minSdkVersion="23"
         android:targetSdkVersion="27" />
 
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
@@ -71,6 +71,7 @@
             android:launchMode="singleInstance" />
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity"
+            android:clearTaskOnLaunch="true"
             android:label="GTO touch Me"
             android:launchMode="singleInstance" >
         </activity>

@@ -165,6 +165,13 @@ public class DeviceMappingActivity extends Activity {
         unregisterReceiver(mGattUpdateReceiver);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(mServiceConnection);
+        mBluetoothLeService = null;
+    }
+
     private void updateConnectionState(final int resourceId) {
         runOnUiThread(new Runnable() {
             @Override

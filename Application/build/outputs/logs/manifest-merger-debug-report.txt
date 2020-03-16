@@ -1,31 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
-MERGED from [com.android.support:design:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\e445618099ce43d4d038d61d6cf09951\design-27.1.1\AndroidManifest.xml:17:1-22:12
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:2:1-17:12
-MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:2:1-17:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\66f12a7200af14e0f85c231d9d9cbd07\appcompat-v7-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6ae44ecfdbe525c6cf9d849072167ce5\support-v4-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\05d7562acd194fb1a1e3c927e61e90af\support-fragment-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6ff32c6ac5fcb0d5dbba2204a95d44aa\animated-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d4f03da6ea1640bf14a8fca500d29dc1\recyclerview-v7-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\31716d5493df58adf41f3252cbc8a8a1\support-core-ui-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\0986f3f0129dc26c0eaa2d06208be0cb\support-core-utils-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\c2e2c606240b99c47261c33da70927fc\support-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\335fe602ca49007ea33276cf5914becc\transition-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\cd7b4eabd84b01e2dff0fd7f369073b4\support-media-compat-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6931bc3fe5868b0ab5606c1192ce8d93\support-compat-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.otaliastudios:zoomlayout:1.7.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\1a735d4b7e961bea7ed82ce6b285df64\zoomlayout-1.7.0\AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\18787156f110e201db47575423b9af04\livedata-core-1.1.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\15710bad692d7514ce221e254adcf49e\viewmodel-1.1.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\a29701de75fb599a6d5b46865fc4d183\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d1a0d104cb76491b0a79c0ad09abcfca\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-75:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\8a1bafd3a6784dc29e2a0f1f4e2f437b\appcompat-v7-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\f3ab528f82c1c1ec4b0a54f9bee567ea\support-fragment-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\fda5b9117db595323eba2bcdbe8eabe1\support-core-utils-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\7a426a23ff8f9f9a49c8cb89cbdc301c\animated-vector-drawable-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\7fc65963524651aea2aee0756d485e7d\support-vector-drawable-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\ad2586c63e1296267cad7fd6a8d318b9\support-core-ui-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b10d974ba8b444faf866fc4a658ef006\support-compat-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\36057acd24d8ef41985ac98e7416eb82\runtime-1.0.3\AndroidManifest.xml:17:1-24:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:2:1-76:12
 	package
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:3:5-58
 		INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
@@ -63,11 +53,9 @@ ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:5-67
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-64
 application
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-73:19
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:23:5-74:19
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:11:5-15:19
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:11:5-15:19
-MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:11:5-15:19
-MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:11:5-15:19
 	android:supportsRtl
 		ADDED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:14:9-35
 	android:label
@@ -149,61 +137,43 @@ ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:60:9-63:60
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:61:13-65
 activity#com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-68:20
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:64:9-69:20
+	android:clearTaskOnLaunch
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:67:13-45
 	android:label
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:66:13-41
 	android:launchMode
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:67:13-48
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:68:13-48
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:65:13-54
 service#com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:70:9-72:38
+ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:9-73:38
 	android:enabled
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:72:13-35
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:73:13-35
 	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:71:13-51
+		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:72:13-51
 uses-sdk
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\e445618099ce43d4d038d61d6cf09951\design-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\e445618099ce43d4d038d61d6cf09951\design-27.1.1\AndroidManifest.xml:20:5-44
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [de.blox.treeview:treeview:0.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b9f4d94e925ff605b068e8375f3ee774\treeview-0.1.0\AndroidManifest.xml:7:5-9:41
-MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:7:5-9:41
-MERGED from [de.blox:graphview:0.6.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\2e254fc3bf8cdb7408d3f76c3c8d3d88\graphview-0.6.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\66f12a7200af14e0f85c231d9d9cbd07\appcompat-v7-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\66f12a7200af14e0f85c231d9d9cbd07\appcompat-v7-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6ae44ecfdbe525c6cf9d849072167ce5\support-v4-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6ae44ecfdbe525c6cf9d849072167ce5\support-v4-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\05d7562acd194fb1a1e3c927e61e90af\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\05d7562acd194fb1a1e3c927e61e90af\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6ff32c6ac5fcb0d5dbba2204a95d44aa\animated-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6ff32c6ac5fcb0d5dbba2204a95d44aa\animated-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d4f03da6ea1640bf14a8fca500d29dc1\recyclerview-v7-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d4f03da6ea1640bf14a8fca500d29dc1\recyclerview-v7-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\31716d5493df58adf41f3252cbc8a8a1\support-core-ui-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\31716d5493df58adf41f3252cbc8a8a1\support-core-ui-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\0986f3f0129dc26c0eaa2d06208be0cb\support-core-utils-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\0986f3f0129dc26c0eaa2d06208be0cb\support-core-utils-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\c2e2c606240b99c47261c33da70927fc\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\c2e2c606240b99c47261c33da70927fc\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\335fe602ca49007ea33276cf5914becc\transition-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\335fe602ca49007ea33276cf5914becc\transition-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\cd7b4eabd84b01e2dff0fd7f369073b4\support-media-compat-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\cd7b4eabd84b01e2dff0fd7f369073b4\support-media-compat-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6931bc3fe5868b0ab5606c1192ce8d93\support-compat-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\6931bc3fe5868b0ab5606c1192ce8d93\support-compat-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.otaliastudios:zoomlayout:1.7.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\1a735d4b7e961bea7ed82ce6b285df64\zoomlayout-1.7.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.otaliastudios:zoomlayout:1.7.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\1a735d4b7e961bea7ed82ce6b285df64\zoomlayout-1.7.0\AndroidManifest.xml:7:5-9:41
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\18787156f110e201db47575423b9af04\livedata-core-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\18787156f110e201db47575423b9af04\livedata-core-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\15710bad692d7514ce221e254adcf49e\viewmodel-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\15710bad692d7514ce221e254adcf49e\viewmodel-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\a29701de75fb599a6d5b46865fc4d183\runtime-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\a29701de75fb599a6d5b46865fc4d183\runtime-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d1a0d104cb76491b0a79c0ad09abcfca\runtime-1.1.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\d1a0d104cb76491b0a79c0ad09abcfca\runtime-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\8a1bafd3a6784dc29e2a0f1f4e2f437b\appcompat-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\8a1bafd3a6784dc29e2a0f1f4e2f437b\appcompat-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\f3ab528f82c1c1ec4b0a54f9bee567ea\support-fragment-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\f3ab528f82c1c1ec4b0a54f9bee567ea\support-fragment-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\fda5b9117db595323eba2bcdbe8eabe1\support-core-utils-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\fda5b9117db595323eba2bcdbe8eabe1\support-core-utils-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\7a426a23ff8f9f9a49c8cb89cbdc301c\animated-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\7a426a23ff8f9f9a49c8cb89cbdc301c\animated-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\7fc65963524651aea2aee0756d485e7d\support-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\7fc65963524651aea2aee0756d485e7d\support-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\ad2586c63e1296267cad7fd6a8d318b9\support-core-ui-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\ad2586c63e1296267cad7fd6a8d318b9\support-core-ui-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b10d974ba8b444faf866fc4a658ef006\support-compat-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\b10d974ba8b444faf866fc4a658ef006\support-compat-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\36057acd24d8ef41985ac98e7416eb82\runtime-1.0.3\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\calic\.gradle\caches\transforms-2\files-2.1\36057acd24d8ef41985ac98e7416eb82\runtime-1.0.3\AndroidManifest.xml:20:5-22:41
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 INJECTED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml
 	android:targetSdkVersion

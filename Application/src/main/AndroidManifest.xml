@@ -64,6 +64,7 @@
         <activity
             android:name=".com.main_menu.RunActivity"
             android:label="GTO touch Me"
+            android:clearTaskOnLaunch="true"
             android:launchMode="singleInstance">
         </activity>
 

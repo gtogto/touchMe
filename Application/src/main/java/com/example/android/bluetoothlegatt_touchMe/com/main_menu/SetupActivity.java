@@ -31,31 +31,45 @@ import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.SampleGattAttributes;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import static android.bluetooth.BluetoothProfile.STATE_CONNECTED;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST1;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST2;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_RX_MEASUREMENT;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_TX_MEASUREMENT;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_CHAR_UUID;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_SERVICE_UUID;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.action;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.mGattCharacteristics;
+
 /**
  * Created by GTO on 2020-01-22.
  */
 
 public class SetupActivity extends Activity implements View.OnClickListener {
+    private final static String TAG = "DCA";
+
+    public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
+    public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
 
     //TODO: BLE variable
-    private boolean mConnected = false;
     private TextView mConnectionState;
-    private BluetoothLeService mBluetoothLeService;
-    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
-            new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
-    private String mDeviceAddress;
+    private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
+    public static final int DUMP = -1;
+
+    public String mDeviceName;
+    public String mDeviceAddress;
+    public static BluetoothLeService mBluetoothLeService;
+    private boolean mConnected = false;
     private BluetoothGattCharacteristic mNotifyCharacteristic;
 
+    private final String LIST_NAME = "NAME";
+    private final String LIST_UUID = "UUID";
 
     public static SeekBar seekBar_age;
     public static TextView output_age;
@@ -84,14 +98,6 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     int standardSize_X, standardSize_Y;
     float density;
 
-    private final static String TAG = "DCA";
-    public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
-    public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
-
-    private final String LIST_NAME = "NAME";
-    private final String LIST_UUID = "UUID";
-
-
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -109,6 +115,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     }
 
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
+
 
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
@@ -128,16 +135,12 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         }
     };
 
-    public void onClick(View v) {
-
-    }
-
-
+    public void onClick(View v) {}
 
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
+            //action = intent.getAction();
                 if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                     mConnected = true;
                     updateConnectionState(R.string.connected);
@@ -271,7 +274,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         timer_txt2.setTextSize((float) (standardSize_X / 12)); timer_txt2.setTextSize((float) (standardSize_Y / 22));
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-        //bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
         //TODO Age selection SeekBar menu
         seekBar_age.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -539,7 +542,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 tMsg.show();
                 //sensitive_flag = 0;
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.OTA_DATA_REQ);
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST2);
             }
         });
 
@@ -552,7 +555,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 //sensitive_flag = 1;
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
             }
         });
 
@@ -594,10 +597,15 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     //TODO BLE Packet receive
     protected void onResume() {
         super.onResume();
+        System.out.println("run on Resume function");
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-        if (DeviceControlActivity.mBluetoothLeService != null) {
-            final boolean result = DeviceControlActivity.mBluetoothLeService.connect(mDeviceAddress);
-            //Log.d(TAG, "Connect request result=" + result);
+        if (mBluetoothLeService != null) {
+            final boolean result = mBluetoothLeService.connect(mDeviceAddress);
+            Log.d(TAG, "setup Connect request result=" + result + "*********************");
+
+        }
+        else {
+            Log.d(TAG, "setup Connect request result= " + mBluetoothLeService);
         }
     }
 
@@ -605,6 +613,13 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(mGattUpdateReceiver);
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        //unbindService(mServiceConnection);
+        mBluetoothLeService = null;
+        Log.d(TAG, "setup onDestroy request");
     }
 
     private void updateConnectionState(final int resourceId) {
@@ -664,10 +679,12 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         return null;
     }
 
-    public BluetoothGattCharacteristic getWriteGattCharacteristic(){
+
+    private BluetoothGattCharacteristic getWriteGattCharacteristic(){
 
         BluetoothGattCharacteristic writeGattCharacteristic = null;
         if(mGattCharacteristics == null || mGattCharacteristics.size() == 0){
+            System.out.println("run getWriteGattCharacteristic null");
             return null;
         }
 
@@ -678,11 +695,12 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     return writeGattCharacteristic;
                 }
 
-                if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
+                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
                     return writeGattCharacteristic;
                 }
             }
         }
+        System.out.println("setup getWriteGattCharacteristic for");
         return null;
     }
 
@@ -726,6 +744,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             mGattCharacteristics.add(charas);
             gattCharacteristicData.add(gattCharacteristicGroupData);
         }
+
+        //System.out.println("run device NAME = " + LIST_NAME);
+        System.out.println("run device UUID = " + uuid);
     }
 
         private static String hexToASCII(String hexValue)

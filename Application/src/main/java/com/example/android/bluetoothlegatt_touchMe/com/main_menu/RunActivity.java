@@ -10,12 +10,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +26,7 @@ import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt_touchMe.Common.CommonData;
 import com.example.android.bluetoothlegatt_touchMe.R;
+//import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.SampleGattAttributes;
@@ -33,55 +37,65 @@ import java.util.HashMap;
 import java.util.List;
 
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST1;
-import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST2;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.action;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.mGattCharacteristics;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.packet;
+
+import static android.bluetooth.BluetoothProfile.STATE_CONNECTED;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_RX_MEASUREMENT;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.JDY_TX_MEASUREMENT;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_CHAR_UUID;
+import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_SERVICE_UUID;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.run_btn;
 
 /**
  * Created by GTO on 2020-01-22.
  */
 
 public class RunActivity extends Activity {
-
-    //TODO: BLE variable
-    private boolean mConnected = false;
-    private TextView mConnectionState;
-
-    private String mDeviceAddress;
-
-    public static ImageView node_imageView01, node_imageView02, node_imageView03, node_imageView04, node_imageView05, node_imageView06;
-
     private final static String TAG = "DCA";
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
 
+    //TODO: BLE variable
+    private TextView mConnectionState;
     private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
     public static final int DUMP = -1;
 
-    public ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
-            new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
-    private BluetoothGattCharacteristic mNotifyCharacteristic;
-    private BluetoothLeService mBluetoothLeService;
+    public String mDeviceName;
+    public String mDeviceAddress;
+    public static BluetoothLeService mBluetoothLeService;
 
+    public static ImageView node_imageView01, node_imageView02, node_imageView03, node_imageView04, node_imageView05, node_imageView06;
+
+    /*public ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
+            new ArrayList<ArrayList<BluetoothGattCharacteristic>>();*/
+    private boolean mConnected = false;
+    private BluetoothGattCharacteristic mNotifyCharacteristic;
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.run_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    int standardSize_X, standardSize_Y;
+    float density;
 
-        node_imageView01 = (ImageView) findViewById(R.id.node1);
-        node_imageView02 = (ImageView) findViewById(R.id.node2);
-        node_imageView03 = (ImageView) findViewById(R.id.node3);
-        node_imageView04 = (ImageView) findViewById(R.id.node4);
-        node_imageView05 = (ImageView) findViewById(R.id.node5);
-        node_imageView06 = (ImageView) findViewById(R.id.node6);
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
 
-        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
     }
 
     // Code to manage Service lifecycle.
@@ -108,22 +122,34 @@ public class RunActivity extends Activity {
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
+            //String action = intent.getAction();
+            System.out.println("run Function Test action = " + action );
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
                 updateConnectionState(R.string.connected);
+                Log.w(TAG, String.format("run connected "));
+                System.out.println("run Function Test 1");
+                System.out.println("run Function Test 1 action = " + action );
+
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
                 updateConnectionState(R.string.disconnected);
+                Log.w(TAG, String.format("run disconnected "));
+                System.out.println("run Function Test 2");
+                System.out.println("run Function Test 2 action = " + action );
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
 
                 displayGattServices(mBluetoothLeService.getSupportedGattServices());
+                System.out.println("run Function Test 3");
+                System.out.println("run Function Test 3 action = " + action );
 
                 final BluetoothGattCharacteristic notifyCharacteristic = getNottifyCharacteristic();
                 if (notifyCharacteristic == null) {
                     Toast.makeText(getApplication(), "gatt_services can not supported", Toast.LENGTH_SHORT).show();
+                    System.out.println("run Function Test 4");
+                    System.out.println("run Function Test 4 action = " + action );
                     mConnected = false;
                     return;
                 }
@@ -131,22 +157,61 @@ public class RunActivity extends Activity {
                 if ((charaProp | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
                     mBluetoothLeService.setCharacteristicNotification(
                             notifyCharacteristic, true);
+                    System.out.println("run Function Test 5");
+                    System.out.println("run Function Test 5 action = " + action );
                 }
 
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
                 packet = intent.getByteArrayExtra(EXTRA_DATA);
                 displayData(packet);
+                System.out.println("run Function Test 6");
+                System.out.println("run Function Test 6 action = " + action );
             }
         }
     };
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.run_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        getStandardSize();
+
+        System.out.println("mBluetoothLeService value run = " + mBluetoothLeService) ;
+
+        final Intent intent = getIntent();
+        mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
+        mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
+
+        node_imageView01 = (ImageView) findViewById(R.id.node1);
+        node_imageView02 = (ImageView) findViewById(R.id.node2);
+        node_imageView03 = (ImageView) findViewById(R.id.node3);
+        node_imageView04 = (ImageView) findViewById(R.id.node4);
+        node_imageView05 = (ImageView) findViewById(R.id.node5);
+        node_imageView06 = (ImageView) findViewById(R.id.node6);
+
+        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
+        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+
+        DeviceControlActivity.run_btn = (Button) findViewById(R.id.run_btn);
+
+        //run_btn.setOnClickListener();
+
+    }
+
+
     //TODO BLE Packet receive
     protected void onResume() {
         super.onResume();
+        System.out.println("run on Resume function");
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         if (mBluetoothLeService != null) {
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
-            //Log.d(TAG, "Connect request result=" + result);
+            Log.d(TAG, "run Connect request result=" + result + "*********************");
+
+        }
+        else {
+            Log.d(TAG, "run Connect request result= " + mBluetoothLeService);
         }
     }
 
@@ -154,12 +219,14 @@ public class RunActivity extends Activity {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(mGattUpdateReceiver);
+        Log.d(TAG, "run onPause request");
     }
 
     protected void onDestroy() {
         super.onDestroy();
         unbindService(mServiceConnection);
-        //mBluetoothLeService = null;
+        mBluetoothLeService = null;
+        Log.d(TAG, "run onDestroy request");
     }
 
     private void updateConnectionState(final int resourceId) {
@@ -196,6 +263,7 @@ public class RunActivity extends Activity {
         LinearLayout view = (LinearLayout) tMsg.getView();
         tMsg.show();
 
+        /*
         String choice_node = hexToASCII(hex_value).substring(13,14);
 
         asciiToHex(choice_node);       // is 1
@@ -244,7 +312,7 @@ public class RunActivity extends Activity {
             System.out.println("node 6 = " + node6 + " " + " choice num = " + choice_node);
         }
         else node_imageView06.setImageResource(R.drawable.green_circle_button1);
-
+        */
 
 
         return sb.toString();
@@ -270,10 +338,11 @@ public class RunActivity extends Activity {
         return null;
     }
 
-    public BluetoothGattCharacteristic getWriteGattCharacteristic(){
+    private BluetoothGattCharacteristic getWriteGattCharacteristic(){
 
         BluetoothGattCharacteristic writeGattCharacteristic = null;
         if(mGattCharacteristics == null || mGattCharacteristics.size() == 0){
+            System.out.println("run getWriteGattCharacteristic null");
             return null;
         }
 
@@ -289,6 +358,7 @@ public class RunActivity extends Activity {
                 }
             }
         }
+        System.out.println("run getWriteGattCharacteristic for");
         return null;
     }
 
@@ -332,14 +402,29 @@ public class RunActivity extends Activity {
             mGattCharacteristics.add(charas);
             gattCharacteristicData.add(gattCharacteristicGroupData);
         }
+
+        //System.out.println("run device NAME = " + LIST_NAME);
+        System.out.println("run device UUID = " + uuid);
     }
 
     public void onClick_test_btn(View v) {        //Map info Activity     //Map Button
 
         //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
         //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST1);
         //DeviceControlActivity.test_send();
+        System.out.println("run device address = " + mDeviceAddress);
+        //System.out.println("run device NAME = " + LIST_NAME);
+        //System.out.println("run device UUID = " + LIST_UUID);
+        System.out.println("run Function Test action = " + action );
+        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), TOUCH_GTO_TEST2);
+        /*
+        byte[] cmd_bytes = new byte[4];
+        cmd_bytes[0] = 0x30;
+        cmd_bytes[1] = 0x31;
+        cmd_bytes[2] = 0x32;
+        cmd_bytes[3] = 0x33;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);*/
 
     }
 

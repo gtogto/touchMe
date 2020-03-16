@@ -110,7 +110,6 @@ public class BluetoothLeService extends Service {
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
-        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
         @Override
         public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
             String intentAction;
@@ -136,7 +135,6 @@ public class BluetoothLeService extends Service {
         public void onServicesDiscovered(BluetoothGatt gatt, int status) {
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 Log.w(TAG, "mBluetoothGatt = " + mBluetoothGatt );
-
                 broadcastUpdate(ACTION_GATT_SERVICES_DISCOVERED);
             } else {
                 Log.w(TAG, "onServicesDiscovered received: " + status);
@@ -188,7 +186,7 @@ public class BluetoothLeService extends Service {
 
         else if (TX_CHAR_UUID.equals(characteristic.getUuid())) {
 
-            // Log.w(TAG, String.format("Received TX:" ));
+             Log.w(TAG, String.format("Received TX:" ));
             intent.putExtra(EXTRA_DATA, characteristic.getValue());
         /*} else  if (HEALTH_DATA_UUID.equals(characteristic.getUuid())){
             intent.putExtra(EXTRA_DATA, characteristic.getValue());
@@ -262,6 +260,9 @@ public class BluetoothLeService extends Service {
             Log.w(TAG, "BluetoothAdapter not initialized or unspecified address.");
             return false;
         }
+        else {
+            Log.w(TAG, "BluetoothAdapter initialized or specified address.");
+        }
 
         // Previously connected device.  Try to reconnect.
         if (mBluetoothDeviceAddress != null && address.equals(mBluetoothDeviceAddress)
@@ -315,7 +316,6 @@ public class BluetoothLeService extends Service {
      * After using a given BLE device, the app must call this method to ensure resources are
      * released properly.
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void close() {
         if (mBluetoothGatt == null) {
             return;
