@@ -137,10 +137,17 @@ public class CommonData {
     public static final int OTA_REQ_TIMER_INTERVAL		    =	500;
 
     public static final int touch_test1       =   0x99;
-
     public static final int TOUCH_GTO_TEST1                  =   0x59;
-
     public static final int TOUCH_GTO_TEST2                  =   0xFE;
+
+    public static final int SETUP_MODE_SINGLE                   = 0x00; //'Push Only'
+    public static final int SETUP_MODE_DUAL                     = 0x01; //'Dual'
+
+    public static final int CMD_NODE_SCAN                       = 0x53; //'S'
+    public static final int CMD_NODE_REGISTER                   = 0x47; //'G'
+    public static final int CMD_SCAN_FINISH                     = 0x51; //'Q'
+    public static final int CMD_PLAY_NODE                        = 0x50; //'P'
+
 
 
     public static byte[] SendData(int msgReq, int msgLen, byte[] payloadData) {
@@ -177,15 +184,16 @@ public class CommonData {
     public static byte[] touch_Data(int msgReq, int msgLen, byte[] payloadData) {
         int index = 0, checkSum = 0;
         byte[] value = null;
-        value = new byte[7+msgLen];
+        value = new byte[3+msgLen];
 
-        value[index++] = (byte) 0x5B;   // header char '['
+        value[index++] = (byte) 0x3C;   // header char '<'
         value[index++] = (byte) msgReq; // Net ID
 
+        /*
         value[index++] = (byte) 0x54;   // 'T' Command
         value[index++] = (byte) 0x53;   // 'S' Source
         value[index++] = (byte) 0x4D;   // 'M' Master
-
+        */
         for (int i=0; i<msgLen; i++) {
             value[index++] = payloadData[i];
         }
@@ -196,13 +204,22 @@ public class CommonData {
 
         //value[index++] = (byte) checkSum;
         //value[index++] = (byte) 0x7E;
-        value[index++] = (byte) 0xFF;   // tail
-        value[index++] = (byte) 0x5D;   // tail char ']'
+        //value[index++] = (byte) 0xFF;   // tail
+        value[index++] = (byte) 0x3E;   // tail char '>'
         /*
         value[index++] = (byte) checkSum;
         value[index++] = (byte) 0xFE;
         value[index++] = (byte) 0xFE;
         value[index++] = (byte) 0xFF;*/
+
+        return value;
+    }
+
+    public static byte[] setup_mode (int msgReq) {
+        int index = 0;
+        byte[] value = null;
+
+        value[index++] = (byte) 0x3C;   // header char '<'
 
         return value;
     }

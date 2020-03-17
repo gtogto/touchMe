@@ -868,11 +868,36 @@ public class BluetoothLeService extends Service {
                 pData[2] = 0x32;
                 pData[3] = 0x33;
 
-                bSendData = CommonData.SendData(CommonData.TOUCH_GTO_TEST2, 4, pData);
+                bSendData = CommonData.touch_Data(CommonData.TOUCH_GTO_TEST2, 4, pData);
                 characteristic.setValue(bSendData);
                 Log.w(TAG, String.format("SEND DATA TO JDY"));
             }
             break;
+
+            case CommonData.SETUP_MODE_SINGLE: {
+                byte[] pData = new byte[3];
+                pData[0] = 0x00;
+                pData[1] = 0x00;
+                pData[2] = 0x01;
+
+                bSendData = CommonData.touch_Data(CommonData.SETUP_MODE_SINGLE, 3, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SINGLE MODE [DO]"));
+            }
+            break;
+
+            case CommonData.SETUP_MODE_DUAL: {
+                byte[] pData = new byte[3];
+                pData[0] = 0x00;
+                pData[1] = 0x00;
+                pData[2] = 0x01;
+
+                bSendData = CommonData.touch_Data(CommonData.SETUP_MODE_DUAL, 3, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("DUAL MODE [DO]"));
+            }
+            break;
+
 
             default:
                 Log.d(TAG, "Send MSGType = " + type);

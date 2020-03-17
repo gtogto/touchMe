@@ -471,7 +471,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         final Intent i = new Intent(this, SetupActivity.class);
         startActivityForResult(i, 201);
         //test_send();
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
         //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST2);
         //System.out.println("send data "+ mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1));
 
@@ -495,12 +495,12 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
         //final Intent i = new Intent(this, ReportAnalysisActivity.class);
         //startActivityForResult(i, 201);
-        System.out.println("main device address = " + mDeviceAddress);
+        //System.out.println("main device address = " + mDeviceAddress);
         //System.out.println("main device NAME = " + LIST_NAME);
         //System.out.println("main device UUID = " + LIST_UUID);
-        System.out.println("main Function Test action = " + action );
+        //System.out.println("main Function Test action = " + action );
 
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.touch_test1);
 
         //System.out.println("clicked Mapping btn");
 
