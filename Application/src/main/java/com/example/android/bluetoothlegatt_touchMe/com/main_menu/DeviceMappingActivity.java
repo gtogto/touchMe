@@ -10,9 +10,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -31,40 +33,56 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.SETUP_MODE_SINGLE;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.action;
+import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.mGattCharacteristics;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.packet;
 
 /**
  * Created by GTO on 2020-01-22.
  */
 public class DeviceMappingActivity extends Activity {
-
-    //TODO: BLE variable
-    private boolean mConnected = false;
-    private TextView mConnectionState;
-    public BluetoothLeService mBluetoothLeService;
-    private String mDeviceAddress;
     private final static String TAG = "DCA";
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
 
+    //TODO: BLE variable
+    private TextView mConnectionState;
     private SimpleDateFormat mFormat = new SimpleDateFormat("HH:mm:ss");
     public static final int DUMP = -1;
 
-    private TextView mDataTextView;
-    private ScrollView mDataScrollView;
-
     public String mDeviceName;
-    public ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
-            new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
+    public String mDeviceAddress;
+    public static BluetoothLeService mBluetoothLeService;
+    private boolean mConnected = false;
     private BluetoothGattCharacteristic mNotifyCharacteristic;
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
 
-    // Code to manage Service lifecycle.
+    int standardSize_X, standardSize_Y;
+    float density;
+
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
+    }
+
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
+
 
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
@@ -87,7 +105,7 @@ public class DeviceMappingActivity extends Activity {
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
+            //String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
                 updateConnectionState(R.string.connected);
@@ -136,6 +154,7 @@ public class DeviceMappingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.device_mapping);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        getStandardSize();
 
         System.out.println("mBluetoothLeService value map = " + mBluetoothLeService) ;
 
@@ -145,7 +164,12 @@ public class DeviceMappingActivity extends Activity {
 
         //final ImageView back_btn = (ImageView) findViewById(R.id.back_btn);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-        //bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+
+        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
+
+        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
+
 
     }
 
@@ -246,10 +270,6 @@ public class DeviceMappingActivity extends Activity {
                 else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT)){
                     return writeGattCharacteristic;
                 }
-
-                else if(writeGattCharacteristic. getUuid().equals(BluetoothLeService.JDY_RX_MEASUREMENT1)){
-                    return writeGattCharacteristic;
-                }
             }
         }
         return null;
@@ -298,18 +318,7 @@ public class DeviceMappingActivity extends Activity {
     }
 
     public void onClick_Map_btn(View v) {        //Map info Activity     //Map Button
-
-        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST1);
-
-        //getWriteGattCharacteristic().setValue(cmd_bytes);
-        /*
-        byte[] cmd_bytes = new byte[4];
-        cmd_bytes[0] = 0x30;
-        cmd_bytes[1] = 0x31;
-        cmd_bytes[2] = 0x32;
-        cmd_bytes[3] = 0x33;
-        getWriteGattCharacteristic().setValue(cmd_bytes);*/
-        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST2);
+        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_SINGLE);
     }
 
     private static String hexToASCII(String hexValue)

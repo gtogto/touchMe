@@ -61,6 +61,7 @@ public class ReportAnalysisActivity extends Activity {
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로모드
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // 가로모드
 
+        /*
         TreeView treeView = findViewById(R.id.treeview);
 
         BaseTreeAdapter adapter = new BaseTreeAdapter<ViewHolder>(this, R.layout.node) {
@@ -100,7 +101,7 @@ public class ReportAnalysisActivity extends Activity {
         TreeNode child5 = new TreeNode("node 5");
         TreeNode child6 = new TreeNode("node 6");
 
-        /*
+
         TreeNode child7 = new TreeNode("C_7");
         TreeNode child8 = new TreeNode("C_8");
         TreeNode child9 = new TreeNode("Child 9");
@@ -108,7 +109,7 @@ public class ReportAnalysisActivity extends Activity {
         TreeNode child11 = new TreeNode("C_11");
         TreeNode child12 = new TreeNode("C_12");
         TreeNode child13 = new TreeNode("C_13");
-        TreeNode child14 = new TreeNode("C_14");*/
+        TreeNode child14 = new TreeNode("C_14");
 
         // Childs added to root
         rootNode.addChild(child1);
@@ -117,7 +118,7 @@ public class ReportAnalysisActivity extends Activity {
         rootNode.addChild(child4);
         rootNode.addChild(child5);
         rootNode.addChild(child6);
-        /*
+
         // Childs 3 & 4 added to Child 1
         child1.addChild(child3);
         child1.addChild(child4);
@@ -139,8 +140,8 @@ public class ReportAnalysisActivity extends Activity {
         child10.addChild(child12);
         child10.addChild(child13);
         child10.addChild(child14);
-        */
-        adapter1.setRootNode(rootNode);
+
+        adapter1.setRootNode(rootNode);*/
     }
 
     //TODO BLE Packet receive

@@ -125,7 +125,7 @@ Applications for Health care use to BLE modules
 
             <Button
                 android:id="@+id/nodeBtn1"
-                android:layout_width="88dp"
+                android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:background="@drawable/green_circle_button"
                 android:gravity="center"
@@ -195,7 +195,7 @@ Applications for Health care use to BLE modules
 
             <Button
                 android:id="@+id/nodeBtn3"
-                android:layout_width="88dp"
+                android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:background="@drawable/green_circle_button"
                 android:gravity="center"
@@ -265,7 +265,7 @@ Applications for Health care use to BLE modules
 
             <Button
                 android:id="@+id/nodeBtn5"
-                android:layout_width="88dp"
+                android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:background="@drawable/green_circle_button"
                 android:gravity="center"

@@ -49,6 +49,7 @@ import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_CHAR_UUID;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_SERVICE_UUID;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.run_btn;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.act_flag;
 
 /**
  * Created by GTO on 2020-01-22.
@@ -183,12 +184,16 @@ public class RunActivity extends Activity {
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
-        node_imageView01 = (ImageView) findViewById(R.id.node1);
-        node_imageView02 = (ImageView) findViewById(R.id.node2);
-        node_imageView03 = (ImageView) findViewById(R.id.node3);
-        node_imageView04 = (ImageView) findViewById(R.id.node4);
-        node_imageView05 = (ImageView) findViewById(R.id.node5);
-        node_imageView06 = (ImageView) findViewById(R.id.node6);
+        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
+
+        TextView run_mode_txt = (TextView)findViewById(R.id.run_mode_txt);
+        TextView run_mode_change = (TextView)findViewById(R.id.run_mode_change);
+
+        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
+
+        run_mode_txt.setTextSize((float) (standardSize_X / 15)); run_mode_txt.setTextSize((float) (standardSize_Y / 25));
+        run_mode_change.setTextSize((float) (standardSize_X / 15)); run_mode_change.setTextSize((float) (standardSize_Y / 25));
+
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
@@ -196,6 +201,13 @@ public class RunActivity extends Activity {
         DeviceControlActivity.run_btn = (Button) findViewById(R.id.run_btn);
 
         //run_btn.setOnClickListener();
+
+        if (act_flag == 0) {
+            run_mode_change.setText("자동");
+        }
+        else if (act_flag == 1) {
+            run_mode_change.setText("수동");
+        }
 
     }
 

@@ -76,6 +76,8 @@ Applications for Health care
 
         </LinearLayout>
 
+
+        <!--
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,6 +93,7 @@ Applications for Health care
 
 
         </LinearLayout>
+        -->
 
 
     </LinearLayout>

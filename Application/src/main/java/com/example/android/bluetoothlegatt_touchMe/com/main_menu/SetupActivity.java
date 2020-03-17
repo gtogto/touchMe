@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -76,6 +77,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     public static SeekBar seekBar_age;
     public static TextView output_age;
     public static int age_number;
+    public static int age;
 
     public static int sex_flag;
 
@@ -99,6 +101,12 @@ public class SetupActivity extends Activity implements View.OnClickListener {
 
     int standardSize_X, standardSize_Y;
     float density;
+    public SharedPreferences.Editor editor;
+    private SharedPreferences preferences;
+    private static final String PROGRESS1 = "SEEKBAR_AGE";
+    private static final String PROGRESS2 = "SEEKBAR_WEIGHT";
+    private static final String PROGRESS3 = "SEEKBAR_TIMER";
+    private int save;
 
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
@@ -278,8 +286,12 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
+        preferences = getSharedPreferences(" ", MODE_PRIVATE);
+        editor = preferences.edit();
+
         //TODO Age selection SeekBar menu
         seekBar_age.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 age_number = seekBar_age.getProgress();
@@ -291,7 +303,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                age_number = seekBar_age.getProgress();
+                //age_number = seekBar_age.getProgress();
+                editor.putInt(PROGRESS1, seekBar.getProgress());
+                editor.commit();
             }
         });
 
@@ -320,6 +334,17 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             }
         });
 
+        if (sex_flag == 0) {
+            radio_male.setChecked(true);
+        } else {
+            radio_male.setChecked(false);
+        }
+        if (sex_flag == 1) {
+            radio_female.setChecked(true);
+        } else {
+            radio_female.setChecked(false);
+        }
+
         //TODO Weight selection SeekBar menu
         seekBar_weight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -333,7 +358,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                weight_number = seekBar_weight.getProgress();
+                //weight_number = seekBar_weight.getProgress();
+                editor.putInt(PROGRESS2, seekBar.getProgress());
+                editor.commit();
             }
         });
 
@@ -362,6 +389,17 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             }
         });
 
+        if (act_flag == 0) {
+            radio_auto.setChecked(true);
+        } else {
+            radio_auto.setChecked(false);
+        }
+        if (act_flag == 1) {
+            radio_manual.setChecked(true);
+        } else {
+            radio_manual.setChecked(false);
+        }
+
         //TODO Auto mode selection Radio menu
         radio_random.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -386,6 +424,17 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 auto_flag = 1;
             }
         });
+
+        if (auto_flag == 0) {
+            radio_random.setChecked(true);
+        } else {
+            radio_random.setChecked(false);
+        }
+        if (auto_flag == 1) {
+            radio_sequential.setChecked(true);
+        } else {
+            radio_sequential.setChecked(false);
+        }
 
         //TODO C.D.S mode selection Radio menu
         radio_center.setOnClickListener(new View.OnClickListener() {
@@ -423,6 +472,22 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 cds_flag = 2;
             }
         });
+
+        if (cds_flag == 0) {
+            radio_center.setChecked(true);
+        } else {
+            radio_center.setChecked(false);
+        }
+        if (cds_flag == 1) {
+            radio_dispersion.setChecked(true);
+        } else {
+            radio_dispersion.setChecked(false);
+        }
+        if (cds_flag == 2) {
+            radio_scenario.setChecked(true);
+        } else {
+            radio_scenario.setChecked(false);
+        }
 
         //TODO Voice switch mode selection Radio menu
         OnOff.setOnClickListener(new View.OnClickListener() {
@@ -472,6 +537,17 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 color_flag = 1;
             }
         });
+
+        if (color_flag == 0) {
+            radio_rand_color.setChecked(true);
+        } else {
+            radio_rand_color.setChecked(false);
+        }
+        if (color_flag == 1) {
+            radio_one_color.setChecked(true);
+        } else {
+            radio_one_color.setChecked(false);
+        }
 
         red_color.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -542,7 +618,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 tMsg.setGravity(Gravity.CENTER, 0, 0);
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
-                //sensitive_flag = 0;
+                sensitive_flag = 0;
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.OTA_DATA_REQ);
                 mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_SINGLE);
             }
@@ -556,10 +632,21 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 tMsg.setGravity(Gravity.CENTER, 0, 0);
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
-                //sensitive_flag = 1;
+                sensitive_flag = 1;
                 mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_DUAL);
             }
         });
+
+        if (sensitive_flag == 0) {
+            radio_contact.setChecked(true);
+        } else {
+            radio_contact.setChecked(false);
+        }
+        if (sensitive_flag == 1) {
+            radio_nearing.setChecked(true);
+        } else {
+            radio_nearing.setChecked(false);
+        }
 
 
         //TODO timer selection SeekBar menu
@@ -575,7 +662,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                timer_number = seekBar_timer.getProgress();
+                //timer_number = seekBar_timer.getProgress();
+                editor.putInt(PROGRESS3, seekBar.getProgress());
+                editor.commit();
             }
         });
 
@@ -609,6 +698,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         else {
             Log.d(TAG, "setup Connect request result= " + mBluetoothLeService);
         }
+        seekBar_age.setProgress(preferences.getInt(PROGRESS1,0));
+        seekBar_weight.setProgress(preferences.getInt(PROGRESS2,0));
+        seekBar_timer.setProgress(preferences.getInt(PROGRESS3,0));
     }
 
     @Override

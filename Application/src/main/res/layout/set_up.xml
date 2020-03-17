@@ -170,7 +170,6 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:checked="true"
                     android:text="남자"
                     android:textSize="30sp"></RadioButton>
 
@@ -305,7 +304,6 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_auto"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:checked="true"
                     android:text="자동"
                     android:textSize="30sp"></RadioButton>
 
@@ -369,8 +367,7 @@ Applications for Health care use to BLE modules
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="30sp"
-                    android:text="랜덤"
-                    android:checked="true">
+                    android:text="랜덤">
                 </RadioButton>
 
                 <RadioButton
@@ -426,8 +423,7 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:textSize="30sp"
                     android:layout_marginLeft="10dp"
-                    android:text="센터"
-                    android:checked="true">
+                    android:text="센터">
                 </RadioButton>
 
                 <RadioButton
@@ -545,7 +541,6 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_random_color"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:checked="true"
                     android:text="회전"
                     android:textSize="30sp"></RadioButton>
 
@@ -582,7 +577,6 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_red"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:checked="true"
                     android:scaleType="fitXY"
                     android:button="@animator/red_button">
                     </RadioButton>
@@ -692,7 +686,6 @@ Applications for Health care use to BLE modules
                     android:id="@+id/radio_contact"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:checked="true"
                     android:text="싱글"
                     android:textSize="30sp">
                 </RadioButton>

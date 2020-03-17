@@ -718,7 +718,6 @@ id line1
 id line3
 id linearLayout
 id linearLayout_1
-id linearLayout_1_1
 id linearLayout_2
 id linearLayout_3
 id linearLayout_4
@@ -785,12 +784,8 @@ id report_btn
 id right_icon
 id right_side
 id run_btn
-id run_node1
-id run_node2
-id run_node3
-id run_node4
-id run_node5
-id run_node6
+id run_mode_change
+id run_mode_txt
 id scan_btn
 id screen
 id scrollIndicatorDown
@@ -848,7 +843,6 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id treeview
 id ubio_logo_black
 id ubio_text
 id uniform
