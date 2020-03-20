@@ -818,13 +818,14 @@ id split_action_bar
 id src_atop
 id src_in
 id src_over
+id start_btn
+id stop_btn
 id submenuarrow
 id submit_area
 id switch_voice
 id tabMode
 id tableLayout
 id tag_transition_group
-id test_btn
 id text
 id text2
 id textSpacerNoButtons
@@ -834,6 +835,7 @@ id textView2
 id textView_node
 id textView_root
 id time
+id timeView
 id timer_seekbar
 id timer_txt
 id timer_txt2

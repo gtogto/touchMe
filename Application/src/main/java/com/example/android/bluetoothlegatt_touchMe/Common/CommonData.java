@@ -82,10 +82,10 @@ public class CommonData {
     public static final int EXERCISE_SYNC_DATA_ALTITUDE_REQ     =   0x4C;
     public static final int EXERCISE_SYNC_DATA_ALTITUDE_CFM     =   0x4D;
 
-    public static final int RTC_REQ					        =	0x50;
-    public static final int RTC_CFM					        =	0x51;
+    public static final int RTC_REQ					        =	0x88;
+    public static final int RTC_CFM					        =	0x89;
     public static final int USERPROFILE_REQ                 =   0x52;
-    public static final int USERPROFILE_CFM                 =   0x53;
+    public static final int USERPROFILE_CFM                 =   0x87;
     public static final int LANGUAGE_REQ                    =   0x54;
     public static final int LANGUAGE_CFM                    =   0x55;
     public static final int UNIT_REQ                        =   0x56;
@@ -136,7 +136,7 @@ public class CommonData {
     public static final int OTA_REQ_TIMER					=	1;
     public static final int OTA_REQ_TIMER_INTERVAL		    =	500;
 
-    public static final int touch_test1       =   0x99;
+    public static final int touch_test1                      =   0x99;
     public static final int TOUCH_GTO_TEST1                  =   0x59;
     public static final int TOUCH_GTO_TEST2                  =   0xFE;
 
@@ -147,6 +147,14 @@ public class CommonData {
     public static final int CMD_NODE_REGISTER                   = 0x47; //'G'
     public static final int CMD_SCAN_FINISH                     = 0x51; //'Q'
     public static final int CMD_PLAY_NODE                        = 0x50; //'P'
+    public static final int CMD_PLAY_NODE_DO                        = 0x64; //'P'
+    public static final int CMD_PLAY_NODE_RE                        = 0x65; //'P'
+    public static final int CMD_PLAY_NODE_MI                        = 0x66; //'P'
+    public static final int CMD_PLAY_NODE_PA                        = 0x67; //'P'
+    public static final int CMD_PLAY_NODE_SO                        = 0x68; //'P'
+    public static final int CMD_PLAY_NODE_RA                        = 0x69; //'P'
+    public static final int CMD_PLAY_NODE_SI                        = 0x6A; //'P'
+
 
 
 
@@ -194,6 +202,7 @@ public class CommonData {
         value[index++] = (byte) 0x53;   // 'S' Source
         value[index++] = (byte) 0x4D;   // 'M' Master
         */
+
         for (int i=0; i<msgLen; i++) {
             value[index++] = payloadData[i];
         }
@@ -211,6 +220,27 @@ public class CommonData {
         value[index++] = (byte) 0xFE;
         value[index++] = (byte) 0xFE;
         value[index++] = (byte) 0xFF;*/
+
+        return value;
+    }
+
+    public static byte[] header_tail_Data(int msgReq, int msgLen, byte[] payloadData) {
+        int index = 0, checkSum = 0;
+        byte[] value = null;
+        value = new byte[2+msgLen];
+
+        value[index++] = (byte) 0x3C;   // header char '<'
+        //value[index++] = (byte) msgReq; // Net ID
+
+        for (int i=0; i<msgLen; i++) {
+            value[index++] = payloadData[i];
+        }
+
+        for (int i = 1; i < index; i++) {
+            checkSum += value[i];
+        }
+
+        value[index++] = (byte) 0x3E;   // tail char '>'
 
         return value;
     }

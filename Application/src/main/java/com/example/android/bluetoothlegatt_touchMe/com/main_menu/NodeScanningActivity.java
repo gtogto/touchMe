@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_NODE_SCAN;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_SI;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.EXTRA_DATA;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.action;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.mGattCharacteristics;
@@ -61,10 +64,16 @@ public class NodeScanningActivity extends Activity {
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
-    public static TextView node1_txt, node2_txt, node3_txt, node4_txt, node5_txt, node6_txt;
+    private TextView node1, node2, node3, node4, node5, node6;
+    private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6;
 
     int standardSize_X, standardSize_Y;
     float density;
+
+    public String node_number;
+    public static int node_battery;
+    public static int node_count;
+    public static String node_B;
 
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
@@ -147,20 +156,216 @@ public class NodeScanningActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getStandardSize();
 
-        node1_txt = (TextView)findViewById(R.id.node1);
-        node2_txt = (TextView)findViewById(R.id.node2);
-        node3_txt = (TextView)findViewById(R.id.node3);
-        node4_txt = (TextView)findViewById(R.id.node4);
-        node5_txt = (TextView)findViewById(R.id.node5);
-        node6_txt = (TextView)findViewById(R.id.node6);
+        node1 = (TextView)findViewById(R.id.node1);        node2 = (TextView)findViewById(R.id.node2);
+        node3 = (TextView)findViewById(R.id.node3);        node4 = (TextView)findViewById(R.id.node4);
+        node5 = (TextView)findViewById(R.id.node5);        node6 = (TextView)findViewById(R.id.node6);
+
+        nodeBtn1 = (Button)findViewById(R.id.nodeBtn1);        nodeBtn2 = (Button)findViewById(R.id.nodeBtn2);
+        nodeBtn3 = (Button)findViewById(R.id.nodeBtn3);        nodeBtn4 = (Button)findViewById(R.id.nodeBtn4);
+        nodeBtn5 = (Button)findViewById(R.id.nodeBtn5);        nodeBtn6 = (Button)findViewById(R.id.nodeBtn6);
+        master = (Button)findViewById(R.id.master);
+
         getStandardSize();
 
         TextView setup_txt = (TextView)findViewById(R.id.setup_txt);        // dynamic layout font
         setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));      // dynamic layout font
 
+        master.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x30;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //master.setText("MASTER Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+        nodeBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x31;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //nodeBtn1.setText("Node 1 Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+        nodeBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x32;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //nodeBtn2.setText("Node 2 Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+        nodeBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x33;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //nodeBtn3.setText("Node 3 Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+        nodeBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x34;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //nodeBtn4.setText("Node 4 Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+        nodeBtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x35;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //nodeBtn5.setText("Node 5 Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+        nodeBtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
+                node_count++;
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x53;
+                cmd_bytes[2] = 0x36;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+
+                //nodeBtn6.setText("Node 6 Battery " + node_battery + "%");
+
+                management_node();
+            }
+        });
+
+
+
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
+    }
+
+    public void management_node () {
+        switch (node_count) {
+            case 1:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                break;
+
+            case 2:
+                nodeBtn2.setVisibility(View.VISIBLE);
+                break;
+
+            case 3:
+                nodeBtn3.setVisibility(View.VISIBLE);
+                break;
+
+            case 4:
+                nodeBtn4.setVisibility(View.VISIBLE);
+                break;
+
+            case 5:
+                nodeBtn5.setVisibility(View.VISIBLE);
+                break;
+
+            case 6:
+                nodeBtn6.setVisibility(View.VISIBLE);
+                break;
+
+        }
+        /*
+        if (node_count == 3)
+        {
+            LinearLayout.LayoutParams mLayoutParams = (LinearLayout.LayoutParams) nodeBtn2.getLayoutParams();
+            mLayoutParams.leftMargin = 50;
+            nodeBtn2.setLayoutParams(mLayoutParams);
+        }*/
     }
 
     //TODO BLE Packet receive
@@ -184,6 +389,7 @@ public class NodeScanningActivity extends Activity {
         super.onDestroy();
         unbindService(mServiceConnection);
         mBluetoothLeService = null;
+        node_count = 0;
     }
 
     private void updateConnectionState(final int resourceId) {
@@ -214,26 +420,82 @@ public class NodeScanningActivity extends Activity {
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
         System.out.println("By. NodeScanning HEX To ASCII : "+ hexToASCII(hex_value));
+        /*
+        System.out.println("sub String : "+   "[0] " + hexToASCII(hex_value).substring(0, 1));
+        System.out.println("sub String : "+   "[1] " + hexToASCII(hex_value).substring(1, 2));
+        System.out.println("sub String : "+   "[2] " + hexToASCII(hex_value).substring(2, 3));
+        System.out.println("sub String : "+   "[3] " + hexToASCII(hex_value).substring(3, 4));
+        System.out.println("sub String : "+   "[4] " + hexToASCII(hex_value).substring(4, 5));
+        System.out.println("sub String : "+   "[5] " + hexToASCII(hex_value).substring(5, 6));
+        System.out.println("sub String : "+   "[6] " + hexToASCII(hex_value).substring(6, 7));
+        System.out.println("sub String : "+   "[7] " + hexToASCII(hex_value).substring(7, 8));*/
+
+        //String node_number;
+        node_number = hexToASCII(hex_value).substring(2, 3);
+        node_B = (hexToASCII(hex_value).substring(6, 7));
+        if (node_B.equals("d")){
+            node_battery = 100;
+        }
+
+        System.out.println("node num : "+ node_number);
+
+        /*
+        master.setText("Master Battery " + node_battery + "%");
+        nodeBtn1.setText("Node 1 Battery " + node_battery + "%");
+        nodeBtn2.setText("Node 2 Battery " + node_battery + "%");
+        nodeBtn3.setText("Node 3 Battery " + node_battery + "%");
+        nodeBtn4.setText("Node 4 Battery " + node_battery + "%");
+        nodeBtn5.setText("Node 5 Battery " + node_battery + "%");
+        nodeBtn6.setText("Node 6 Battery " + node_battery + "%");*/
+
+        if (node_number.equals("0")){
+            master.setText("MASTER Battery " + node_battery + "%");
+
+        }
+        else if (node_number.equals("1"))
+        {
+            //node1.setText((hexToASCII(hex_value).substring(6, 7)));
+            //node1.setText("100");
+            nodeBtn1.setText("Node 1 Battery " + node_battery + "%");
+
+        }
+        else  if (node_number.equals("2"))
+        {
+            //node2.setText((hexToASCII(hex_value).substring(6, 7)));
+            nodeBtn2.setText("Node 2 Battery " + node_battery + "%");
+
+        }
+        else  if (node_number.equals("3"))
+        {
+            nodeBtn3.setText("Node 3 Battery " + node_battery + "%");
+
+            //node3.setText((hexToASCII(hex_value).substring(6, 7)));
+        }
+        else  if (node_number.equals("4"))
+        {
+            nodeBtn4.setText("Node 4 Battery " + node_battery + "%");
+
+            //node4.setText((hexToASCII(hex_value).substring(6, 7)));
+        }
+        else  if (node_number.equals("5"))
+        {
+            nodeBtn5.setText("Node 5 Battery " + node_battery + "%");
+
+            //node5.setText((hexToASCII(hex_value).substring(6, 7)));
+        }
+        else  if (node_number.equals("6"))
+        {
+            nodeBtn6.setText("Node 6 Battery " + node_battery + "%");
+
+            //node6.setText((hexToASCII(hex_value).substring(6, 7)));
+        }
+
 
         Toast tMsg = Toast.makeText(NodeScanningActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
         tMsg.setGravity(Gravity.CENTER, 0, 0);
         LinearLayout view = (LinearLayout) tMsg.getView();
         tMsg.show();
-        /*
-        String sub_node1 = hexToASCII(hex_value).substring(7,8);
-        String sub_node2 = hexToASCII(hex_value).substring(8,9);
-        String sub_node3 = hexToASCII(hex_value).substring(9,10);
-        String sub_node4 = hexToASCII(hex_value).substring(10,11);
-        String sub_node5 = hexToASCII(hex_value).substring(11,12);
-        String sub_node6 = hexToASCII(hex_value).substring(12,13);
 
-        node1_txt.setText(sub_node1);
-        node2_txt.setText(sub_node2);
-        node3_txt.setText(sub_node3);
-        node4_txt.setText(sub_node4);
-        node5_txt.setText(sub_node5);
-        node6_txt.setText(sub_node6);
-        */
         return sb.toString();
     }
 

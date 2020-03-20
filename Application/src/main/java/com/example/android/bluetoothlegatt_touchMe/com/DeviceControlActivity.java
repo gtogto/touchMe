@@ -364,11 +364,11 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
         System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
-
+        /*
         Toast tMsg = Toast.makeText(DeviceControlActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
         tMsg.setGravity(Gravity.CENTER, 0, 0);
         LinearLayout view = (LinearLayout) tMsg.getView();
-        tMsg.show();
+        tMsg.show();*/
 
         return sb.toString();
     }

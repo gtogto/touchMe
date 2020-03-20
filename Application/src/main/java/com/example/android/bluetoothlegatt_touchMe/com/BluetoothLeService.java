@@ -862,41 +862,224 @@ public class BluetoothLeService extends Service {
             break;
 
             case CommonData.TOUCH_GTO_TEST2: {
-                byte[] pData = new byte[4];
-                pData[0] = 0x30;
-                pData[1] = 0x31;
-                pData[2] = 0x32;
-                pData[3] = 0x33;
+                byte[] pData = new byte[6];
+                pData[0] = 0x35;
+                pData[1] = 0x34;
+                pData[2] = 0x33;
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
 
-                bSendData = CommonData.touch_Data(CommonData.TOUCH_GTO_TEST2, 4, pData);
+                bSendData = CommonData.touch_Data(CommonData.TOUCH_GTO_TEST2, 6, pData);
                 characteristic.setValue(bSendData);
                 Log.w(TAG, String.format("SEND DATA TO JDY"));
             }
             break;
 
             case CommonData.SETUP_MODE_SINGLE: {
-                byte[] pData = new byte[3];
-                pData[0] = 0x00;
-                pData[1] = 0x00;
-                pData[2] = 0x01;
+                byte[] pData = new byte[6];
+                pData[0] = 0x30;
+                pData[1] = 0x31;
+                pData[2] = 0x32;
+                pData[3] = 0x33;
+                pData[4] = 0x34;
+                pData[5] = 0x35;
 
-                bSendData = CommonData.touch_Data(CommonData.SETUP_MODE_SINGLE, 3, pData);
+                bSendData = CommonData.touch_Data(CommonData.SETUP_MODE_SINGLE, 6, pData);
                 characteristic.setValue(bSendData);
                 Log.w(TAG, String.format("SINGLE MODE [DO]"));
             }
             break;
 
             case CommonData.SETUP_MODE_DUAL: {
-                byte[] pData = new byte[3];
-                pData[0] = 0x00;
-                pData[1] = 0x00;
-                pData[2] = 0x01;
+                byte[] pData = new byte[6];
+                pData[0] = 0x35;
+                pData[1] = 0x34;
+                pData[2] = 0x33;
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
 
-                bSendData = CommonData.touch_Data(CommonData.SETUP_MODE_DUAL, 3, pData);
+                bSendData = CommonData.touch_Data(CommonData.SETUP_MODE_DUAL, 6, pData);
                 characteristic.setValue(bSendData);
                 Log.w(TAG, String.format("DUAL MODE [DO]"));
             }
             break;
+
+            case CommonData.CMD_NODE_SCAN: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x30;
+                pData[1] = 0x34;
+                pData[2] = 0x33;
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.touch_Data(CommonData.CMD_NODE_SCAN, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("CMD_NODE_SCAN"));
+            }
+            break;
+
+            case CommonData.CMD_NODE_REGISTER: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x31;
+                pData[1] = 0x34;
+                pData[2] = 0x33;
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.touch_Data(CommonData.CMD_NODE_REGISTER, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("CMD_NODE_REGISTER"));
+            }
+            break;
+
+            case CommonData.CMD_SCAN_FINISH: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x35;
+                pData[1] = 0x34;
+                pData[2] = 0x33;
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.touch_Data(CommonData.CMD_SCAN_FINISH, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("CMD_SCAN_FINISH"));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_DO: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x10;    // 'DO'
+                pData[2] = (byte) 0x90;    // 'DO'
+                //pData[2] = 0x01;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x33;
+                pData[5] = 0x34;
+
+                //byteToBinaryString(pData[2]);
+
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_DO, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [DO]"));
+                //Log.w(TAG, String.format("pData 2" + pData[2]));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_RE: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x20;    // 'RE'
+                pData[2] = (byte) 0xA0;    // 'RE'
+                //pData[2] = 0x02;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_RE, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [RE]"));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_MI: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x30;    // 'MI'
+                pData[2] = (byte) 0xB0;    // 'RE'
+                //pData[2] = 0x03;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_MI, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [MI]"));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_PA: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x40;    // 'PA'
+                //pData[2] = 0x10;    // 'DO'
+                pData[2] = (byte) 0xC0;    // 'RE'
+                //pData[2] = 0x04;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_PA, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [PA]"));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_SO: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x50;    // 'SO'
+                //pData[2] = 0x20;    // 'RE'
+                pData[2] = (byte) 0xD0;    // 'RE'
+                //pData[2] = 0x05;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_SO, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [SO]"));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_RA: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x60;    // 'RA'
+                //pData[2] = 0x30;    // 'MI'
+                pData[2] = (byte) 0xE0;    // 'RE'
+                //pData[2] = 0x06;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_RA, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [RA]"));
+            }
+            break;
+
+            case CommonData.CMD_PLAY_NODE_SI: {
+                byte[] pData = new byte[6];
+                pData[0] = 0x50;    // 'P'
+                pData[1] = 0x30;    // 'M'
+                //pData[2] = 0x70;    // 'SI'
+                //pData[2] = 0x40;    // 'MI'
+                pData[2] = (byte) 0xF0;    // 'RE'
+                //pData[2] = 0x07;    // 'LED'
+                pData[3] = 0x32;
+                pData[4] = 0x31;
+                pData[5] = 0x30;
+
+                bSendData = CommonData.header_tail_Data(CommonData.CMD_PLAY_NODE_SI, 6, pData);
+                characteristic.setValue(bSendData);
+                Log.w(TAG, String.format("SOUND [SI]"));
+            }
+            break;
+
+
+
 
 
             default:
@@ -1052,9 +1235,14 @@ public class BluetoothLeService extends Service {
 
     public static final UUID TouchMe_DATA_UUID = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb"); //jdy bt
 
-
-
-
-
+    public String byteToBinaryString(byte n) {
+        StringBuilder sb = new StringBuilder("00000000");
+        for (int bit = 0; bit < 8; bit++) {
+            if (((n >> bit) & 1) > 0) {
+                sb.setCharAt(7 - bit, '1');
+            }
+        }
+        return sb.toString();
+    }
 
 }

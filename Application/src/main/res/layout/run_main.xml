@@ -38,21 +38,28 @@ Applications for Health care
 
                 <ImageView
                     android:id="@+id/setup_btn"
-                    android:layout_width="106dp"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ubio_logo"></ImageView>
+
+                <TextView
+                    android:id="@+id/timeView"
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:adjustViewBounds="true"
+                    android:layout_marginLeft="10dp"
+                    android:ems="5"
                     android:gravity="center"
-                    android:src="@drawable/ubio_logo">
-                </ImageView>
+                    android:text="00:00:00:00 "
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/run_mode_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
-
+                    android:layout_marginLeft="10dp"
                     android:text="모드 : "
                     android:textStyle="bold|italic" />
 
@@ -60,289 +67,318 @@ Applications for Health care
                     android:id="@+id/run_mode_change"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ems="2"
                     android:text="자동 "
+                    android:textColor="#00FFE5"
                     android:textStyle="bold|italic" />
 
             </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/setup_txt"
+            <LinearLayout
+                android:id="@id/linearLayout_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="RUN "
-                android:textStyle="bold|italic" />
-            <!-- android:textSize="45sp"-->
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
-                android:scaleType="center"
-                android:src="@drawable/linie_albastra_lr"></ImageView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/master"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentStart="true"
-                android:layout_gravity="center"
-                android:background="@drawable/orange_circle_button"
-                android:gravity="center"
-                android:text="MASTER"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/nodeBtn1"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:background="@drawable/green_circle_button"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:text="node 1" />
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/nodeBtn2"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginLeft="200dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 2" />
+                <TextView
+                    android:id="@+id/setup_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="RUN "
+                    android:textStyle="bold|italic" />
+                <!-- android:textSize="45sp"-->
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="center"
+                    android:src="@drawable/linie_albastra_lr"></ImageView>
 
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/node1"
+            <LinearLayout
+                android:id="@id/linearLayout_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:ems="3"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
-                android:text="00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/node2"
-                android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/master"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/orange_circle_button"
+                    android:gravity="center"
+                    android:text="MASTER"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="200dp"
-                android:ems="3"
-                android:gravity="center"
-                android:text="00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/nodeBtn3"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:background="@drawable/green_circle_button"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:text="node 1" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/nodeBtn4"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginLeft="200dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 2" />
+                <Button
+                    android:id="@+id/nodeBtn1"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:background="@drawable/green_circle_button"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="node 1" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/nodeBtn2"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="200dp"
+                    android:background="@drawable/green_circle_button"
+                    android:text="node 2" />
 
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/node3"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout_1"
                 android:layout_gravity="center"
-                android:ems="3"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
-                android:text="00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/node4"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/node1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/node2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="200dp"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="200dp"
-                android:ems="3"
-                android:gravity="center"
-                android:text="00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/nodeBtn5"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:background="@drawable/green_circle_button"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:text="node 1" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/nodeBtn6"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginLeft="100dp"
-                android:background="@drawable/green_circle_button"
-                android:text="node 2" />
+                <Button
+                    android:id="@+id/nodeBtn3"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/green_circle_button"
+                    android:gravity="center"
+                    android:text="node 3" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/nodeBtn4"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="200dp"
+                    android:background="@drawable/green_circle_button"
+                    android:gravity="center"
+                    android:text="node 4" />
 
-        <LinearLayout
-            android:id="@id/linearLayout_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout_1"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/node5"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout_1"
                 android:layout_gravity="center"
-                android:ems="3"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
-                android:text="00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/node6"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/node3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/node4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="200dp"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="100dp"
-                android:ems="3"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
                 android:gravity="center"
-                android:text="00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/nodeBtn5"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/green_circle_button"
+                    android:gravity="center"
+                    android:text="node 5" />
 
-        <Button
-            android:id="@+id/test_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClick_test_btn"
-            android:background="@drawable/circie_button"
-            android:textColor="#FF0000"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:text="START" />
+                <Button
+                    android:id="@+id/nodeBtn6"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
+                    android:background="@drawable/green_circle_button"
+                    android:gravity="center"
+                    android:text="node 6" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/node5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/node6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/linearLayout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout_1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/start_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick_test_btn"
+                    android:background="@drawable/circie_button"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:text="START" />
+
+                <Button
+                    android:id="@+id/stop_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick_stop_btn"
+                    android:background="@drawable/circie_button"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="75dp"
+                    android:text="STOP" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 

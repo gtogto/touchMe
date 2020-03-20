@@ -38,6 +38,10 @@ import java.util.HashMap;
 import java.util.List;
 
 import static android.bluetooth.BluetoothProfile.STATE_CONNECTED;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_NODE_REGISTER;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_NODE_SCAN;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_SCAN_FINISH;
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.SETUP_MODE_DUAL;
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.SETUP_MODE_SINGLE;
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST1;
@@ -374,6 +378,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 act_flag = 0;
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
             }
         });
 
@@ -386,6 +391,8 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 act_flag = 1;
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_REGISTER);
+
             }
         });
 
@@ -410,6 +417,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 auto_flag = 0;
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_SCAN_FINISH);
             }
         });
 
@@ -422,6 +430,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 auto_flag = 1;
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE);
             }
         });
 
@@ -620,7 +629,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 tMsg.show();
                 sensitive_flag = 0;
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.OTA_DATA_REQ);
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_SINGLE);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_SINGLE);
             }
         });
 
@@ -633,7 +642,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 sensitive_flag = 1;
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_DUAL);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), SETUP_MODE_DUAL);
             }
         });
 

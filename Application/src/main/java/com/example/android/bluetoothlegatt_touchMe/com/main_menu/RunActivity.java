@@ -1,5 +1,6 @@
 package com.example.android.bluetoothlegatt_touchMe.com.main_menu;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
@@ -13,7 +14,9 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
@@ -36,6 +39,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_DO;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_MI;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_PA;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_RA;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_RE;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_SI;
+import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_SO;
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST1;
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.TOUCH_GTO_TEST2;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.action;
@@ -82,6 +92,20 @@ public class RunActivity extends Activity {
 
     int standardSize_X, standardSize_Y;
     float density;
+
+    private TextView mTimeTextView, mRecordTextView;
+    private Button mStopBtn, mStartBtn;
+
+    private Thread timeThread = null;
+    private Boolean isRunning = true;
+
+    private TextView node1, node2, node3, node4, node5, node6;
+    private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6;
+
+    private int timer_flag;
+
+    public static int sound_clicked_num;
+
 
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
@@ -189,6 +213,16 @@ public class RunActivity extends Activity {
         TextView run_mode_txt = (TextView)findViewById(R.id.run_mode_txt);
         TextView run_mode_change = (TextView)findViewById(R.id.run_mode_change);
 
+        node1 = (TextView)findViewById(R.id.node1);        node2 = (TextView)findViewById(R.id.node2);
+        node3 = (TextView)findViewById(R.id.node3);        node4 = (TextView)findViewById(R.id.node4);
+        node5 = (TextView)findViewById(R.id.node5);        node6 = (TextView)findViewById(R.id.node6);
+
+        nodeBtn1 = (Button)findViewById(R.id.nodeBtn1);        nodeBtn2 = (Button)findViewById(R.id.nodeBtn2);
+        nodeBtn3 = (Button)findViewById(R.id.nodeBtn3);        nodeBtn4 = (Button)findViewById(R.id.nodeBtn4);
+        nodeBtn5 = (Button)findViewById(R.id.nodeBtn5);        nodeBtn6 = (Button)findViewById(R.id.nodeBtn6);
+
+        master = (Button)findViewById(R.id.master);
+
         setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
 
         run_mode_txt.setTextSize((float) (standardSize_X / 15)); run_mode_txt.setTextSize((float) (standardSize_Y / 25));
@@ -198,7 +232,10 @@ public class RunActivity extends Activity {
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
-        DeviceControlActivity.run_btn = (Button) findViewById(R.id.run_btn);
+        mTimeTextView = (TextView) findViewById(R.id.timeView);
+        mStartBtn = (Button) findViewById(R.id.start_btn);
+        mStopBtn = (Button) findViewById(R.id.stop_btn);
+
 
         //run_btn.setOnClickListener();
 
@@ -209,6 +246,171 @@ public class RunActivity extends Activity {
             run_mode_change.setText("수동");
         }
 
+        mStartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //v.setVisibility(View.GONE);
+                //mStopBtn.setVisibility(View.VISIBLE);
+                timer_flag = 1;
+                timeThread = new Thread(new timeThread());
+                timeThread.start();
+                Toast.makeText(RunActivity.this, "Timer Start!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mStopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //v.setVisibility(View.GONE);
+                //mStartBtn.setVisibility(View.VISIBLE);
+                if (timer_flag == 1) {
+                    timeThread.interrupt();
+                    timer_flag = 0;
+                }
+                else Toast.makeText(RunActivity.this, "The timer has not Started!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        nodeBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_DO);
+                sound_clicked_num ++;
+
+            }
+        });
+
+        nodeBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RE);
+                sound_clicked_num ++;
+            }
+        });
+
+        nodeBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_MI);
+                sound_clicked_num ++;
+            }
+        });
+
+        nodeBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_PA);
+                sound_clicked_num ++;
+            }
+        });
+
+        nodeBtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SO);
+                sound_clicked_num ++;
+            }
+        });
+
+        nodeBtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RA);
+                sound_clicked_num ++;
+            }
+        });
+
+        master.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
+                sound_clicked_num ++;
+            }
+        });
+
+    }
+
+    @SuppressLint("HandlerLeak")
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            int mSec = msg.arg1 % 100;
+            int sec = (msg.arg1 / 100) % 60;
+            int min = (msg.arg1 / 100) / 60;
+            int hour = (msg.arg1 / 100) / 360;
+            //1000이 1초 1000*60 은 1분 1000*60*10은 10분 1000*60*60은 한시간
+
+            @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d:%02d", hour, min, sec, mSec);
+            /*
+            if (result.equals("00:01:15:00")) {
+                Toast.makeText(RunActivity.this, "1분 15초가 지났습니다.", Toast.LENGTH_SHORT).show();
+            }*/
+            mTimeTextView.setText(result);
+        }
+    };
+
+    public class timeThread implements Runnable {
+        @Override
+        public void run() {
+            int i = 0;
+
+            while (true) {
+                while (isRunning) { //일시정지를 누르면 멈춤
+                    Message msg = new Message();
+                    msg.arg1 = i++;
+                    handler.sendMessage(msg);
+
+                    if (sound_clicked_num > 7) {
+                        sound_clicked_num = 0;
+                    }
+
+                    switch (sound_clicked_num) {
+                        case 1:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_DO);
+                            break;
+
+                        case 2:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RE);
+                            break;
+
+                        case 3:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_MI);
+                            break;
+
+                        case 4:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_PA);
+                            break;
+
+                        case 5:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SO);
+                            break;
+
+                        case 6:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RA);
+                            break;
+
+                        case 7:
+                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
+                            break;
+
+                    }
+
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        runOnUiThread(new Runnable(){
+                            @Override
+                            public void run() {
+                                mTimeTextView.setText("");
+                                mTimeTextView.setText("00:00:00:00");
+                            }
+                        });
+                        return; // 인터럽트 받을 경우 return
+                    }
+                }
+            }
+        }
     }
 
 
@@ -269,63 +471,15 @@ public class RunActivity extends Activity {
         StringBuilder sb = new StringBuilder(packet.length * 2);
 
         System.out.println("By. Run HEX To ASCII : "+ hexToASCII(hex_value));
-
+        /*
+        node1.setText(hex_value);        node2.setText(hex_value);
+        node3.setText(hex_value);        node4.setText(hex_value);
+        node5.setText(hex_value);        node6.setText(hex_value);*/
+        /*
         Toast tMsg = Toast.makeText(RunActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
         tMsg.setGravity(Gravity.CENTER, 0, 0);
         LinearLayout view = (LinearLayout) tMsg.getView();
-        tMsg.show();
-
-        /*
-        String choice_node = hexToASCII(hex_value).substring(13,14);
-
-        asciiToHex(choice_node);       // is 1
-
-        String node1 = "1";
-        String node2 = "2";
-        String node3 = "3";
-        String node4 = "4";
-        String node5 = "5";
-        String node6 = "6";
-
-        //System.out.println(" choice num = " + choice_node);
-
-        if (choice_node.equals(node1)) {
-            node_imageView01.setImageResource(R.drawable.clicked_pink_circle_button);
-            System.out.println("node 1 = " + node1 + " " + " choice num = " + choice_node);
-        }
-        else node_imageView01.setImageResource(R.drawable.green_circle_button1);
-
-        if (choice_node.equals(node2)) {
-            node_imageView02.setImageResource(R.drawable.clicked_pink_circle_button);
-            System.out.println("node 2 = " + node2 + " " + " choice num = " + choice_node);
-        }
-        else node_imageView02.setImageResource(R.drawable.green_circle_button1);
-
-        if (choice_node.equals(node3)) {
-            node_imageView03.setImageResource(R.drawable.clicked_pink_circle_button);
-            System.out.println("node 3 = " + node3 + " " + " choice num = " + choice_node);
-        }
-        else node_imageView03.setImageResource(R.drawable.green_circle_button1);
-
-        if (choice_node.equals(node4)) {
-            node_imageView04.setImageResource(R.drawable.clicked_pink_circle_button);
-            System.out.println("node 4 = " + node4 + " " + " choice num = " + choice_node);
-        }
-        else node_imageView04.setImageResource(R.drawable.green_circle_button1);
-
-        if (choice_node.equals(node5)) {
-            node_imageView05.setImageResource(R.drawable.clicked_pink_circle_button);
-            System.out.println("node 5 = " + node5 + " " + " choice num = " + choice_node);
-        }
-        else node_imageView05.setImageResource(R.drawable.green_circle_button1);
-
-        if (choice_node.equals(node6)) {
-            node_imageView06.setImageResource(R.drawable.clicked_pink_circle_button);
-            System.out.println("node 6 = " + node6 + " " + " choice num = " + choice_node);
-        }
-        else node_imageView06.setImageResource(R.drawable.green_circle_button1);
-        */
-
+        tMsg.show();*/
 
         return sb.toString();
     }

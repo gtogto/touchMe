@@ -105,7 +105,7 @@ Applications for Health care use to BLE modules
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="5dp"
                 android:scaleType="center"
                 android:src="@drawable/wifi1"></ImageView>
 
@@ -130,7 +130,8 @@ Applications for Health care use to BLE modules
                 android:background="@drawable/green_circle_button"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:text="node 1" />
+                android:text="node 1"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/nodeBtn2"
@@ -140,7 +141,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:layout_marginLeft="100dp"
                 android:background="@drawable/green_circle_button"
-                android:text="node 2" />
+                android:text="node 2"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -165,7 +167,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/node2"
@@ -177,7 +180,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -197,20 +201,22 @@ Applications for Health care use to BLE modules
                 android:id="@+id/nodeBtn3"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
+                android:layout_gravity="center"
                 android:background="@drawable/green_circle_button"
                 android:gravity="center"
-                android:layout_gravity="center"
-                android:text="node 1" />
+                android:text="node 3"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/nodeBtn4"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginLeft="100dp"
                 android:background="@drawable/green_circle_button"
-                android:text="node 2" />
+                android:gravity="center"
+                android:text="node 4"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -235,7 +241,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/node4"
@@ -247,7 +254,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -267,20 +275,22 @@ Applications for Health care use to BLE modules
                 android:id="@+id/nodeBtn5"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
+                android:layout_gravity="center"
                 android:background="@drawable/green_circle_button"
                 android:gravity="center"
-                android:layout_gravity="center"
-                android:text="node 1" />
+                android:text="node 5"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/nodeBtn6"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginLeft="100dp"
                 android:background="@drawable/green_circle_button"
-                android:text="node 2" />
+                android:gravity="center"
+                android:text="node 6"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -305,7 +315,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/node6"
@@ -317,7 +328,8 @@ Applications for Health care use to BLE modules
                 android:gravity="center"
                 android:text="00"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
