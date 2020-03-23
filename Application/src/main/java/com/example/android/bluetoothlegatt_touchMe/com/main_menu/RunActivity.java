@@ -38,6 +38,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_DO;
 import static com.example.android.bluetoothlegatt_touchMe.Common.CommonData.CMD_PLAY_NODE_MI;
@@ -106,6 +109,45 @@ public class RunActivity extends Activity {
 
     public static int sound_clicked_num;
 
+    private Random rnd;
+    private int timer_sec, count;
+    private int node_act;
+
+    private TimerTask second;
+    private final Handler rnd_handler = new Handler();
+    public void testStart() {
+        timer_sec = 0;
+        count = 0;
+        second = new TimerTask() {
+            @Override
+            public void run() {
+                Log.i("Test", "Timer start");
+                Update();
+                timer_sec++;
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(second, 0, 1000);
+    }
+    public void testStop(){
+        second.cancel();
+        nodeBtn1.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn2.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn3.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn4.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn5.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn6.setBackgroundResource(R.drawable.black_circle_button_off);
+    }
+    protected void Update() {
+        Runnable updater = new Runnable() {
+            public void run() {
+                node_act = rnd.nextInt(7);
+
+                System.out.println("Random num = " + node_act);
+            }
+        };
+        rnd_handler.post(updater);
+    }
 
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
@@ -236,6 +278,7 @@ public class RunActivity extends Activity {
         mStartBtn = (Button) findViewById(R.id.start_btn);
         mStopBtn = (Button) findViewById(R.id.stop_btn);
 
+        rnd = new Random();
 
         //run_btn.setOnClickListener();
 
@@ -255,6 +298,7 @@ public class RunActivity extends Activity {
                 timeThread = new Thread(new timeThread());
                 timeThread.start();
                 Toast.makeText(RunActivity.this, "Timer Start!", Toast.LENGTH_SHORT).show();
+                testStart();
             }
         });
 
@@ -266,11 +310,15 @@ public class RunActivity extends Activity {
                 if (timer_flag == 1) {
                     timeThread.interrupt();
                     timer_flag = 0;
+                    testStop();
                 }
                 else Toast.makeText(RunActivity.this, "The timer has not Started!", Toast.LENGTH_SHORT).show();
             }
         });
 
+
+        /* node Button */
+        /*
         nodeBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -283,7 +331,7 @@ public class RunActivity extends Activity {
         nodeBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RE);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RE);
                 sound_clicked_num ++;
             }
         });
@@ -291,7 +339,7 @@ public class RunActivity extends Activity {
         nodeBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_MI);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_MI);
                 sound_clicked_num ++;
             }
         });
@@ -299,7 +347,7 @@ public class RunActivity extends Activity {
         nodeBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_PA);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_PA);
                 sound_clicked_num ++;
             }
         });
@@ -307,7 +355,7 @@ public class RunActivity extends Activity {
         nodeBtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SO);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SO);
                 sound_clicked_num ++;
             }
         });
@@ -315,7 +363,7 @@ public class RunActivity extends Activity {
         nodeBtn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RA);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RA);
                 sound_clicked_num ++;
             }
         });
@@ -323,10 +371,10 @@ public class RunActivity extends Activity {
         master.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
+                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
                 sound_clicked_num ++;
             }
-        });
+        });*/
 
     }
 
@@ -360,10 +408,31 @@ public class RunActivity extends Activity {
                     msg.arg1 = i++;
                     handler.sendMessage(msg);
 
-                    if (sound_clicked_num > 7) {
-                        sound_clicked_num = 0;
-                    }
+                    if (node_act == 1) {
+                        nodeBtn1.setBackgroundResource(R.drawable.green_circle_button);
+                    } else nodeBtn1.setBackgroundResource(R.drawable.black_circle_button_off);
 
+                    if (node_act == 2) {
+                        nodeBtn2.setBackgroundResource(R.drawable.green_circle_button);
+                    } else nodeBtn2.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 3) {
+                        nodeBtn3.setBackgroundResource(R.drawable.green_circle_button);
+                    } else nodeBtn3.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 4) {
+                        nodeBtn4.setBackgroundResource(R.drawable.green_circle_button);
+                    } else nodeBtn4.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 5) {
+                        nodeBtn5.setBackgroundResource(R.drawable.green_circle_button);
+                    } else nodeBtn5.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 6) {
+                        nodeBtn6.setBackgroundResource(R.drawable.green_circle_button);
+                    } else nodeBtn6.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    /*
                     switch (sound_clicked_num) {
                         case 1:
                             mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_DO);
@@ -393,7 +462,7 @@ public class RunActivity extends Activity {
                             mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
                             break;
 
-                    }
+                    }*/
 
                     try {
                         Thread.sleep(10);

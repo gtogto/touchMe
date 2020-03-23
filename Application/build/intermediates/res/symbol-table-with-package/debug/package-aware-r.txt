@@ -576,6 +576,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ap_logo
 drawable back_icon
+drawable black_circle_button_off
 drawable blue_0
 drawable blue_1
 drawable blue_2
@@ -592,6 +593,7 @@ drawable green_1
 drawable green_2
 drawable green_circle_button
 drawable green_circle_button1
+drawable green_circle_button_off
 drawable ic_launcher
 drawable ic_launcher1
 drawable ic_launcher_round
@@ -613,6 +615,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable orange_circle_button
+drawable orange_circle_button_off
 drawable pink_0
 drawable pink_1
 drawable pink_2
@@ -750,6 +753,9 @@ id nodeBtn3
 id nodeBtn4
 id nodeBtn5
 id nodeBtn6
+id nodeBtn7
+id nodeBtn8
+id nodeBtn9
 id none
 id normal
 id notification_background

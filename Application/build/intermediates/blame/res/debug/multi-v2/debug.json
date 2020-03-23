@@ -97,38 +97,6 @@
             ]
         },
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-nl_values-nl.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\8a1bafd3a6784dc29e2a0f1f4e2f437b\\appcompat-v7-27.0.2\\res\\values-nl\\values-nl.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,223,328,435,521,629,749,826,903,985,1096,1200,1299,1414,1527,1630,1785,1888",
-                        "endColumns": "117,104,106,85,107,119,76,76,81,110,103,98,114,112,102,154,102,81",
-                        "endOffsets": "218,323,430,516,624,744,821,898,980,1091,1195,1294,1409,1522,1625,1780,1883,1965"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\b10d974ba8b444faf866fc4a658ef006\\support-compat-27.0.2\\res\\values-nl\\values-nl.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1970",
-                        "endColumns": "100",
-                        "endOffsets": "2066"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-fa_values-fa.arsc.flat",
             "map": [
                 {
@@ -156,6 +124,38 @@
                         "startOffsets": "1948",
                         "endColumns": "100",
                         "endOffsets": "2044"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-nl_values-nl.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\8a1bafd3a6784dc29e2a0f1f4e2f437b\\appcompat-v7-27.0.2\\res\\values-nl\\values-nl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,223,328,435,521,629,749,826,903,985,1096,1200,1299,1414,1527,1630,1785,1888",
+                        "endColumns": "117,104,106,85,107,119,76,76,81,110,103,98,114,112,102,154,102,81",
+                        "endOffsets": "218,323,430,516,624,744,821,898,980,1091,1195,1294,1409,1522,1625,1780,1883,1965"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\b10d974ba8b444faf866fc4a658ef006\\support-compat-27.0.2\\res\\values-nl\\values-nl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1970",
+                        "endColumns": "100",
+                        "endOffsets": "2066"
                     }
                 }
             ]
@@ -499,38 +499,6 @@
             ]
         },
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-lt_values-lt.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\8a1bafd3a6784dc29e2a0f1f4e2f437b\\appcompat-v7-27.0.2\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,221,322,435,522,631,752,834,915,1000,1109,1218,1318,1428,1532,1645,1821,1922",
-                        "endColumns": "115,100,112,86,108,120,81,80,84,108,108,99,109,103,112,175,100,82",
-                        "endOffsets": "216,317,430,517,626,747,829,910,995,1104,1213,1313,1423,1527,1640,1816,1917,2000"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\b10d974ba8b444faf866fc4a658ef006\\support-compat-27.0.2\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2005",
-                        "endColumns": "100",
-                        "endOffsets": "2101"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
             "map": [
                 {
@@ -558,6 +526,38 @@
                         "startOffsets": "1949",
                         "endColumns": "100",
                         "endOffsets": "2045"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-lt_values-lt.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\8a1bafd3a6784dc29e2a0f1f4e2f437b\\appcompat-v7-27.0.2\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,221,322,435,522,631,752,834,915,1000,1109,1218,1318,1428,1532,1645,1821,1922",
+                        "endColumns": "115,100,112,86,108,120,81,80,84,108,108,99,109,103,112,175,100,82",
+                        "endOffsets": "216,317,430,517,626,747,829,910,995,1104,1213,1313,1423,1527,1640,1816,1917,2000"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\b10d974ba8b444faf866fc4a658ef006\\support-compat-27.0.2\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2005",
+                        "endColumns": "100",
+                        "endOffsets": "2101"
                     }
                 }
             ]
@@ -659,38 +659,6 @@
             ]
         },
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-cs_values-cs.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\b10d974ba8b444faf866fc4a658ef006\\support-compat-27.0.2\\res\\values-cs\\values-cs.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1955",
-                        "endColumns": "100",
-                        "endOffsets": "2051"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\8a1bafd3a6784dc29e2a0f1f4e2f437b\\appcompat-v7-27.0.2\\res\\values-cs\\values-cs.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,212,314,423,509,614,731,812,893,977,1081,1190,1289,1395,1505,1612,1775,1873",
-                        "endColumns": "106,101,108,85,104,116,80,80,83,103,108,98,105,109,106,162,97,81",
-                        "endOffsets": "207,309,418,504,609,726,807,888,972,1076,1185,1284,1390,1500,1607,1770,1868,1950"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-ko_values-ko.arsc.flat",
             "map": [
                 {
@@ -718,6 +686,38 @@
                         "startOffsets": "1824",
                         "endColumns": "100",
                         "endOffsets": "1920"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\values-cs_values-cs.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\b10d974ba8b444faf866fc4a658ef006\\support-compat-27.0.2\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1955",
+                        "endColumns": "100",
+                        "endOffsets": "2051"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\8a1bafd3a6784dc29e2a0f1f4e2f437b\\appcompat-v7-27.0.2\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,314,423,509,614,731,812,893,977,1081,1190,1289,1395,1505,1612,1775,1873",
+                        "endColumns": "106,101,108,85,104,116,80,80,83,103,108,98,105,109,106,162,97,81",
+                        "endOffsets": "207,309,418,504,609,726,807,888,972,1076,1185,1284,1390,1500,1607,1770,1868,1950"
                     }
                 }
             ]
