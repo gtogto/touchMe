@@ -138,7 +138,7 @@ Applications for Health care
                 android:layout_height="wrap_content"
                 android:layout_below="@id/linearLayout_1"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:layout_gravity="center"
@@ -151,7 +151,8 @@ Applications for Health care
                     android:background="@drawable/green_circle_button_off"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="node 1" />
+                    android:text="node 1"
+                    android:visibility="gone"/>
 
                 <Button
                     android:id="@+id/nodeBtn2"
@@ -159,9 +160,21 @@ Applications for Health care
                     android:layout_height="85dp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_marginLeft="200dp"
+                    android:layout_marginLeft="50dp"
                     android:background="@drawable/green_circle_button_off"
-                    android:text="node 2" />
+                    android:text="node 2"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/nodeBtn3"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/green_circle_button_off"
+                    android:gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:text="node 3"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -186,7 +199,8 @@ Applications for Health care
                     android:gravity="center"
                     android:text="00"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/node2"
@@ -198,7 +212,8 @@ Applications for Health care
                     android:gravity="center"
                     android:text="00"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -215,23 +230,36 @@ Applications for Health care
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/nodeBtn3"
-                    android:layout_width="85dp"
-                    android:layout_height="85dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/green_circle_button_off"
-                    android:gravity="center"
-                    android:text="node 3" />
-
-                <Button
                     android:id="@+id/nodeBtn4"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="200dp"
                     android:background="@drawable/green_circle_button_off"
                     android:gravity="center"
-                    android:text="node 4" />
+                    android:text="node 4"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/nodeBtn5"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/green_circle_button_off"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="node 5"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/nodeBtn6"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/green_circle_button_off"
+                    android:gravity="center"
+                    android:text="node 6"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -256,7 +284,8 @@ Applications for Health care
                     android:gravity="center"
                     android:text="00"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/node4"
@@ -268,7 +297,8 @@ Applications for Health care
                     android:gravity="center"
                     android:text="00"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -285,23 +315,37 @@ Applications for Health care
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/nodeBtn5"
+                    android:id="@+id/nodeBtn7"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_gravity="center"
                     android:background="@drawable/green_circle_button_off"
                     android:gravity="center"
-                    android:text="node 5" />
+                    android:text="node 7"
+                    android:visibility="gone"/>
 
                 <Button
-                    android:id="@+id/nodeBtn6"
+                    android:id="@+id/nodeBtn8"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
+                    android:background="@drawable/green_circle_button_off"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center"
+                    android:text="node 8"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/nodeBtn9"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
                     android:background="@drawable/green_circle_button_off"
                     android:gravity="center"
-                    android:text="node 6" />
+                    android:text="node 9"
+                    android:visibility="gone"/>
+
 
             </LinearLayout>
 
@@ -326,7 +370,8 @@ Applications for Health care
                     android:gravity="center"
                     android:text="00"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/node6"
@@ -338,7 +383,8 @@ Applications for Health care
                     android:gravity="center"
                     android:text="00"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -349,7 +395,7 @@ Applications for Health care
                 android:layout_below="@id/linearLayout_1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:orientation="horizontal">

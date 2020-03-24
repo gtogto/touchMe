@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -38,6 +39,8 @@ import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.action;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.mGattCharacteristics;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.packet;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.scan_node_count;
+
 
 /**
  * Created by GTO on 2020-01-22.
@@ -65,18 +68,19 @@ public class DeviceMappingActivity extends Activity {
     int standardSize_X, standardSize_Y;
     float density;
 
+    private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6, nodeBtn7, nodeBtn8, nodeBtn9;
+
+
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-
         return size;
     }
 
     public void getStandardSize() {
         Point ScreenSize = getScreenSize(this);
         density  = getResources().getDisplayMetrics().density;
-
         standardSize_X = (int) (ScreenSize.x / density);
         standardSize_Y = (int) (ScreenSize.y / density);
     }
@@ -145,7 +149,6 @@ public class DeviceMappingActivity extends Activity {
         for (int i = 0; i < s.length(); i++) {
             result += String.format("0x%02X ", (int) s.charAt(i));
         }
-
         return result;
     }
 
@@ -162,13 +165,86 @@ public class DeviceMappingActivity extends Activity {
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
-        //final ImageView back_btn = (ImageView) findViewById(R.id.back_btn);
+        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
+
+        nodeBtn1 = (Button)findViewById(R.id.nodeBtn1);        nodeBtn2 = (Button)findViewById(R.id.nodeBtn2);        nodeBtn3 = (Button)findViewById(R.id.nodeBtn3);
+        nodeBtn4 = (Button)findViewById(R.id.nodeBtn4);        nodeBtn5 = (Button)findViewById(R.id.nodeBtn5);        nodeBtn6 = (Button)findViewById(R.id.nodeBtn6);
+        nodeBtn7 = (Button)findViewById(R.id.nodeBtn7);        nodeBtn8 = (Button)findViewById(R.id.nodeBtn8);        nodeBtn9 = (Button)findViewById(R.id.nodeBtn9);
+        master = (Button)findViewById(R.id.master);
+
+        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
+
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
-        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
-
-        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));
+        switch (scan_node_count) {
+            case 0:
+                Toast.makeText(DeviceMappingActivity.this, "No have scan node !", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                break;
+            case 5:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                break;
+            case 6:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                break;
+            case 7:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);
+                break;
+            case 8:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);
+                nodeBtn8.setVisibility(View.VISIBLE);
+                break;
+            case 9:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);
+                nodeBtn8.setVisibility(View.VISIBLE);
+                nodeBtn9.setVisibility(View.VISIBLE);
+                break;
+        }
 
 
     }
@@ -179,7 +255,6 @@ public class DeviceMappingActivity extends Activity {
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         if (mBluetoothLeService != null) {
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
-            //Log.d(TAG, "Connect request result=" + result);
         }
     }
 
@@ -206,9 +281,7 @@ public class DeviceMappingActivity extends Activity {
     }
 
     public void displayData(byte[] packet) {
-
         getStringPacket(DeviceControlActivity.packet);
-
     }
 
     private String getStringPacket(byte[] packet) {
@@ -356,6 +429,5 @@ public class DeviceMappingActivity extends Activity {
 
     public void onClickBack (View v) {
         onBackPressed();
-
     }
 }

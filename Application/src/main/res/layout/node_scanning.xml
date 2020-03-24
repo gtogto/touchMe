@@ -127,7 +127,7 @@ Applications for Health care use to BLE modules
                 android:id="@+id/nodeBtn1"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:text="node 1"
@@ -140,7 +140,7 @@ Applications for Health care use to BLE modules
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:text="node 2"
                 android:visibility="gone"/>
 
@@ -150,7 +150,7 @@ Applications for Health care use to BLE modules
                 android:layout_height="85dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 3"
                 android:visibility="gone"/>
@@ -174,7 +174,7 @@ Applications for Health care use to BLE modules
                 android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 4"
                 android:visibility="gone"/>
@@ -185,7 +185,7 @@ Applications for Health care use to BLE modules
                 android:layout_height="85dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 5"
                 android:visibility="gone"/>
@@ -196,7 +196,7 @@ Applications for Health care use to BLE modules
                 android:layout_height="85dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 6"
                 android:visibility="gone"/>
@@ -259,7 +259,7 @@ Applications for Health care use to BLE modules
                 android:layout_width="85dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 7"
                 android:visibility="gone"/>
@@ -270,7 +270,7 @@ Applications for Health care use to BLE modules
                 android:layout_height="85dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 8"
                 android:visibility="gone"/>
@@ -281,7 +281,7 @@ Applications for Health care use to BLE modules
                 android:layout_height="85dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/green_circle_button_off"
+                android:background="@drawable/black_circle_button_off"
                 android:gravity="center"
                 android:text="node 9"
                 android:visibility="gone"/>

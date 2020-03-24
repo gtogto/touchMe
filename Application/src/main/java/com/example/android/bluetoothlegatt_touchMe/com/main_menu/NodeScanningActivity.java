@@ -72,6 +72,8 @@ public class NodeScanningActivity extends Activity {
     public static int node_count;
     public static String node_B;
 
+    public static int scan_node_count;
+
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -206,10 +208,12 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
 
-                nodeBtn1.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn1.setBackgroundResource(R.drawable.green_circle_button_on);
 
                 //nodeBtn1.setText("Node 1 Battery " + node_battery + "%");
                 nodeBtn2.setVisibility(View.VISIBLE);
+
+                scan_node_count = 1;
 
                 //management_node();
             }
@@ -230,13 +234,13 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
 
-                nodeBtn2.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn2.setBackgroundResource(R.drawable.green_circle_button_on);
 
                 //nodeBtn2.setText("Node 2 Battery " + node_battery + "%");
 
                 //management_node();
                 nodeBtn3.setVisibility(View.VISIBLE);
-
+                scan_node_count = 2;
             }
         });
 
@@ -255,11 +259,11 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
 
-                nodeBtn3.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn3.setBackgroundResource(R.drawable.green_circle_button_on);
 
                 //nodeBtn3.setText("Node 3 Battery " + node_battery + "%");
                 nodeBtn4.setVisibility(View.VISIBLE);
-
+                scan_node_count = 3;
                 //management_node();
             }
         });
@@ -279,11 +283,11 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
 
-                nodeBtn4.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn4.setBackgroundResource(R.drawable.green_circle_button_on);
 
                 //nodeBtn4.setText("Node 4 Battery " + node_battery + "%");
                 nodeBtn5.setVisibility(View.VISIBLE);
-
+                scan_node_count = 4;
                 //management_node();
             }
         });
@@ -303,11 +307,11 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
 
-                nodeBtn5.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn5.setBackgroundResource(R.drawable.green_circle_button_on);
                 nodeBtn6.setVisibility(View.VISIBLE);
 
                 //nodeBtn5.setText("Node 5 Battery " + node_battery + "%");
-
+                scan_node_count = 5;
                 //management_node();
             }
         });
@@ -327,11 +331,11 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
 
-                nodeBtn6.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn6.setBackgroundResource(R.drawable.green_circle_button_on);
                 nodeBtn7.setVisibility(View.VISIBLE);
 
                 //nodeBtn6.setText("Node 6 Battery " + node_battery + "%");
-
+                scan_node_count = 6;
                 //management_node();
             }
         });
@@ -351,8 +355,9 @@ public class NodeScanningActivity extends Activity {
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 //nodeBtn6.setText("Node 6 Battery " + node_battery + "%");
                 //management_node();
-                nodeBtn7.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn7.setBackgroundResource(R.drawable.green_circle_button_on);
                 nodeBtn8.setVisibility(View.VISIBLE);
+                scan_node_count = 7;
 
             }
         });
@@ -371,9 +376,9 @@ public class NodeScanningActivity extends Activity {
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 //nodeBtn6.setText("Node 6 Battery " + node_battery + "%");
                 //management_node();
-                nodeBtn8.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn8.setBackgroundResource(R.drawable.green_circle_button_on);
                 nodeBtn9.setVisibility(View.VISIBLE);
-
+                scan_node_count = 8;
             }
         });
         nodeBtn9.setOnClickListener(new View.OnClickListener() {
@@ -389,12 +394,15 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[6] = 0x00;
                 cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-                nodeBtn9.setBackgroundResource(R.drawable.green_circle_button);
+                nodeBtn9.setBackgroundResource(R.drawable.green_circle_button_on);
                 //nodeBtn6.setText("Node 6 Battery " + node_battery + "%");
                 //management_node();
+                Toast.makeText(NodeScanningActivity.this, "No more can be added, The maximum number of nodes is 9", Toast.LENGTH_SHORT).show();
+                scan_node_count = 9;
             }
         });
 
+        //node_count = scan_node_count;
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);

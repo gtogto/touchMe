@@ -22,9 +22,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db35a5f5-e765-4a97-861c-d3e6157ff084" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" afterDir="false" />
     </list>
@@ -44,32 +49,56 @@
     <window id="1">
       <content type="file-editors">
         <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="397">
+                    <caret line="186" column="19" lean-forward="true" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#7793#7794#0" expanded="true" />
+                      <element signature="e#7854#7855#0" expanded="true" />
+                      <element signature="e#14100#14101#0" expanded="true" />
+                      <element signature="e#14131#14132#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/report_analysis.xml">
+                <provider editor-type-id="android-designer2" />
                 <provider selected="true" editor-type-id="text-editor">
-                  <state>
+                  <state relative-caret-position="1482">
                     <caret line="78" selection-start-line="78" selection-end-line="78" />
                   </state>
                 </provider>
-                <provider editor-type-id="android-designer2" />
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/set_up.xml">
+                <provider editor-type-id="android-designer2" />
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="2242">
                     <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
                   </state>
                 </provider>
-                <provider editor-type-id="android-designer2" />
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="19">
-                    <caret line="539" column="41" selection-start-line="539" selection-start-column="41" selection-end-line="539" selection-end-column="41" />
+                  <state relative-caret-position="721">
+                    <caret line="709" selection-start-line="709" selection-end-line="711" selection-end-column="67" />
                     <folding>
                       <element signature="imports" expanded="true" />
                       <element signature="e#23462#23952#0" expanded="true" />
@@ -82,40 +111,47 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="626">
-                    <caret line="208" column="35" selection-start-line="208" selection-end-line="209" />
+                  <state relative-caret-position="306">
+                    <caret line="210" column="80" selection-start-line="210" selection-start-column="80" selection-end-line="210" selection-end-column="80" />
+                    <folding>
+                      <element signature="e#10180#11131#0" expanded="true" />
+                      <element signature="e#11130#11131#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml">
+                <provider editor-type-id="android-designer2" />
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="817">
-                    <caret line="304" selection-start-line="304" selection-end-line="304" />
+                  <state relative-caret-position="-10">
+                    <caret line="368" column="35" lean-forward="true" selection-start-line="368" selection-start-column="35" selection-end-line="368" selection-end-column="35" />
                   </state>
                 </provider>
-                <provider editor-type-id="android-designer2" />
               </entry>
             </file>
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="959">
-                    <caret line="430" column="40" lean-forward="true" selection-start-line="430" selection-start-column="40" selection-end-line="430" selection-end-column="40" />
+                  <state relative-caret-position="570">
+                    <caret line="294" column="33" lean-forward="true" selection-start-line="294" selection-start-column="33" selection-end-line="294" selection-end-column="33" />
                     <folding>
                       <element signature="imports" expanded="true" />
-                      <element signature="e#5212#5408#0" expanded="true" />
-                      <element signature="e#5407#5408#0" expanded="true" />
-                      <element signature="e#5608#5788#0" expanded="true" />
-                      <element signature="e#5787#5788#0" expanded="true" />
-                      <element signature="e#13322#15459#0" />
-                      <element signature="e#15523#16202#0" expanded="true" />
-                      <element signature="e#16201#16202#0" expanded="true" />
-                      <element signature="e#19649#19935#0" expanded="true" />
-                      <element signature="e#19934#19935#0" expanded="true" />
-                      <element signature="e#21061#21209#0" expanded="true" />
-                      <element signature="e#21208#21209#0" expanded="true" />
+                      <element signature="e#6537#6763#0" expanded="true" />
+                      <element signature="e#6762#6763#0" expanded="true" />
+                      <element signature="e#8142#10830#0" expanded="true" />
+                      <element signature="e#10829#10830#0" expanded="true" />
+                      <element signature="e#16589#17056#0" expanded="true" />
+                      <element signature="e#17055#17056#0" expanded="true" />
+                      <element signature="e#17096#17596#0" expanded="true" />
+                      <element signature="e#17595#17596#0" expanded="true" />
+                      <element signature="e#14500#15179#0" expanded="true" />
+                      <element signature="e#15178#15179#0" expanded="true" />
+                      <element signature="e#22326#22612#0" expanded="true" />
+                      <element signature="e#22611#22612#0" expanded="true" />
+                      <element signature="e#23738#23886#0" expanded="true" />
+                      <element signature="e#23885#23886#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -126,7 +162,7 @@
       </content>
     </window>
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="2383af08820d7ece" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Galaxy_S9_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -144,34 +180,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="6118">
-              <caret line="322" column="44" selection-start-line="322" selection-start-column="29" selection-end-line="322" selection-end-column="44" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/LoginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1121">
-              <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/start_Activity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -196,8 +204,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5871">
-              <caret line="370" column="22" selection-start-line="370" selection-start-column="22" selection-end-line="370" selection-end-column="22" />
+            <state relative-caret-position="228">
+              <caret line="483" column="102" selection-start-line="483" selection-start-column="102" selection-end-line="483" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,16 +214,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-mdpi/circie_button.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
+        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="356">
+              <caret line="881" column="32" selection-start-line="881" selection-start-column="32" selection-end-line="881" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,14 +243,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4246">
-              <caret line="284" selection-start-line="284" selection-end-line="284" />
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="283" column="69" selection-start-line="283" selection-start-column="69" selection-end-line="283" selection-end-column="69" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml">
           <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="707">
+              <caret line="237" column="65" selection-start-line="237" selection-start-column="65" selection-end-line="237" selection-end-column="65" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -252,8 +276,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DecToBCDArray</find>
-      <find>stringToSubString</find>
       <find>auto</find>
       <find>여</find>
       <find>tr</find>
@@ -282,6 +304,8 @@
       <find>wifi</find>
       <find>timeThread</find>
       <find>testStart</find>
+      <find>dest</find>
+      <find>scan_node</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -316,8 +340,6 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceScanActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Application/build.gradle" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/report_analysis.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/set_up.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/ReportAnalysisActivity.java" />
@@ -325,10 +347,12 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml" />
       </list>
     </option>
   </component>
@@ -344,8 +368,8 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -378,6 +402,17 @@
               <item name="bluetoothlegatt_touchMe" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="main_menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="touch_Me_BLE" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Application" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="touch_Me_BLE" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Application" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="touch_Me_BLE" type="1abcf292:AndroidViewProjectNode" />
@@ -507,7 +542,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5011547" side_tool="true" weight="0.18550107" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49884528" visible="true" weight="0.18550107" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49884528" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="2" sideWeight="0.5011547" side_tool="true" weight="0.18550107" />
       <window_info id="Build Variants" order="3" sideWeight="0.5011547" side_tool="true" weight="0.18550107" />
       <window_info id="Image Layers" order="4" />
@@ -516,7 +551,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" sideWeight="0.5011547" side_tool="true" weight="0.18550107" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.32942432" />
-      <window_info active="true" anchor="bottom" x="-1899" y="376" width="1876" height="505" id="Logcat" order="1" sideWeight="0.49733475" visible="true" weight="0.4477612" />
+      <window_info anchor="bottom" x="-1882" y="322" width="1876" height="505" id="Logcat" order="1" sideWeight="0.49733475" type="SLIDING" weight="0.7334755" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.102345414" />
       <window_info anchor="bottom" id="Android Profiler" order="3" weight="0.32942432" />
       <window_info anchor="bottom" id="Debug" order="4" />
@@ -578,13 +613,7 @@
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ubio_logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2ad9bfadafd430f8dbad1412b3cf8d16/appcompat-v7-28.0.0/res/values-v28/values-v28.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2ad9bfadafd430f8dbad1412b3cf8d16/appcompat-v7-28.0.0/res/values-v28/values-v28.xml" />
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -780,17 +809,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4693">
-          <caret line="286" column="53" selection-start-line="286" selection-start-column="53" selection-end-line="286" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://B:/KETI 과제/2019~2020-자기장센서과제-By.Syublee/1차년도_424B9674/Magnetic_Controller/제스처데모/mgc_to_serial/src/task_mgc.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13491">
           <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="535" column="25" selection-start-line="535" selection-start-column="25" selection-end-line="535" selection-end-column="25" />
+          <folding>
+            <element signature="e#22023#22024#0" expanded="true" />
+            <element signature="e#22072#22073#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -800,14 +833,6 @@
           <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="6118">
-          <caret line="322" column="44" selection-start-line="322" selection-start-column="29" selection-end-line="322" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -833,19 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5871">
-          <caret line="370" column="22" selection-start-line="370" selection-start-column="22" selection-end-line="370" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-mdpi/circie_button.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -863,7 +875,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/report_analysis.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="1482">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
@@ -877,22 +889,10 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/DeviceControlActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="539" column="41" selection-start-line="539" selection-start-column="41" selection-end-line="539" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#23462#23952#0" expanded="true" />
-            <element signature="e#23951#23952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="105" column="31" lean-forward="true" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+        <state relative-caret-position="228">
+          <caret line="483" column="102" selection-start-line="483" selection-start-column="102" selection-end-line="483" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -901,62 +901,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/Common/CommonData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        <state relative-caret-position="242">
+          <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/os/Handler.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/SetupActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="535" column="25" selection-start-line="535" selection-start-column="25" selection-end-line="535" selection-end-column="25" />
+        <state relative-caret-position="721">
+          <caret line="709" selection-start-line="709" selection-end-line="711" selection-end-column="67" />
           <folding>
-            <element signature="e#22023#22024#0" expanded="true" />
-            <element signature="e#22072#22073#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#23462#23952#0" expanded="true" />
+            <element signature="e#23951#23952#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="210" column="80" selection-start-line="210" selection-start-column="80" selection-end-line="210" selection-end-column="80" />
+          <folding>
+            <element signature="e#10180#11131#0" expanded="true" />
+            <element signature="e#11130#11131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/run_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="304" selection-start-line="304" selection-end-line="304" />
+        <state relative-caret-position="-10">
+          <caret line="368" column="35" lean-forward="true" selection-start-line="368" selection-start-column="35" selection-end-line="368" selection-end-column="35" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/NodeScanningActivity.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-mdpi/circie_button.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/BluetoothLeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="208" column="35" selection-start-line="208" selection-end-line="209" />
+        <state relative-caret-position="356">
+          <caret line="881" column="32" selection-start-line="881" selection-start-column="32" selection-end-line="881" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/node_scanning.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="283" column="69" selection-start-line="283" selection-start-column="69" selection-end-line="283" selection-end-column="69" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/device_mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4246">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
+        <state relative-caret-position="707">
+          <caret line="237" column="65" selection-start-line="237" selection-start-column="65" selection-end-line="237" selection-end-column="65" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/RunActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="959">
-          <caret line="430" column="40" lean-forward="true" selection-start-line="430" selection-start-column="40" selection-end-line="430" selection-end-column="40" />
+        <state relative-caret-position="570">
+          <caret line="294" column="33" lean-forward="true" selection-start-line="294" selection-start-column="33" selection-end-line="294" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5212#5408#0" expanded="true" />
-            <element signature="e#5407#5408#0" expanded="true" />
-            <element signature="e#5608#5788#0" expanded="true" />
-            <element signature="e#5787#5788#0" expanded="true" />
-            <element signature="e#13322#15459#0" />
-            <element signature="e#15523#16202#0" expanded="true" />
-            <element signature="e#16201#16202#0" expanded="true" />
-            <element signature="e#19649#19935#0" expanded="true" />
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#21061#21209#0" expanded="true" />
-            <element signature="e#21208#21209#0" expanded="true" />
+            <element signature="e#6537#6763#0" expanded="true" />
+            <element signature="e#6762#6763#0" expanded="true" />
+            <element signature="e#8142#10830#0" expanded="true" />
+            <element signature="e#10829#10830#0" expanded="true" />
+            <element signature="e#16589#17056#0" expanded="true" />
+            <element signature="e#17055#17056#0" expanded="true" />
+            <element signature="e#17096#17596#0" expanded="true" />
+            <element signature="e#17595#17596#0" expanded="true" />
+            <element signature="e#14500#15179#0" expanded="true" />
+            <element signature="e#15178#15179#0" expanded="true" />
+            <element signature="e#22326#22612#0" expanded="true" />
+            <element signature="e#22611#22612#0" expanded="true" />
+            <element signature="e#23738#23886#0" expanded="true" />
+            <element signature="e#23885#23886#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/bluetoothlegatt_touchMe/com/main_menu/DeviceMappingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="186" column="19" lean-forward="true" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7793#7794#0" expanded="true" />
+            <element signature="e#7854#7855#0" expanded="true" />
+            <element signature="e#14100#14101#0" expanded="true" />
+            <element signature="e#14131#14132#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -62,6 +62,8 @@ import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_CHAR_UUID;
 import static com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService.RX_SERVICE_UUID;
 import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity.run_btn;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.node_count;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.scan_node_count;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.act_flag;
 
 /**
@@ -103,7 +105,7 @@ public class RunActivity extends Activity {
     private Boolean isRunning = true;
 
     private TextView node1, node2, node3, node4, node5, node6;
-    private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6;
+    private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6, nodeBtn7, nodeBtn8, nodeBtn9;
 
     private int timer_flag;
 
@@ -137,13 +139,16 @@ public class RunActivity extends Activity {
         nodeBtn4.setBackgroundResource(R.drawable.black_circle_button_off);
         nodeBtn5.setBackgroundResource(R.drawable.black_circle_button_off);
         nodeBtn6.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn7.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn8.setBackgroundResource(R.drawable.black_circle_button_off);
+        nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
     }
     protected void Update() {
         Runnable updater = new Runnable() {
             public void run() {
-                node_act = rnd.nextInt(7);
+                node_act = rnd.nextInt(scan_node_count+1);
 
-                System.out.println("Random num = " + node_act);
+                System.out.println("Random num "+ "[" + scan_node_count + "] = " + node_act);
             }
         };
         rnd_handler.post(updater);
@@ -244,7 +249,9 @@ public class RunActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getStandardSize();
 
-        System.out.println("mBluetoothLeService value run = " + mBluetoothLeService) ;
+        //System.out.println("mBluetoothLeService value run = " + mBluetoothLeService) ;
+        System.out.println("get node scan count 0 = " + node_count) ;
+        System.out.println("get node scan count 1 = " + scan_node_count) ;
 
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
@@ -259,9 +266,9 @@ public class RunActivity extends Activity {
         node3 = (TextView)findViewById(R.id.node3);        node4 = (TextView)findViewById(R.id.node4);
         node5 = (TextView)findViewById(R.id.node5);        node6 = (TextView)findViewById(R.id.node6);
 
-        nodeBtn1 = (Button)findViewById(R.id.nodeBtn1);        nodeBtn2 = (Button)findViewById(R.id.nodeBtn2);
-        nodeBtn3 = (Button)findViewById(R.id.nodeBtn3);        nodeBtn4 = (Button)findViewById(R.id.nodeBtn4);
-        nodeBtn5 = (Button)findViewById(R.id.nodeBtn5);        nodeBtn6 = (Button)findViewById(R.id.nodeBtn6);
+        nodeBtn1 = (Button)findViewById(R.id.nodeBtn1);        nodeBtn2 = (Button)findViewById(R.id.nodeBtn2);        nodeBtn3 = (Button)findViewById(R.id.nodeBtn3);
+        nodeBtn4 = (Button)findViewById(R.id.nodeBtn4);        nodeBtn5 = (Button)findViewById(R.id.nodeBtn5);        nodeBtn6 = (Button)findViewById(R.id.nodeBtn6);
+        nodeBtn7 = (Button)findViewById(R.id.nodeBtn7);        nodeBtn8 = (Button)findViewById(R.id.nodeBtn8);        nodeBtn9 = (Button)findViewById(R.id.nodeBtn9);
 
         master = (Button)findViewById(R.id.master);
 
@@ -288,6 +295,76 @@ public class RunActivity extends Activity {
         else if (act_flag == 1) {
             run_mode_change.setText("수동");
         }
+
+        switch (scan_node_count) {
+            case 0:
+                Toast.makeText(RunActivity.this, "No have scan node !", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                break;
+            case 5:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                break;
+            case 6:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                break;
+            case 7:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);
+                break;
+            case 8:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);
+                nodeBtn8.setVisibility(View.VISIBLE);
+                break;
+            case 9:
+                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);
+                nodeBtn8.setVisibility(View.VISIBLE);
+                nodeBtn9.setVisibility(View.VISIBLE);
+                break;
+        }
+
 
         mStartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -316,65 +393,6 @@ public class RunActivity extends Activity {
             }
         });
 
-
-        /* node Button */
-        /*
-        nodeBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_DO);
-                sound_clicked_num ++;
-
-            }
-        });
-
-        nodeBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RE);
-                sound_clicked_num ++;
-            }
-        });
-
-        nodeBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_MI);
-                sound_clicked_num ++;
-            }
-        });
-
-        nodeBtn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_PA);
-                sound_clicked_num ++;
-            }
-        });
-
-        nodeBtn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SO);
-                sound_clicked_num ++;
-            }
-        });
-
-        nodeBtn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RA);
-                sound_clicked_num ++;
-            }
-        });
-
-        master.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
-                sound_clicked_num ++;
-            }
-        });*/
 
     }
 
@@ -409,28 +427,40 @@ public class RunActivity extends Activity {
                     handler.sendMessage(msg);
 
                     if (node_act == 1) {
-                        nodeBtn1.setBackgroundResource(R.drawable.green_circle_button);
+                        nodeBtn1.setBackgroundResource(R.drawable.green_circle_button_on);
                     } else nodeBtn1.setBackgroundResource(R.drawable.black_circle_button_off);
 
                     if (node_act == 2) {
-                        nodeBtn2.setBackgroundResource(R.drawable.green_circle_button);
+                        nodeBtn2.setBackgroundResource(R.drawable.green_circle_button_on);
                     } else nodeBtn2.setBackgroundResource(R.drawable.black_circle_button_off);
 
                     if (node_act == 3) {
-                        nodeBtn3.setBackgroundResource(R.drawable.green_circle_button);
+                        nodeBtn3.setBackgroundResource(R.drawable.green_circle_button_on);
                     } else nodeBtn3.setBackgroundResource(R.drawable.black_circle_button_off);
 
                     if (node_act == 4) {
-                        nodeBtn4.setBackgroundResource(R.drawable.green_circle_button);
+                        nodeBtn4.setBackgroundResource(R.drawable.green_circle_button_on);
                     } else nodeBtn4.setBackgroundResource(R.drawable.black_circle_button_off);
 
                     if (node_act == 5) {
-                        nodeBtn5.setBackgroundResource(R.drawable.green_circle_button);
+                        nodeBtn5.setBackgroundResource(R.drawable.green_circle_button_on);
                     } else nodeBtn5.setBackgroundResource(R.drawable.black_circle_button_off);
 
                     if (node_act == 6) {
-                        nodeBtn6.setBackgroundResource(R.drawable.green_circle_button);
+                        nodeBtn6.setBackgroundResource(R.drawable.green_circle_button_on);
                     } else nodeBtn6.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 7) {
+                        nodeBtn7.setBackgroundResource(R.drawable.green_circle_button_on);
+                    } else nodeBtn7.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 8) {
+                        nodeBtn8.setBackgroundResource(R.drawable.green_circle_button_on);
+                    } else nodeBtn8.setBackgroundResource(R.drawable.black_circle_button_off);
+
+                    if (node_act == 9) {
+                        nodeBtn9.setBackgroundResource(R.drawable.green_circle_button_on);
+                    } else nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
 
                     /*
                     switch (sound_clicked_num) {
