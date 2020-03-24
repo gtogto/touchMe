@@ -32,4 +32,4 @@ This application is a vehicle application that controls the ambient lighting in 
 Screenshots
 -------------
 
-<img src="https://user-images.githubusercontent.com/30851459/75013141-ecb89900-54c6-11ea-865c-200d8ef8e516.png">
+<img src="https://user-images.githubusercontent.com/30851459/77404481-2695fb80-6df5-11ea-9ec1-deb9cda27aa9.png">
