@@ -92,6 +92,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     public static int act_flag;
     public static int auto_flag;
     public static int cds_flag;
+    public static int voice_flag;
 
     public static Switch OnOff;
 
@@ -110,6 +111,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     private static final String PROGRESS1 = "SEEKBAR_AGE";
     private static final String PROGRESS2 = "SEEKBAR_WEIGHT";
     private static final String PROGRESS3 = "SEEKBAR_TIMER";
+    private static final String VOICE1 = "VOICE_SWITCHING";
     private int save;
 
     public Point getScreenSize(Activity activity) {
@@ -510,14 +512,18 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
-
+                    voice_flag = 1;
                 }
                 else {
                     Toast tMsg = Toast.makeText(SetupActivity.this, "Voice OFF", Toast.LENGTH_SHORT);
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    voice_flag = 0;
                 }
+
+                editor.putInt(VOICE1, voice_flag);
+                editor.commit();
 
             }
         });
@@ -710,6 +716,12 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         seekBar_age.setProgress(preferences.getInt(PROGRESS1,0));
         seekBar_weight.setProgress(preferences.getInt(PROGRESS2,0));
         seekBar_timer.setProgress(preferences.getInt(PROGRESS3,0));
+        if (voice_flag == 1) {
+            OnOff.setChecked(true);
+        }
+        else if(voice_flag == 0) {
+            OnOff.setChecked(false);
+        }
     }
 
     @Override
