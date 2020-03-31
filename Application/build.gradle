@@ -55,9 +55,9 @@ android {
 }
 
 dependencies {
-    //implementation 'com.android.support:appcompat-v7:27.1.1'
-    //implementation 'com.android.support:design:27.1.1'
-    implementation 'de.blox.treeview:treeview:0.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    //implementation 'de.blox.treeview:treeview:0.1.0'
     //implementation 'de.blox:graphview:0.6.1'
 }
 

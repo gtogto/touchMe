@@ -20,11 +20,6 @@ import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.ViewHolder;
 
-
-import de.blox.treeview.BaseTreeAdapter;
-import de.blox.treeview.TreeNode;
-import de.blox.treeview.TreeView;
-
 /**
  * Created by GTO on 2020-01-22.
  */
