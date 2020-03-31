@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -103,6 +104,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     public static SeekBar seekBar_timer;
     public static TextView output_timer;
     public static int timer_number;
+    public static int timer_setting;
+
+    public static TextView timer_value_out;
 
     int standardSize_X, standardSize_Y;
     float density;
@@ -229,6 +233,9 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         RadioButton pink_color = (RadioButton) findViewById(R.id.radio_pink);
         RadioButton sky_color = (RadioButton) findViewById(R.id.radio_sky);
 
+        Button min_btn = (Button) findViewById(R.id.min_btn);
+        Button plus_btn = (Button) findViewById(R.id.plus_btn);
+
         OnOff = (Switch)findViewById(R.id.switch_voice);
 
         RadioButton radio_contact = (RadioButton) findViewById(R.id.radio_contact);
@@ -259,7 +266,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         TextView Sensitivity_mode_txt = (TextView)findViewById(R.id.Sensitivity_mode_txt);
 
         TextView timer_txt = (TextView)findViewById(R.id.timer_txt);
-        TextView timer_value_out = (TextView)findViewById(R.id.timer_value_out);
+        timer_value_out = (TextView)findViewById(R.id.timer_value_out);
         TextView timer_txt2 = (TextView)findViewById(R.id.timer_txt2);
 
 
@@ -294,6 +301,8 @@ public class SetupActivity extends Activity implements View.OnClickListener {
 
         preferences = getSharedPreferences(" ", MODE_PRIVATE);
         editor = preferences.edit();
+
+        timer_value_out.setText(""+timer_setting);
 
         //TODO Age selection SeekBar menu
         seekBar_age.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -680,6 +689,32 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 //timer_number = seekBar_timer.getProgress();
                 editor.putInt(PROGRESS3, seekBar.getProgress());
                 editor.commit();
+            }
+        });
+
+        min_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (timer_setting > 0){
+                    timer_setting = timer_setting - 1;
+                }
+                else {
+                    timer_setting = 20;
+                }
+                timer_value_out.setText(""+timer_setting);
+            }
+        });
+
+        plus_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (timer_setting < 20){
+                    timer_setting = timer_setting + 1;
+                }
+                else {
+                    timer_setting = 0;
+                }
+                timer_value_out.setText(""+timer_setting);
             }
         });
 

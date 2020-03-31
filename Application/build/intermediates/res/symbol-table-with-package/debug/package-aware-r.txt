@@ -930,6 +930,7 @@ id menu_scan
 id menu_stop
 id message
 id middle
+id min_btn
 id mini
 id multiply
 id navigation_header_container
@@ -958,6 +959,7 @@ id parallax
 id parentPanel
 id parent_matrix
 id pin
+id plus_btn
 id progress_circular
 id progress_horizontal
 id radiation_mode_txt

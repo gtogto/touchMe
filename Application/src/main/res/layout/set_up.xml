@@ -6,7 +6,8 @@ Applications for Health care use to BLE modules
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools">
 
     <LinearLayout
         android:id="@+id/set_up_main_Linear"
@@ -741,6 +742,19 @@ Applications for Health care use to BLE modules
                 android:text="동 작 시 간"
                 />
 
+            <Button
+                android:id="@+id/min_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/circie_button"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/timer_value_out"
                 android:layout_width="wrap_content"
@@ -758,8 +772,22 @@ Applications for Health care use to BLE modules
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/timer_value_out"
-                android:text="분">
+                android:text="초">
             </TextView>
+
+            <Button
+                android:id="@+id/plus_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/circie_button"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="+" />
 
             <SeekBar
                 android:id="@+id/timer_seekbar"
@@ -767,8 +795,10 @@ Applications for Health care use to BLE modules
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="16dp"
-                android:max="200">
+                android:max="200"
+                android:visibility="gone">
             </SeekBar>
+
 
         </LinearLayout>
 

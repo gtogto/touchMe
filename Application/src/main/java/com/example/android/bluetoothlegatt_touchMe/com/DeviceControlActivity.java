@@ -481,7 +481,7 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
         final Intent i = new Intent(this, NodeScanningActivity.class);
         startActivityForResult(i, 201);
-        mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST2);
+        //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CommonData.TOUCH_GTO_TEST2);
 
     }
 

@@ -67,7 +67,7 @@ public class NodeScanningActivity extends Activity {
     int standardSize_X, standardSize_Y;
     float density;
 
-    public String node_number;
+    public String node_number, node_COMMAND;
     public static int node_battery;
     public static int node_count;
     public static String node_B;
@@ -185,8 +185,9 @@ public class NodeScanningActivity extends Activity {
                 cmd_bytes[7] = 0x3E;
 
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-                master.setBackgroundResource(R.drawable.orange_circle_button);
-                nodeBtn1.setVisibility(View.VISIBLE);
+
+                //master.setBackgroundResource(R.drawable.orange_circle_button);
+                //nodeBtn1.setVisibility(View.VISIBLE);
 
                 //master.setText("MASTER Battery " + node_battery + "%");
 
@@ -522,12 +523,151 @@ public class NodeScanningActivity extends Activity {
         System.out.println("sub String : "+   "[7] " + hexToASCII(hex_value).substring(7, 8));*/
 
         //String node_number;
+        node_COMMAND = hexToASCII(hex_value).substring(1, 2);
         node_number = hexToASCII(hex_value).substring(2, 3);
         node_B = (hexToASCII(hex_value).substring(6, 7));
-
         node_count = Integer.parseInt(node_number);
-        //int battery_Num = Integer.parseInt(node_B);
+        String command_s = "s";
+        if (node_COMMAND.equals(command_s)) {
+            if (node_number.equals("0")){
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x30;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else if (node_number.equals("1"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x31;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("2"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x32;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("3"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x33;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("4"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x34;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("5"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x35;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("6"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x36;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("7"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x37;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("8"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x38;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+            else  if (node_number.equals("9"))
+            {
+                byte[] cmd_bytes = new byte[8];
+                cmd_bytes[0] = 0x3C;
+                cmd_bytes[1] = 0x47;
+                cmd_bytes[2] = 0x39;
+                cmd_bytes[3] = 0x00;
+                cmd_bytes[4] = 0x00;
+                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;
+                cmd_bytes[7] = 0x3E;
+                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+            }
+        }
 
+        final String command_g = "g";
+        if(node_COMMAND.equals(command_g)) {
+            master.setBackgroundResource(R.drawable.orange_circle_button);
+            nodeBtn1.setVisibility(View.VISIBLE);
+        }
+
+        //int battery_Num = Integer.parseInt(node_B);
+        /*
         int test_1 = Integer.parseInt(node_B, 16);
         //management_node();
         //node_battery = 0;
@@ -540,7 +680,7 @@ public class NodeScanningActivity extends Activity {
 
         if (test_1 == 13) {
             battery_Num = 10;
-        }
+        }*/
 
         /*
         master.setText("Master Battery " + node_battery + "%");
@@ -550,7 +690,7 @@ public class NodeScanningActivity extends Activity {
         nodeBtn4.setText("Node 4 Battery " + node_battery + "%");
         nodeBtn5.setText("Node 5 Battery " + node_battery + "%");
         nodeBtn6.setText("Node 6 Battery " + node_battery + "%");*/
-
+        /*
         if (node_number.equals("0")){
             master.setText("Master Battery " + battery_Num*10 + "%");
         }
@@ -590,7 +730,7 @@ public class NodeScanningActivity extends Activity {
         else  if (node_number.equals("9"))
         {
             nodeBtn9.setText("Node 9 Battery " + battery_Num*10 + "%");
-        }
+        }*/
 
 
         Toast tMsg = Toast.makeText(NodeScanningActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
