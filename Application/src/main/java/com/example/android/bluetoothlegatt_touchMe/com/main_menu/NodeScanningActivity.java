@@ -165,8 +165,6 @@ public class NodeScanningActivity extends Activity {
         nodeBtn7 = (Button)findViewById(R.id.nodeBtn7);        nodeBtn8 = (Button)findViewById(R.id.nodeBtn8);
         nodeBtn9 = (Button)findViewById(R.id.nodeBtn9);        master = (Button)findViewById(R.id.master);
 
-        getStandardSize();
-
         TextView setup_txt = (TextView)findViewById(R.id.setup_txt);        // dynamic layout font
         setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));      // dynamic layout font
 

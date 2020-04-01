@@ -6,12 +6,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +38,30 @@ public class ReportAnalysisActivity extends Activity {
     private TextView mConnectionState;
     private BluetoothLeService mBluetoothLeService;
     private String mDeviceAddress;
+
+    int standardSize_X, standardSize_Y;
+    float density;
+
+    LinearLayout mainLayout;
+    Resources res;
+    Animation growAnim;
+
+
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density  = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x / density);
+        standardSize_Y = (int) (ScreenSize.y / density);
+    }
 
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
@@ -53,90 +84,115 @@ public class ReportAnalysisActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_analysis);
-        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로모드
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // 가로모드
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로모드
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // 가로모드
+        getStandardSize();
 
-        /*
-        TreeView treeView = findViewById(R.id.treeview);
+        TextView setup_txt = (TextView)findViewById(R.id.setup_txt);        // dynamic layout font
+        setup_txt.setTextSize((float) (standardSize_X / 8)); setup_txt.setTextSize((float) (standardSize_Y / 18));      // dynamic layout font
 
-        BaseTreeAdapter adapter = new BaseTreeAdapter<ViewHolder>(this, R.layout.node) {
-            @NonNull
-            @Override
-            public ViewHolder onCreateViewHolder(View view) {
-                return new ViewHolder(view);
-            }
+        res = getResources();
+        growAnim = AnimationUtils.loadAnimation(this, R.anim.grow);
+        mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
 
-            @Override
-            public void onBindViewHolder(ViewHolder viewHolder, Object data, int position) {
-                viewHolder.mTextView1.setText(data.toString());
-            }
-        };
+        addItem("Red", 180, Color.RED);
+        addItem("Green", 290, Color.GREEN);
+        addItem("Blue", 140, Color.BLUE);
+        addItem("Yellow", 170, Color.YELLOW);
+        addItem("Pink", 260, Color.DKGRAY);  // pink
+        addItem("Sky", 20, Color.CYAN);     // sky
 
-        BaseTreeAdapter adapter1 = new BaseTreeAdapter<ViewHolder>(this, R.layout.root) {
-            @NonNull
-            @Override
-            public ViewHolder onCreateViewHolder(View view) {
-                return new ViewHolder(view);
-            }
+    }
 
-            @Override
-            public void onBindViewHolder(ViewHolder viewHolder, Object data, int position) {
-                viewHolder.mTextView2.setText(data.toString());
-            }
-        };
+    private void addItem(String name, int value, int color) {
+        LinearLayout itemLayout = new LinearLayout(this);
+        itemLayout.setOrientation(LinearLayout.HORIZONTAL);
 
 
-        treeView.setAdapter(adapter1);
-
-        TreeNode rootNode = new TreeNode("MASTER");
-        TreeNode child1 = new TreeNode("node 1");
-        TreeNode child2 = new TreeNode("node 2");
-        TreeNode child3 = new TreeNode("node 3");
-        TreeNode child4 = new TreeNode("node 4");
-        TreeNode child5 = new TreeNode("node 5");
-        TreeNode child6 = new TreeNode("node 6");
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
 
 
-        TreeNode child7 = new TreeNode("C_7");
-        TreeNode child8 = new TreeNode("C_8");
-        TreeNode child9 = new TreeNode("Child 9");
-        TreeNode child10 = new TreeNode("Child 10");
-        TreeNode child11 = new TreeNode("C_11");
-        TreeNode child12 = new TreeNode("C_12");
-        TreeNode child13 = new TreeNode("C_13");
-        TreeNode child14 = new TreeNode("C_14");
+        LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        // Childs added to root
-        rootNode.addChild(child1);
-        rootNode.addChild(child2);
-        rootNode.addChild(child3);
-        rootNode.addChild(child4);
-        rootNode.addChild(child5);
-        rootNode.addChild(child6);
 
-        // Childs 3 & 4 added to Child 1
-        child1.addChild(child3);
-        child1.addChild(child4);
+        LinearLayout.LayoutParams params3 = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        // Childs 5 & 6 added to Child 2
-        child2.addChild(child5);
-        child2.addChild(child6);
 
-        // Childs 7, 8 & 9 added to Child 4
-        child4.addChild(child7);
-        child4.addChild(child8);
-        child4.addChild(child9);
+        // 텍스트뷰 추가
+        TextView textView = new TextView(this);
+        textView.setText(name);
+        params.width = 180;
+        params.setMargins(0, 4, 0, 4);  // textView layout control
+        itemLayout.addView(textView, params);
 
-        // Childs 10 & 11 added to Child 9
-        child9.addChild(child10);
-        child9.addChild(child11);
 
-        // Childs 12, 13 & 14 added to Child 10
-        child10.addChild(child12);
-        child10.addChild(child13);
-        child10.addChild(child14);
+        // 프로그레스바 추가
+        ProgressBar proBar = new ProgressBar(this, null,
 
-        adapter1.setRootNode(rootNode);*/
+                android.R.attr.progressBarStyleHorizontal);
+        proBar.setIndeterminate(false);
+        proBar.setMax(300);
+        proBar.setProgress(300);
+        if(color == Color.RED)
+            proBar.setProgressDrawable(
+
+                    getResources().getDrawable(R.drawable.progressbar_color_red));
+        else if(color == Color.GREEN)
+            proBar.setProgressDrawable(
+
+                    getResources().getDrawable(R.drawable.progressbar_color_green));
+        else if(color == Color.BLUE)
+            proBar.setProgressDrawable(
+
+                    getResources().getDrawable(R.drawable.progressbar_color_blue));
+
+        else if(color == Color.YELLOW)
+            proBar.setProgressDrawable(
+
+                    getResources().getDrawable(R.drawable.progressbar_color_yellow));
+
+        else if(color == Color.DKGRAY)  // PINK
+            proBar.setProgressDrawable(
+
+                    getResources().getDrawable(R.drawable.progressbar_color_pink));
+
+        else if(color == Color.CYAN)    // SKY
+            proBar.setProgressDrawable(
+
+                    getResources().getDrawable(R.drawable.progressbar_color_sky));
+
+
+        proBar.setAnimation(growAnim);
+
+
+        params2.height = 3;
+        params2.width = value * 3;
+        params2.gravity = Gravity.CENTER_VERTICAL;
+        itemLayout.addView(proBar, params2);
+
+        mainLayout.addView(itemLayout, params3);
+    }
+
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+
+        Toast.makeText(getApplicationContext(),
+
+                "onWindowFocusChanged : " + hasFocus, Toast.LENGTH_SHORT).show();
+
+
+        if(hasFocus) {
+            growAnim.start();
+        } else {
+            growAnim.reset();
+        }
     }
 
     //TODO BLE Packet receive

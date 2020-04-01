@@ -181,7 +181,10 @@ public class RunActivity extends Activity {
     protected void Update() {
         Runnable updater = new Runnable() {
             public void run() {
-                node_act = rnd.nextInt(scan_node_count+1);
+                node_act = rnd.nextInt((scan_node_count) + 1);
+                if (node_act == 0) {
+                    node_act = node_act+1;
+                }
                 System.out.println("Random num "+ "[" + scan_node_count + "] = " + node_act);
 
                 mode_count++;

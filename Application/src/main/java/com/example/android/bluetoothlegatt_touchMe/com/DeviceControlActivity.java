@@ -493,8 +493,9 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 
     public void onClick_report(View v) {        //Map info Activity     //Map Button
 
-        //final Intent i = new Intent(this, ReportAnalysisActivity.class);
-        //startActivityForResult(i, 201);
+        final Intent i = new Intent(this, ReportAnalysisActivity.class);
+        startActivityForResult(i, 201);
+
         //System.out.println("main device address = " + mDeviceAddress);
         //System.out.println("main device NAME = " + LIST_NAME);
         //System.out.println("main device UUID = " + LIST_UUID);

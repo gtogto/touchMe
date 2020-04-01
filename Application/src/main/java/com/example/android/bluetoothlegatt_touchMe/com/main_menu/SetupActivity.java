@@ -108,6 +108,15 @@ public class SetupActivity extends Activity implements View.OnClickListener {
 
     public static TextView timer_value_out;
 
+    private RadioButton radio_rand_color;
+    private RadioButton radio_one_color;
+    private RadioButton red_color;
+    private RadioButton green_color;
+    private RadioButton blue_color;
+    private RadioButton yellow_color;
+    private RadioButton pink_color;
+    private RadioButton sky_color;
+
     int standardSize_X, standardSize_Y;
     float density;
     public SharedPreferences.Editor editor;
@@ -223,15 +232,15 @@ public class SetupActivity extends Activity implements View.OnClickListener {
         RadioButton radio_dispersion = (RadioButton) findViewById(R.id.radio_dispersion);
         RadioButton radio_scenario = (RadioButton) findViewById(R.id.radio_scenario);
 
-        RadioButton radio_rand_color = (RadioButton) findViewById(R.id.radio_random_color);
-        RadioButton radio_one_color = (RadioButton) findViewById(R.id.radio_one_color);
+        radio_rand_color = (RadioButton) findViewById(R.id.radio_random_color);
+        radio_one_color = (RadioButton) findViewById(R.id.radio_one_color);
 
-        RadioButton red_color = (RadioButton) findViewById(R.id.radio_red);
-        RadioButton green_color = (RadioButton) findViewById(R.id.radio_green);
-        RadioButton blue_color = (RadioButton) findViewById(R.id.radio_blue);
-        RadioButton yellow_color = (RadioButton) findViewById(R.id.radio_yellow);
-        RadioButton pink_color = (RadioButton) findViewById(R.id.radio_pink);
-        RadioButton sky_color = (RadioButton) findViewById(R.id.radio_sky);
+        red_color = (RadioButton) findViewById(R.id.radio_red);
+        green_color = (RadioButton) findViewById(R.id.radio_green);
+        blue_color = (RadioButton) findViewById(R.id.radio_blue);
+        yellow_color = (RadioButton) findViewById(R.id.radio_yellow);
+        pink_color = (RadioButton) findViewById(R.id.radio_pink);
+        sky_color = (RadioButton) findViewById(R.id.radio_sky);
 
         Button min_btn = (Button) findViewById(R.id.min_btn);
         Button plus_btn = (Button) findViewById(R.id.plus_btn);
@@ -547,6 +556,8 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 color_flag = 0;
+                System.out.println("color flag value is : " + color_flag);
+                color_Change();
             }
         });
 
@@ -559,78 +570,11 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();
                 color_flag = 1;
+                System.out.println("color flag value is : " + color_flag);
+                color_Change();
             }
         });
 
-        if (color_flag == 0) {
-            radio_rand_color.setChecked(true);
-        } else {
-            radio_rand_color.setChecked(false);
-        }
-        if (color_flag == 1) {
-            radio_one_color.setChecked(true);
-        } else {
-            radio_one_color.setChecked(false);
-        }
-
-        red_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  R  E  D  ", Toast.LENGTH_SHORT);
-                tMsg.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout view = (LinearLayout) tMsg.getView();
-                tMsg.show();
-            }
-        });
-
-        green_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  G R E E N  ", Toast.LENGTH_SHORT);
-                tMsg.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout view = (LinearLayout) tMsg.getView();
-                tMsg.show();
-            }
-        });
-
-        blue_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  B L U E  ", Toast.LENGTH_SHORT);
-                tMsg.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout view = (LinearLayout) tMsg.getView();
-                tMsg.show();
-            }
-        });
-
-        yellow_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  Y E L L O W  ", Toast.LENGTH_SHORT);
-                tMsg.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout view = (LinearLayout) tMsg.getView();
-                tMsg.show();
-            }
-        });
-        pink_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  P I N K  ", Toast.LENGTH_SHORT);
-                tMsg.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout view = (LinearLayout) tMsg.getView();
-                tMsg.show();
-            }
-        });
-
-        sky_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  S K Y  ", Toast.LENGTH_SHORT);
-                tMsg.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout view = (LinearLayout) tMsg.getView();
-                tMsg.show();
-            }
-        });
 
 
         //TODO Sensitivity mode selection Radio menu
@@ -733,6 +677,84 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     public void update_timer() {
         output_timer.setText(new StringBuilder().append(timer_number));
         // seekbar의 이동 값에 따라 TextView에 리턴
+    }
+
+    public void color_Change() {
+        if (color_flag == 0) {
+            radio_rand_color.setChecked(true);
+
+            red_color.setChecked(false);
+            green_color.setChecked(false);
+            blue_color.setChecked(false);
+            yellow_color.setChecked(false);
+            pink_color.setChecked(false);
+            sky_color.setChecked(false);
+        } else {
+            radio_rand_color.setChecked(false);
+        }
+        if (color_flag == 1) {
+            radio_one_color.setChecked(true);
+            red_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast tMsg = Toast.makeText(SetupActivity.this, "  R  E  D  ", Toast.LENGTH_SHORT);
+                    tMsg.setGravity(Gravity.CENTER, 0, 0);
+                    LinearLayout view = (LinearLayout) tMsg.getView();
+                    tMsg.show();
+                }
+            });
+
+            green_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast tMsg = Toast.makeText(SetupActivity.this, "  G R E E N  ", Toast.LENGTH_SHORT);
+                    tMsg.setGravity(Gravity.CENTER, 0, 0);
+                    LinearLayout view = (LinearLayout) tMsg.getView();
+                    tMsg.show();
+                }
+            });
+
+            blue_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast tMsg = Toast.makeText(SetupActivity.this, "  B L U E  ", Toast.LENGTH_SHORT);
+                    tMsg.setGravity(Gravity.CENTER, 0, 0);
+                    LinearLayout view = (LinearLayout) tMsg.getView();
+                    tMsg.show();
+                }
+            });
+
+            yellow_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast tMsg = Toast.makeText(SetupActivity.this, "  Y E L L O W  ", Toast.LENGTH_SHORT);
+                    tMsg.setGravity(Gravity.CENTER, 0, 0);
+                    LinearLayout view = (LinearLayout) tMsg.getView();
+                    tMsg.show();
+                }
+            });
+            pink_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast tMsg = Toast.makeText(SetupActivity.this, "  P I N K  ", Toast.LENGTH_SHORT);
+                    tMsg.setGravity(Gravity.CENTER, 0, 0);
+                    LinearLayout view = (LinearLayout) tMsg.getView();
+                    tMsg.show();
+                }
+            });
+
+            sky_color.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast tMsg = Toast.makeText(SetupActivity.this, "  S K Y  ", Toast.LENGTH_SHORT);
+                    tMsg.setGravity(Gravity.CENTER, 0, 0);
+                    LinearLayout view = (LinearLayout) tMsg.getView();
+                    tMsg.show();
+                }
+            });
+        } else {
+            radio_one_color.setChecked(false);
+        }
     }
 
     //TODO BLE Packet receive

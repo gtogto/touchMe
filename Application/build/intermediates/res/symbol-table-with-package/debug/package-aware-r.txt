@@ -15,6 +15,7 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim grow
 anim rotate
 anim scale_front
 anim translate
@@ -781,6 +782,12 @@ drawable pink_0
 drawable pink_1
 drawable pink_2
 drawable pink_circle_button
+drawable progressbar_color_blue
+drawable progressbar_color_green
+drawable progressbar_color_pink
+drawable progressbar_color_red
+drawable progressbar_color_sky
+drawable progressbar_color_yellow
 drawable red_0
 drawable red_1
 drawable red_2
@@ -918,6 +925,7 @@ id list_item
 id login_btn
 id logo_blue
 id logo_red
+id mainLayout
 id main_txt
 id mapping_btn
 id masked

@@ -582,7 +582,7 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     android:button="@animator/red_button">
-                    </RadioButton>
+                </RadioButton>
 
                 <RadioButton
                     android:id="@+id/radio_green"
@@ -590,9 +590,7 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
-                    android:button="@animator/green_button"
-                    >
-
+                    android:button="@animator/green_button">
                 </RadioButton>
 
                 <RadioButton
@@ -601,9 +599,7 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
-                    android:button="@animator/blue_button"
-                    >
-
+                    android:button="@animator/blue_button">
                 </RadioButton>
 
                 <RadioButton
@@ -612,9 +608,7 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
-                    android:button="@animator/yellow_button"
-                    >
-
+                    android:button="@animator/yellow_button">
                 </RadioButton>
 
                 <RadioButton
@@ -623,9 +617,7 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
-                    android:button="@animator/pink_button"
-                    >
-
+                    android:button="@animator/pink_button">
                 </RadioButton>
 
                 <RadioButton
@@ -634,9 +626,9 @@ Applications for Health care use to BLE modules
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:scaleType="fitXY"
-                    android:button="@animator/sky_button"
-                    >
+                    android:button="@animator/sky_button">
                 </RadioButton>
+
             </RadioGroup>
         </LinearLayout>
 
