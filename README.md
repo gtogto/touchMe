@@ -20,14 +20,19 @@ This application is a vehicle application that controls the ambient lighting in 
 - Android SDK 25
 - Android Build Tools v25.0.3
 - Android Support Repository
-- Target divices : LG G-pad 3
+- Target divices : LG G-pad 3, Galaxy S9+
 
 - 5 menus(.activity)
   * Set-up Device 
+	@ User info Setting
   * Node Scanning
+	@ Added Node and Node Battery
   * Device Mapping
+	@ Divice distance
   * Report & Analysis
+	@ Graph
   * Run 
+	@ Play Node
 
 Screenshots
 -------------
