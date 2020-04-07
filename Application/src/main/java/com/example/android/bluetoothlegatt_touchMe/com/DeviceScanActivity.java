@@ -16,6 +16,7 @@
 
 package com.example.android.bluetoothlegatt_touchMe.com;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ListActivity;
@@ -28,6 +29,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,6 +58,10 @@ public class DeviceScanActivity extends ListActivity {
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
 
+    private final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1;
+    private BluetoothManager bluetoothManager;
+    private BluetoothAdapter bluetoothAdapter;
+
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,8 +79,7 @@ public class DeviceScanActivity extends ListActivity {
 
         // Initializes a Bluetooth adapter.  For API level 18 and above, get a reference to
         // BluetoothAdapter through BluetoothManager.
-        final BluetoothManager bluetoothManager =
-                (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = bluetoothManager.getAdapter();
 
         // Checks if Bluetooth is supported on the device.
@@ -83,6 +88,7 @@ public class DeviceScanActivity extends ListActivity {
             finish();
             return;
         }
+
     }
 
     @Override

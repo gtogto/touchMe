@@ -43,10 +43,6 @@ ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:14:5-16:35
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:16:9-32
 	android:name
 		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-53
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:5-81
-	android:name
-		ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:18:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-78
 	android:name
