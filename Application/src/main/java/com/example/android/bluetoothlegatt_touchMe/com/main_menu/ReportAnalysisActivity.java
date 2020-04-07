@@ -184,7 +184,6 @@ public class ReportAnalysisActivity extends Activity {
 
 
         Toast.makeText(getApplicationContext(),
-
                 "onWindowFocusChanged : " + hasFocus, Toast.LENGTH_SHORT).show();
 
 

@@ -23,7 +23,7 @@
 19-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:15:9-53
 20        android:required="true" />
 20-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:16:9-32
-21<!--     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+21<!--     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />   ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION are not applicable // -->
 22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-78
 22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-76

@@ -359,11 +359,9 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
             hex_value += Integer.toString((b & 0xF0) >> 4, 16);
             hex_value += Integer.toString(b & 0x0F, 16);
         }
-
-        System.out.println("By. Device control activity : "+ hex_value);
+        //System.out.println("By. Device control activity : "+ hex_value);
         StringBuilder sb = new StringBuilder(packet.length * 2);
-
-        System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
+        //System.out.println("By. Device HEX To ASCII : "+ hexToASCII(hex_value));
         /*
         Toast tMsg = Toast.makeText(DeviceControlActivity.this, hexToASCII(hex_value), Toast.LENGTH_SHORT);
         tMsg.setGravity(Gravity.CENTER, 0, 0);

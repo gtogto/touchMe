@@ -100,10 +100,6 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\drawable-xxhdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_blue_0.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\blue_0.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
@@ -116,12 +112,12 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\6931bc3fe5868b0ab5606c1192ce8d93\\support-compat-27.1.1\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
@@ -142,10 +138,6 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\animator_green_button.xml.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\animator\\green_button.xml"
-    },
-    {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_yellow_0.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\yellow_0.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
@@ -208,16 +200,16 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-mdpi\\progressbar_color_blue.xml"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_linie_albastra_lr.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\linie_albastra_lr.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_linie_albastra_lr.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\linie_albastra_lr.png"
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -272,12 +264,12 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_ab_back_material.xml.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -312,16 +304,16 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\layout\\design_navigation_menu.xml"
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\6931bc3fe5868b0ab5606c1192ce8d93\\support-compat-27.1.1\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_black_circle_button_off.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\black_circle_button_off.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\6931bc3fe5868b0ab5606c1192ce8d93\\support-compat-27.1.1\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\layout\\design_navigation_menu.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
@@ -332,12 +324,12 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar.xml.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\layout\\design_layout_snackbar.xml"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_orange_circle_button_off.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\orange_circle_button_off.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar.xml.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\layout\\design_layout_snackbar.xml"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -384,12 +376,12 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
@@ -476,12 +468,12 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_wifi.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\wifi.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_wifi.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\wifi.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_dark.xml.flat",
@@ -568,12 +560,12 @@
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\wifi1.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clicked_green_circle_button.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\clicked_green_circle_button.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clicked_green_circle_button.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\clicked_green_circle_button.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -788,10 +780,6 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_pink_0.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\pink_0.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
@@ -818,10 +806,6 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ap_logo.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-mdpi\\ap_logo.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -930,10 +914,6 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_in.xml.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_sky_0.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\sky_0.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_border.xml.flat",
@@ -1448,10 +1428,6 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_set_up_text.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\set_up_text.png"
-    },
-    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
@@ -1518,10 +1494,6 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_clicked_pink_circle_button.png.flat",
         "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\clicked_pink_circle_button.png"
-    },
-    {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_green_0.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\green_0.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1718,10 +1690,6 @@
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_red_0.png.flat",
-        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\red_0.png"
     },
     {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_btn_checkable.xml.flat",
