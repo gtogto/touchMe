@@ -736,11 +736,11 @@ Applications for Health care use to BLE modules
 
             <Button
                 android:id="@+id/min_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/circie_button"
-                android:layout_gravity="center"
                 android:gravity="center"
                 android:text="-"
                 android:textColor="#FF0000"
@@ -769,17 +769,17 @@ Applications for Health care use to BLE modules
 
             <Button
                 android:id="@+id/plus_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:background="@drawable/circie_button"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:background="@drawable/circie_button"
+                android:gravity="center"
+                android:text="+"
                 android:textColor="#FF0000"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <SeekBar
                 android:id="@+id/timer_seekbar"

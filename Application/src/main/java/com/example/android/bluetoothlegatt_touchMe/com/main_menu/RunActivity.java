@@ -12,24 +12,20 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt_touchMe.Common.CommonData;
 import com.example.android.bluetoothlegatt_touchMe.R;
-//import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.SampleGattAttributes;
@@ -65,6 +61,8 @@ import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActiv
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.node_count;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.scan_node_count;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.act_flag;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.color_flag;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.set_color_flag;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.timer_setting;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.voice_flag;
 
@@ -122,7 +120,7 @@ public class RunActivity extends Activity {
     private Timer timer;
     private TimerTask timerTask;
 
-    private byte mode_a= 17, mode_b, cmd_play_node_time;
+    private byte mode_a= 17, mode_b, mode_sound, mode_led, cmd_play_node_time;
 
     private int mode_count = 1;
 
@@ -192,12 +190,17 @@ public class RunActivity extends Activity {
                     mode_count = 1;
                 }
 
-                if (voice_flag == 1) {
-                    mode_b = (byte) (mode_a*mode_count);
+                mode_sound = (byte) (10*mode_count);
+                mode_led = (byte) set_color_flag;
+
+                if (voice_flag == 1) {      // voice on -> sound + led
+                    mode_b = (byte) (mode_sound + mode_led);
                 }
-                else if (voice_flag == 0) {
-                    mode_b = (byte) (mode_count);
+                else if (voice_flag == 0) { // voice off -> just led
+                    mode_b = mode_led;
                 }
+
+                //mode_b = (byte) (mode_sound + mode_led);
 
                 cmd_play_node_time = (byte) timer_setting;
                 System.out.println("Random char = " + mode_b);
@@ -251,33 +254,24 @@ public class RunActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             //String action = intent.getAction();
-            System.out.println("run Function Test action = " + action );
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
                 updateConnectionState(R.string.connected);
                 Log.w(TAG, String.format("run connected "));
-                System.out.println("run Function Test 1");
-                System.out.println("run Function Test 1 action = " + action );
 
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
                 updateConnectionState(R.string.disconnected);
                 Log.w(TAG, String.format("run disconnected "));
-                System.out.println("run Function Test 2");
-                System.out.println("run Function Test 2 action = " + action );
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
 
                 displayGattServices(mBluetoothLeService.getSupportedGattServices());
-                System.out.println("run Function Test 3");
-                System.out.println("run Function Test 3 action = " + action );
 
                 final BluetoothGattCharacteristic notifyCharacteristic = getNottifyCharacteristic();
                 if (notifyCharacteristic == null) {
                     Toast.makeText(getApplication(), "gatt_services can not supported", Toast.LENGTH_SHORT).show();
-                    System.out.println("run Function Test 4");
-                    System.out.println("run Function Test 4 action = " + action );
                     mConnected = false;
                     return;
                 }
@@ -285,15 +279,11 @@ public class RunActivity extends Activity {
                 if ((charaProp | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
                     mBluetoothLeService.setCharacteristicNotification(
                             notifyCharacteristic, true);
-                    System.out.println("run Function Test 5");
-                    System.out.println("run Function Test 5 action = " + action );
                 }
 
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
                 packet = intent.getByteArrayExtra(EXTRA_DATA);
                 displayData(packet);
-                System.out.println("run Function Test 6");
-                System.out.println("run Function Test 6 action = " + action );
             }
         }
     };
@@ -350,6 +340,11 @@ public class RunActivity extends Activity {
         }
         else if (act_flag == 1) {
             run_mode_change.setText("수동");
+        }
+
+        switch (set_color_flag) {
+            case 1:
+
         }
 
         switch (scan_node_count) {
@@ -453,126 +448,90 @@ public class RunActivity extends Activity {
             public void handleMessage(Message msg){
                 if (node_act == 1) {
                     nodeBtn1.setBackgroundResource(R.drawable.green_circle_button_on);  byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x31;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x31;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn1.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 2) {
                     nodeBtn2.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x32;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x32;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn2.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 3) {
                     nodeBtn3.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x33;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x33;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn3.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 4) {
                     nodeBtn4.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x34;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x34;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn4.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 5) {
                     nodeBtn5.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x35;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x35;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn5.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 6) {
                     nodeBtn6.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x36;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x36;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn6.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 7) {
                     nodeBtn7.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x37;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x37;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn7.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 8) {
                     nodeBtn8.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x38;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x38;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn8.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 9) {
                     nodeBtn9.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
-                    cmd_bytes[0] = 0x3C;
-                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x39;
-                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                    cmd_bytes[4] = 0x02;
-                    cmd_bytes[5] = 0x00;
-                    cmd_bytes[6] = 0x00;
-                    cmd_bytes[7] = 0x3E;
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
+                    cmd_bytes[2] = 0x39;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
                 } else nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
             }
@@ -583,14 +542,10 @@ public class RunActivity extends Activity {
             public void onClick(View v) {
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
                 byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;
-                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x30;
-                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = cmd_play_node_time;
-                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;
-                cmd_bytes[7] = 0x3E;
+                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+                cmd_bytes[2] = 0x30;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
             }
         });
@@ -600,14 +555,10 @@ public class RunActivity extends Activity {
             public void onClick(View v) {
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
                 byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;
-                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x31;
-                cmd_bytes[3] = 0x22;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;
-                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;
-                cmd_bytes[7] = 0x3E;
+                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+                cmd_bytes[2] = 0x31;                cmd_bytes[3] = 0x22;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
             }
         });
@@ -617,14 +568,10 @@ public class RunActivity extends Activity {
             public void onClick(View v) {
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
                 byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;
-                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x32;
-                cmd_bytes[3] = 0x33;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;
-                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;
-                cmd_bytes[7] = 0x3E;
+                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+                cmd_bytes[2] = 0x32;                cmd_bytes[3] = 0x33;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
             }
         });
@@ -634,14 +581,10 @@ public class RunActivity extends Activity {
             public void onClick(View v) {
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
                 byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;
-                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x33;
-                cmd_bytes[3] = 0x44;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;
-                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;
-                cmd_bytes[7] = 0x3E;
+                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+                cmd_bytes[2] = 0x33;                cmd_bytes[3] = 0x44;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
             }
         });
@@ -651,14 +594,10 @@ public class RunActivity extends Activity {
             public void onClick(View v) {
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
                 byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;
-                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x34;
-                cmd_bytes[3] = 0x55;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;
-                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;
-                cmd_bytes[7] = 0x3E;
+                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+                cmd_bytes[2] = 0x34;                cmd_bytes[3] = 0x55;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
             }
         });
@@ -668,14 +607,10 @@ public class RunActivity extends Activity {
             public void onClick(View v) {
                 //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
                 byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;
-                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x35;
-                cmd_bytes[3] = 0x66;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;
-                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;
-                cmd_bytes[7] = 0x3E;
+                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+                cmd_bytes[2] = 0x35;                cmd_bytes[3] = 0x66;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
+                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
                 mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
             }
         });
@@ -767,7 +702,7 @@ public class RunActivity extends Activity {
     //TODO BLE Packet receive
     protected void onResume() {
         super.onResume();
-        System.out.println("run on Resume function");
+        //System.out.println("run on Resume function");
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         if (mBluetoothLeService != null) {
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);

@@ -98,6 +98,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
     public static Switch OnOff;
 
     public static int color_flag;
+    public static int set_color_flag;
 
     public static int sensitive_flag;
 
@@ -701,6 +702,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    set_color_flag = 1;
                 }
             });
 
@@ -711,6 +713,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    set_color_flag = 2;
                 }
             });
 
@@ -721,6 +724,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    set_color_flag = 3;
                 }
             });
 
@@ -731,6 +735,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    set_color_flag = 4;
                 }
             });
             pink_color.setOnClickListener(new View.OnClickListener() {
@@ -740,6 +745,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    set_color_flag = 5;
                 }
             });
 
@@ -750,6 +756,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
                     tMsg.setGravity(Gravity.CENTER, 0, 0);
                     LinearLayout view = (LinearLayout) tMsg.getView();
                     tMsg.show();
+                    set_color_flag = 6;
                 }
             });
         } else {
