@@ -191,10 +191,17 @@ public class RunActivity extends Activity {
                 }
 
                 mode_sound = (byte) (10*mode_count);
-                mode_led = (byte) set_color_flag;
+
+                if (color_flag == 0) {
+                    mode_led = (byte) 0x08;
+                }
+                else if (color_flag == 1) {
+                    mode_led = (byte) set_color_flag;
+                }
 
                 if (voice_flag == 1) {      // voice on -> sound + led
                     mode_b = (byte) (mode_sound + mode_led);
+                    //System.out.println();
                 }
                 else if (voice_flag == 0) { // voice off -> just led
                     mode_b = mode_led;
@@ -446,6 +453,7 @@ public class RunActivity extends Activity {
 
         node_handler = new Handler(){
             public void handleMessage(Message msg){
+                System.out.println("MODE value ->" + mode_b);
                 if (node_act == 1) {
                     nodeBtn1.setBackgroundResource(R.drawable.green_circle_button_on);  byte[] cmd_bytes = new byte[8];
                     cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
@@ -537,84 +545,87 @@ public class RunActivity extends Activity {
             }
         };
 
-        master.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
-                byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x30;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
-                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-            }
-        });
+    }
 
-        nodeBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
-                byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x31;                cmd_bytes[3] = 0x22;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
-                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-            }
-        });
+    public void onClick_node1(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x31;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
 
-        nodeBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
-                byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x32;                cmd_bytes[3] = 0x33;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
-                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-            }
-        });
+    public void onClick_node2(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x32;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
 
-        nodeBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
-                byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x33;                cmd_bytes[3] = 0x44;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
-                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-            }
-        });
+    public void onClick_node3(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x33;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
 
-        nodeBtn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
-                byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x34;                cmd_bytes[3] = 0x55;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
-                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-            }
-        });
+    public void onClick_node4(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x34;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
 
-        nodeBtn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_NODE_SCAN);
-                byte[] cmd_bytes = new byte[8];
-                cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
-                cmd_bytes[2] = 0x35;                cmd_bytes[3] = 0x66;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
-                cmd_bytes[4] = 0x03;                cmd_bytes[5] = 0x00;
-                cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
-                mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
-            }
-        });
+    public void onClick_node5(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x35;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
 
+    public void onClick_node6(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x36;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
+
+    public void onClick_node7(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x37;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
+
+    public void onClick_node8(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x38;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+    }
+
+    public void onClick_node9(View v) {
+        byte[] cmd_bytes = new byte[8];
+        cmd_bytes[0] = 0x3C;                cmd_bytes[1] = 0x50;
+        cmd_bytes[2] = 0x39;                cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+        cmd_bytes[4] = cmd_play_node_time;                cmd_bytes[5] = 0x00;
+        cmd_bytes[6] = 0x00;                cmd_bytes[7] = 0x3E;
+        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
     }
 
     @SuppressLint("HandlerLeak")
@@ -646,39 +657,6 @@ public class RunActivity extends Activity {
                     Message msg = new Message();
                     msg.arg1 = i++;
                     handler.sendMessage(msg);
-
-
-                    /*
-                    switch (sound_clicked_num) {
-                        case 1:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_DO);
-                            break;
-
-                        case 2:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RE);
-                            break;
-
-                        case 3:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_MI);
-                            break;
-
-                        case 4:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_PA);
-                            break;
-
-                        case 5:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SO);
-                            break;
-
-                        case 6:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_RA);
-                            break;
-
-                        case 7:
-                            mBluetoothLeService.writeGattCharacteristic(getWriteGattCharacteristic(), CMD_PLAY_NODE_SI);
-                            break;
-
-                    }*/
 
                     try {
                         Thread.sleep(10);

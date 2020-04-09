@@ -75,12 +75,19 @@ public class start_Activity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String Id = data.getStringExtra("id");
-        String Pass = data.getStringExtra("pass");
+        try {
+            String Id = data.getStringExtra("id");
+            String Pass = data.getStringExtra("pass");
+            Toast.makeText(getApplicationContext(),"아이디 = " + Id + " 비밀번호 = " + Pass,
+                    Toast.LENGTH_LONG).show();
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(),"value of null",
+                    Toast.LENGTH_LONG).show();
+        }
 
-        Toast.makeText(getApplicationContext(),"아이디 = " + Id + " 비밀번호 = " + Pass,
-                Toast.LENGTH_LONG).show();
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
