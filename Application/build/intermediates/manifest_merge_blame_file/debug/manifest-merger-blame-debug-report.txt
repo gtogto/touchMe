@@ -60,7 +60,7 @@
 38-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:32:9-40:20
 39            android:name="com.example.android.bluetoothlegatt_touchMe.com.start_Activity"
 39-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:33:13-47
-40            android:label="Sigh In" >
+40            android:label="TouchMe" >
 40-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:34:13-36
 41            <intent-filter>
 41-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:35:13-39:29

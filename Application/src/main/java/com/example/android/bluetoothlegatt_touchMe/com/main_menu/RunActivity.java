@@ -61,6 +61,7 @@ import static com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActiv
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.node_count;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.scan_node_count;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.act_flag;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.auto_flag;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.color_flag;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.set_color_flag;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.SetupActivity.timer_setting;
@@ -120,7 +121,7 @@ public class RunActivity extends Activity {
     private Timer timer;
     private TimerTask timerTask;
 
-    private byte mode_a= 17, mode_b, mode_sound, mode_led, cmd_play_node_time;
+    private byte mode_b, mode_sound, mode_led, cmd_play_node_time;
 
     private int mode_count = 1;
 
@@ -179,10 +180,19 @@ public class RunActivity extends Activity {
     protected void Update() {
         Runnable updater = new Runnable() {
             public void run() {
-                node_act = rnd.nextInt((scan_node_count) + 1);
-                if (node_act == 0) {
-                    node_act = node_act+1;
+                if (auto_flag == 0) {
+                    node_act = rnd.nextInt((scan_node_count) + 1);
+                    if (node_act == 0) {
+                        node_act = node_act+1;
+                    }
                 }
+                else {
+                    node_act++;
+                    if (node_act > scan_node_count){
+                        node_act = 1;
+                    }
+                }
+
                 System.out.println("Random num "+ "[" + scan_node_count + "] = " + node_act);
 
                 mode_count++;
@@ -190,7 +200,10 @@ public class RunActivity extends Activity {
                     mode_count = 1;
                 }
 
-                mode_sound = (byte) (10*mode_count);
+                //mode_sound = (byte) (10*mode_count);
+
+                mode_sound = (byte) 0x10;
+
 
                 if (color_flag == 0) {
                     mode_led = (byte) 0x08;
@@ -199,9 +212,12 @@ public class RunActivity extends Activity {
                     mode_led = (byte) set_color_flag;
                 }
 
+                //mode_b = (byte) (mode_sound + mode_led);        // 13 23 33 43 53 63 73
+
                 if (voice_flag == 1) {      // voice on -> sound + led
-                    mode_b = (byte) (mode_sound + mode_led);
-                    //System.out.println();
+                    //mode_b = (byte) (mode_sound + mode_led);
+                    mode_b = (byte) ((mode_sound * mode_count) + mode_led);
+                    //System.out.println("mode sound ->"+mode_sound);
                 }
                 else if (voice_flag == 0) { // voice off -> just led
                     mode_b = mode_led;
@@ -211,6 +227,7 @@ public class RunActivity extends Activity {
 
                 cmd_play_node_time = (byte) timer_setting;
                 System.out.println("Random char = " + mode_b);
+
                 //Random rnd_test = new Random();
                 //String randomStr = String.valueOf((char) ((int) (rnd_test.nextInt(108)) + 11));
                 //stringToHex(randomStr);
@@ -349,11 +366,6 @@ public class RunActivity extends Activity {
             run_mode_change.setText("수동");
         }
 
-        switch (set_color_flag) {
-            case 1:
-
-        }
-
         switch (scan_node_count) {
             case 0:
                 Toast.makeText(RunActivity.this, "No have scan node !", Toast.LENGTH_SHORT).show();
@@ -453,7 +465,7 @@ public class RunActivity extends Activity {
 
         node_handler = new Handler(){
             public void handleMessage(Message msg){
-                System.out.println("MODE value ->" + mode_b);
+
                 if (node_act == 1) {
                     nodeBtn1.setBackgroundResource(R.drawable.green_circle_button_on);  byte[] cmd_bytes = new byte[8];
                     cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
@@ -467,7 +479,7 @@ public class RunActivity extends Activity {
                     nodeBtn2.setBackgroundResource(R.drawable.green_circle_button_on);
                     byte[] cmd_bytes = new byte[8];
                     cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;
-                    cmd_bytes[2] = 0x32;                    cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                    cmd_bytes[2] = 0x32;                    cmd_bytes[3] = mode_b;;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
@@ -544,7 +556,6 @@ public class RunActivity extends Activity {
                 } else nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
             }
         };
-
     }
 
     public void onClick_node1(View v) {
@@ -703,8 +714,15 @@ public class RunActivity extends Activity {
         super.onDestroy();
         unbindService(mServiceConnection);
         mBluetoothLeService = null;
-        second.cancel();
-        timerTask.cancel();
+        try {
+            second.cancel();
+            timerTask.cancel();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(),"value of null",
+                    Toast.LENGTH_LONG).show();
+        }
         Log.d(TAG, "run onDestroy request");
     }
 

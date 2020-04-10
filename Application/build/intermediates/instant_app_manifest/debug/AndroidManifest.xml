@@ -38,7 +38,7 @@
         android:theme="@android:style/Theme.Holo.NoActionBar" >
         <activity
             android:name="com.example.android.bluetoothlegatt_touchMe.com.start_Activity"
-            android:label="Sigh In" >
+            android:label="TouchMe" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
