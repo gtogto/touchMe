@@ -107,6 +107,7 @@ public class RunActivity extends Activity {
 
     private TextView node1, node2, node3, node4, node5, node6;
     private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6, nodeBtn7, nodeBtn8, nodeBtn9;
+    public static int node_count_1, node_count_2, node_count_3, node_count_4, node_count_5, node_count_6, node_count_7, node_count_8, node_count_9;
 
     private int timer_flag;
 
@@ -203,7 +204,6 @@ public class RunActivity extends Activity {
                 //mode_sound = (byte) (10*mode_count);
 
                 mode_sound = (byte) 0x10;
-
 
                 if (color_flag == 0) {
                     mode_led = (byte) 0x08;
