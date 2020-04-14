@@ -107,7 +107,8 @@ public class RunActivity extends Activity {
 
     private TextView node1, node2, node3, node4, node5, node6;
     private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6, nodeBtn7, nodeBtn8, nodeBtn9;
-    public static int node_count_1, node_count_2, node_count_3, node_count_4, node_count_5, node_count_6, node_count_7, node_count_8, node_count_9;
+    public static int NODE_COUNT_REQ_1, NODE_COUNT_REQ_2, NODE_COUNT_REQ_3, NODE_COUNT_REQ_4, NODE_COUNT_REQ_5, NODE_COUNT_REQ_6, NODE_COUNT_REQ_7, NODE_COUNT_REQ_8, NODE_COUNT_REQ_9;
+    public static int NODE_COUNT_ACK_1, NODE_COUNT_ACK_2, NODE_COUNT_ACK_3, NODE_COUNT_ACK_4, NODE_COUNT_ACK_5, NODE_COUNT_ACK_6, NODE_COUNT_ACK_7, NODE_COUNT_ACK_8, NODE_COUNT_ACK_9;
 
     private int timer_flag;
 
