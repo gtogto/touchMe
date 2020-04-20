@@ -158,6 +158,9 @@ public class RunActivity extends Activity {
         nodeBtn7.setBackgroundResource(R.drawable.black_circle_button_off);
         nodeBtn8.setBackgroundResource(R.drawable.black_circle_button_off);
         nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
+
+        NODE_COUNT_REQ_1 = 0; NODE_COUNT_REQ_2 = 0; NODE_COUNT_REQ_3 = 0; NODE_COUNT_REQ_4 = 0; NODE_COUNT_REQ_5 = 0; NODE_COUNT_REQ_6 = 0; NODE_COUNT_REQ_7 = 0; NODE_COUNT_REQ_8 = 0; NODE_COUNT_REQ_9 = 0;
+        NODE_COUNT_ACK_1 = 0; NODE_COUNT_ACK_2 = 0; NODE_COUNT_ACK_3 = 0; NODE_COUNT_ACK_4 = 0; NODE_COUNT_ACK_5 = 0; NODE_COUNT_ACK_6 = 0; NODE_COUNT_ACK_7 = 0; NODE_COUNT_ACK_8 = 0; NODE_COUNT_ACK_9 = 0;
     }
 
     public void node_play() {
@@ -348,7 +351,6 @@ public class RunActivity extends Activity {
         run_mode_txt.setTextSize((float) (standardSize_X / 15)); run_mode_txt.setTextSize((float) (standardSize_Y / 25));
         run_mode_change.setTextSize((float) (standardSize_X / 15)); run_mode_change.setTextSize((float) (standardSize_Y / 25));
 
-
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
@@ -474,6 +476,7 @@ public class RunActivity extends Activity {
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    NODE_COUNT_REQ_1++;
                 } else nodeBtn1.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 2) {
@@ -484,6 +487,7 @@ public class RunActivity extends Activity {
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    NODE_COUNT_REQ_2++;
                 } else nodeBtn2.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 3) {
@@ -494,6 +498,7 @@ public class RunActivity extends Activity {
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    NODE_COUNT_REQ_3++;
                 } else nodeBtn3.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 4) {
@@ -504,6 +509,7 @@ public class RunActivity extends Activity {
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    NODE_COUNT_REQ_4++;
                 } else nodeBtn4.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 5) {
@@ -514,6 +520,7 @@ public class RunActivity extends Activity {
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    NODE_COUNT_REQ_5++;
                 } else nodeBtn5.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 6) {
@@ -524,6 +531,7 @@ public class RunActivity extends Activity {
                     cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
                     cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
                     mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    NODE_COUNT_REQ_6++;
                 } else nodeBtn6.setBackgroundResource(R.drawable.black_circle_button_off);
 
                 if (node_act == 7) {

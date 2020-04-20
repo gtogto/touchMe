@@ -27,6 +27,14 @@ import com.example.android.bluetoothlegatt_touchMe.com.BluetoothLeService;
 import com.example.android.bluetoothlegatt_touchMe.com.DeviceControlActivity;
 import com.example.android.bluetoothlegatt_touchMe.com.ViewHolder;
 
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.NodeScanningActivity.scan_node_count;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_1;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_2;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_3;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_4;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_5;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_6;
+
 /**
  * Created by GTO on 2020-01-22.
  */
@@ -95,13 +103,52 @@ public class ReportAnalysisActivity extends Activity {
         growAnim = AnimationUtils.loadAnimation(this, R.anim.grow);
         mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
 
+        switch (scan_node_count) {
+            case 0:
+                Toast.makeText(ReportAnalysisActivity.this, "No have scan node !", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                addItem("NODE 1", NODE_COUNT_REQ_1*10, Color.RED);
+                break;
+            case 2:
+                addItem("NODE 1", NODE_COUNT_REQ_1*10, Color.RED);
+                addItem("NODE 2", NODE_COUNT_REQ_2*10, Color.GREEN);
+                break;
+            case 3:
+                addItem("NODE 1", NODE_COUNT_REQ_1*10, Color.RED);
+                addItem("NODE 2", NODE_COUNT_REQ_2*10, Color.GREEN);
+                addItem("NODE 3", NODE_COUNT_REQ_3*10, Color.BLUE);
+                break;
+            case 4:
+                addItem("NODE 1", NODE_COUNT_REQ_1*10, Color.RED);
+                addItem("NODE 2", NODE_COUNT_REQ_2*10, Color.GREEN);
+                addItem("NODE 3", NODE_COUNT_REQ_3*10, Color.BLUE);
+                addItem("NODE 4", NODE_COUNT_REQ_4*10, Color.YELLOW);
+                break;
+            case 5:
+                addItem("NODE 1", NODE_COUNT_REQ_1*10, Color.RED);
+                addItem("NODE 2", NODE_COUNT_REQ_2*10, Color.GREEN);
+                addItem("NODE 3", NODE_COUNT_REQ_3*10, Color.BLUE);
+                addItem("NODE 4", NODE_COUNT_REQ_4*10, Color.YELLOW);
+                addItem("NODE 5", NODE_COUNT_REQ_5*10, Color.DKGRAY);  // pink
+                break;
+            case 6:
+                addItem("NODE 1", NODE_COUNT_REQ_1*10, Color.RED);
+                addItem("NODE 2", NODE_COUNT_REQ_2*10, Color.GREEN);
+                addItem("NODE 3", NODE_COUNT_REQ_3*10, Color.BLUE);
+                addItem("NODE 4", NODE_COUNT_REQ_4*10, Color.YELLOW);
+                addItem("NODE 5", NODE_COUNT_REQ_5*10, Color.DKGRAY);  // pink
+                addItem("NODE 6", NODE_COUNT_REQ_6*10, Color.CYAN);     // sky
+                break;
+        }
+        /*
         addItem("Red", 180, Color.RED);
         addItem("Green", 290, Color.GREEN);
         addItem("Blue", 140, Color.BLUE);
         addItem("Yellow", 170, Color.YELLOW);
         addItem("Pink", 260, Color.DKGRAY);  // pink
         addItem("Sky", 20, Color.CYAN);     // sky
-
+        */
     }
 
     private void addItem(String name, int value, int color) {

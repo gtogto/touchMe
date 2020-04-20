@@ -24,15 +24,15 @@
 20        android:required="true" />
 20-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:16:9-32
 21<!--     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />   ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION are not applicable // -->
-22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-78
-22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-76
-23    <uses-permission android:name="android.permission.BLUETOOTH" />
-23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-68
-23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-65
-24    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:5-74
-24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-71
+22    <uses-permission android:name="android.permission.BLUETOOTH" />
+22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:5-68
+22-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:19:22-65
+23    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:5-74
+23-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:20:22-71
+24    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:5-78
+24-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:21:22-76
 25    <uses-permission android:name="android.permission.INTERNET" />
 25-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:22:5-67
 25-->E:\touch_Me_BLE\Application\src\main\AndroidManifest.xml:22:22-64
