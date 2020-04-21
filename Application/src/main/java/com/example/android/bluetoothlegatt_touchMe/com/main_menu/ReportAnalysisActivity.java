@@ -1,5 +1,6 @@
 package com.example.android.bluetoothlegatt_touchMe.com.main_menu;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -34,6 +35,10 @@ import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActiv
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_4;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_5;
 import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.NODE_COUNT_REQ_6;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.report_hour;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.report_mSec;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.report_min;
+import static com.example.android.bluetoothlegatt_touchMe.com.main_menu.RunActivity.report_sec;
 
 /**
  * Created by GTO on 2020-01-22.
@@ -53,6 +58,9 @@ public class ReportAnalysisActivity extends Activity {
     LinearLayout mainLayout;
     Resources res;
     Animation growAnim;
+
+    private TextView mTimeTextView;
+    //public static int report_mSec, report_sec, report_min, report_hour;
 
 
     public Point getScreenSize(Activity activity) {
@@ -102,6 +110,12 @@ public class ReportAnalysisActivity extends Activity {
         res = getResources();
         growAnim = AnimationUtils.loadAnimation(this, R.anim.grow);
         mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
+
+        mTimeTextView = (TextView) findViewById(R.id.timeView_report);
+
+        @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d:%02d", report_hour, report_min, report_sec, report_mSec);
+
+        mTimeTextView.setText(result);
 
         switch (scan_node_count) {
             case 0:
@@ -174,8 +188,9 @@ public class ReportAnalysisActivity extends Activity {
         // 텍스트뷰 추가
         TextView textView = new TextView(this);
         textView.setText(name);
+        textView.setTextColor(Color.DKGRAY);
         params.width = 180;
-        params.setMargins(0, 4, 0, 4);  // textView layout control
+        params.setMargins(2, 4, 0, 4);  // textView layout control
         itemLayout.addView(textView, params);
 
 
@@ -188,32 +203,25 @@ public class ReportAnalysisActivity extends Activity {
         proBar.setProgress(300);
         if(color == Color.RED)
             proBar.setProgressDrawable(
-
                     getResources().getDrawable(R.drawable.progressbar_color_red));
         else if(color == Color.GREEN)
             proBar.setProgressDrawable(
-
                     getResources().getDrawable(R.drawable.progressbar_color_green));
         else if(color == Color.BLUE)
             proBar.setProgressDrawable(
-
                     getResources().getDrawable(R.drawable.progressbar_color_blue));
 
         else if(color == Color.YELLOW)
             proBar.setProgressDrawable(
-
                     getResources().getDrawable(R.drawable.progressbar_color_yellow));
 
         else if(color == Color.DKGRAY)  // PINK
             proBar.setProgressDrawable(
-
                     getResources().getDrawable(R.drawable.progressbar_color_pink));
 
         else if(color == Color.CYAN)    // SKY
             proBar.setProgressDrawable(
-
                     getResources().getDrawable(R.drawable.progressbar_color_sky));
-
 
         proBar.setAnimation(growAnim);
 

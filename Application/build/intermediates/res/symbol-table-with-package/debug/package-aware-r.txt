@@ -1042,6 +1042,8 @@ id start
 id start_btn
 id status_bar_latest_event_content
 id stop_btn
+id subLayout
+id subLayout2
 id submenuarrow
 id submit_area
 id switch_voice
@@ -1061,6 +1063,7 @@ id textinput_counter
 id textinput_error
 id time
 id timeView
+id timeView_report
 id timer_seekbar
 id timer_txt
 id timer_txt2
@@ -1076,6 +1079,9 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id txt
+id txt2
+id txt3
 id ubio_logo_black
 id ubio_text
 id uniform

@@ -109,6 +109,7 @@ public class RunActivity extends Activity {
     private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6, nodeBtn7, nodeBtn8, nodeBtn9;
     public static int NODE_COUNT_REQ_1, NODE_COUNT_REQ_2, NODE_COUNT_REQ_3, NODE_COUNT_REQ_4, NODE_COUNT_REQ_5, NODE_COUNT_REQ_6, NODE_COUNT_REQ_7, NODE_COUNT_REQ_8, NODE_COUNT_REQ_9;
     public static int NODE_COUNT_ACK_1, NODE_COUNT_ACK_2, NODE_COUNT_ACK_3, NODE_COUNT_ACK_4, NODE_COUNT_ACK_5, NODE_COUNT_ACK_6, NODE_COUNT_ACK_7, NODE_COUNT_ACK_8, NODE_COUNT_ACK_9;
+    public static int report_mSec, report_sec, report_min, report_hour;
 
     private int timer_flag;
 
@@ -145,6 +146,8 @@ public class RunActivity extends Activity {
         timer.schedule(second, 0, timer_setting*1000);
         //timer.schedule(timerTask, 0, 1000);
         node_play();
+        NODE_COUNT_REQ_1 = 0; NODE_COUNT_REQ_2 = 0; NODE_COUNT_REQ_3 = 0; NODE_COUNT_REQ_4 = 0; NODE_COUNT_REQ_5 = 0; NODE_COUNT_REQ_6 = 0; NODE_COUNT_REQ_7 = 0; NODE_COUNT_REQ_8 = 0; NODE_COUNT_REQ_9 = 0;
+        NODE_COUNT_ACK_1 = 0; NODE_COUNT_ACK_2 = 0; NODE_COUNT_ACK_3 = 0; NODE_COUNT_ACK_4 = 0; NODE_COUNT_ACK_5 = 0; NODE_COUNT_ACK_6 = 0; NODE_COUNT_ACK_7 = 0; NODE_COUNT_ACK_8 = 0; NODE_COUNT_ACK_9 = 0;
     }
     public void testStop(){
         second.cancel();
@@ -158,9 +161,6 @@ public class RunActivity extends Activity {
         nodeBtn7.setBackgroundResource(R.drawable.black_circle_button_off);
         nodeBtn8.setBackgroundResource(R.drawable.black_circle_button_off);
         nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
-
-        NODE_COUNT_REQ_1 = 0; NODE_COUNT_REQ_2 = 0; NODE_COUNT_REQ_3 = 0; NODE_COUNT_REQ_4 = 0; NODE_COUNT_REQ_5 = 0; NODE_COUNT_REQ_6 = 0; NODE_COUNT_REQ_7 = 0; NODE_COUNT_REQ_8 = 0; NODE_COUNT_REQ_9 = 0;
-        NODE_COUNT_ACK_1 = 0; NODE_COUNT_ACK_2 = 0; NODE_COUNT_ACK_3 = 0; NODE_COUNT_ACK_4 = 0; NODE_COUNT_ACK_5 = 0; NODE_COUNT_ACK_6 = 0; NODE_COUNT_ACK_7 = 0; NODE_COUNT_ACK_8 = 0; NODE_COUNT_ACK_9 = 0;
     }
 
     public void node_play() {
@@ -664,6 +664,8 @@ public class RunActivity extends Activity {
                 Toast.makeText(RunActivity.this, "1분 15초가 지났습니다.", Toast.LENGTH_SHORT).show();
             }*/
             mTimeTextView.setText(result);
+
+            report_mSec = mSec; report_sec = sec; report_min = min; report_hour = hour;
         }
     };
 
