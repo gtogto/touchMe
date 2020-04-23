@@ -134,18 +134,20 @@ Applications for Health care
     </LinearLayout>
 
     <TableRow android:background="#51B435" android:padding="10dp" android:layout_marginTop="5dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:text="Rank" />
+            android:text="Rank"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:text="Player" />
+            android:text="Player"
+            android:textStyle="bold" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -159,8 +161,9 @@ Applications for Health care
             android:textStyle="bold"
             android:text="Success Rate" />
     </TableRow>
-    <TableRow android:background="#F0F7F7" android:padding="5dp">
+    <TableRow android:id="@+id/table_1" android:background="#F0F7F7" android:padding="5dp" android:visibility="gone">
         <TextView
+            android:id="@+id/node1_Rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -170,8 +173,9 @@ Applications for Health care
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NODE 1" />
+            android:text=" NODE 1" />
         <TextView
+            android:id="@+id/node1_NumberOfRun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,8 +186,9 @@ Applications for Health care
             android:layout_weight="1"
             android:text="895" />
     </TableRow>
-    <TableRow android:background="#F0F7F7" android:padding="5dp">
+    <TableRow android:id="@+id/table_2" android:background="#F0F7F7" android:padding="5dp" android:visibility="gone">
         <TextView
+            android:id="@+id/node2_Rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -193,8 +198,9 @@ Applications for Health care
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NODE 2" />
+            android:text=" NODE 2" />
         <TextView
+            android:id="@+id/node2_NumberOfRun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -206,8 +212,9 @@ Applications for Health care
             android:text="863" />
 
     </TableRow>
-    <TableRow android:background="#F0F7F7" android:padding="5dp">
+    <TableRow android:id="@+id/table_3" android:background="#F0F7F7" android:padding="5dp" android:visibility="gone">
         <TextView
+            android:id="@+id/node3_Rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -217,8 +224,9 @@ Applications for Health care
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NODE 3" />
+            android:text=" NODE 3" />
         <TextView
+            android:id="@+id/node3_NumberOfRun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -231,8 +239,9 @@ Applications for Health care
 
     </TableRow>
 
-    <TableRow android:background="#F0F7F7" android:padding="5dp">
+    <TableRow android:id="@+id/table_4" android:background="#F0F7F7" android:padding="5dp" android:visibility="gone">
         <TextView
+            android:id="@+id/node4_Rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -242,8 +251,9 @@ Applications for Health care
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NODE 4" />
+            android:text=" NODE 4" />
         <TextView
+            android:id="@+id/node4_NumberOfRun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -256,8 +266,9 @@ Applications for Health care
 
     </TableRow>
 
-    <TableRow android:background="#F0F7F7" android:padding="5dp">
+    <TableRow android:id="@+id/table_5" android:background="#F0F7F7" android:padding="5dp" android:visibility="gone">
     <TextView
+        android:id="@+id/node5_Rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -267,8 +278,9 @@ Applications for Health care
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="NODE 5" />
+        android:text=" NODE 5" />
     <TextView
+        android:id="@+id/node5_NumberOfRun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -281,8 +293,9 @@ Applications for Health care
 
     </TableRow>
 
-    <TableRow android:background="#F0F7F7" android:padding="5dp">
+    <TableRow android:id="@+id/table_6" android:background="#F0F7F7" android:padding="5dp" android:visibility="gone">
         <TextView
+            android:id="@+id/node6_Rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -292,8 +305,9 @@ Applications for Health care
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NODE 6" />
+            android:text=" NODE 6" />
         <TextView
+            android:id="@+id/node6_NumberOfRun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

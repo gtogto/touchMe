@@ -146,8 +146,8 @@ public class RunActivity extends Activity {
         timer.schedule(second, 0, timer_setting*1000);
         //timer.schedule(timerTask, 0, 1000);
         node_play();
-        NODE_COUNT_REQ_1 = 0; NODE_COUNT_REQ_2 = 0; NODE_COUNT_REQ_3 = 0; NODE_COUNT_REQ_4 = 0; NODE_COUNT_REQ_5 = 0; NODE_COUNT_REQ_6 = 0; NODE_COUNT_REQ_7 = 0; NODE_COUNT_REQ_8 = 0; NODE_COUNT_REQ_9 = 0;
-        NODE_COUNT_ACK_1 = 0; NODE_COUNT_ACK_2 = 0; NODE_COUNT_ACK_3 = 0; NODE_COUNT_ACK_4 = 0; NODE_COUNT_ACK_5 = 0; NODE_COUNT_ACK_6 = 0; NODE_COUNT_ACK_7 = 0; NODE_COUNT_ACK_8 = 0; NODE_COUNT_ACK_9 = 0;
+        //NODE_COUNT_REQ_1 = 0; NODE_COUNT_REQ_2 = 0; NODE_COUNT_REQ_3 = 0; NODE_COUNT_REQ_4 = 0; NODE_COUNT_REQ_5 = 0; NODE_COUNT_REQ_6 = 0; NODE_COUNT_REQ_7 = 0; NODE_COUNT_REQ_8 = 0; NODE_COUNT_REQ_9 = 0;
+        //NODE_COUNT_ACK_1 = 0; NODE_COUNT_ACK_2 = 0; NODE_COUNT_ACK_3 = 0; NODE_COUNT_ACK_4 = 0; NODE_COUNT_ACK_5 = 0; NODE_COUNT_ACK_6 = 0; NODE_COUNT_ACK_7 = 0; NODE_COUNT_ACK_8 = 0; NODE_COUNT_ACK_9 = 0;
     }
     public void testStop(){
         second.cancel();
