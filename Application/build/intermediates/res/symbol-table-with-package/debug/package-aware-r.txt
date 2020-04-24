@@ -777,6 +777,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable orange_circle_button
 drawable orange_circle_button_off
+drawable orange_circle_button_on
 drawable pink_0
 drawable pink_1
 drawable pink_2

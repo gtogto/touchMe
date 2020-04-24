@@ -1276,6 +1276,10 @@
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
+        "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_orange_circle_button_on.png.flat",
+        "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\drawable-hdpi\\orange_circle_button_on.png"
+    },
+    {
         "merged": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\6931bc3fe5868b0ab5606c1192ce8d93\\support-compat-27.1.1\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },

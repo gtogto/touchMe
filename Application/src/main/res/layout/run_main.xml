@@ -103,7 +103,6 @@ Applications for Health care
                     android:layout_marginTop="5dp"
                     android:scaleType="center"
                     android:src="@drawable/linie_albastra_lr"></ImageView>
-
             </LinearLayout>
 
             <LinearLayout
@@ -126,6 +125,7 @@ Applications for Health care
                     android:layout_gravity="center"
                     android:background="@drawable/orange_circle_button"
                     android:gravity="center"
+                    android:onClick="onClick_master"
                     android:text="MASTER"
                     android:textSize="22sp"
                     android:textStyle="bold" />
