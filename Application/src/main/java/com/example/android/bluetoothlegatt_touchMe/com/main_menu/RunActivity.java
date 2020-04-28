@@ -117,7 +117,7 @@ public class RunActivity extends Activity {
 
     private int timer_flag;
 
-    private static int command_count = 1;
+    private static int play_success_count, play_fail_count;
 
     public static int sound_clicked_num;
 
@@ -182,7 +182,6 @@ public class RunActivity extends Activity {
             nodeBtn7.setBackgroundResource(R.drawable.black_circle_button_off);
             nodeBtn8.setBackgroundResource(R.drawable.black_circle_button_off);
             nodeBtn9.setBackgroundResource(R.drawable.black_circle_button_off);
-            command_count = 1;
         }
         catch (NullPointerException e) {
             e.printStackTrace();
@@ -819,6 +818,7 @@ public class RunActivity extends Activity {
             Toast.makeText(getApplicationContext(),"value of null",
                     Toast.LENGTH_LONG).show();
         }
+        play_success_count = 0;
         Log.d(TAG, "run onDestroy request");
     }
 
@@ -864,7 +864,130 @@ public class RunActivity extends Activity {
         node_number = hexToASCII(hex_value).substring(2, 3);    // 2
         node_SF = hexToASCII(hex_value).substring(3, 4);        // 3
 
+        System.out.println("###" + "동작 " + "[ " + node_COMMAND + " ]" + " 노드 " + "[ " + node_number + " ]" + " 응답 " + "[ " + node_SF + " ]");
 
+        if(play_success_count > node_act) {
+            play_success_count = 0;
+        }
+
+        switch (node_COMMAND) {
+            case "c":
+                if (node_number.equals("0")) {
+                    master.setBackgroundResource(R.drawable.orange_circle_button_on);
+                    byte[] cmd_bytes = new byte[8]; // <P0M200>
+                    cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;    //"Cmd_Play_Node [P]"
+                    cmd_bytes[2] = 0x30;                    cmd_bytes[3] = mode_b;
+                    cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                    cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
+                    mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                    System.out.println("Master On");
+
+                    if (node_SF.equals("s")){
+                        System.out.println("Master Off");
+                    }
+
+                }
+                break;
+
+            case "r":
+                if (node_number.equals("0")) {
+                    if (node_SF.equals("s")){
+                        System.out.println("Play On !!");
+                        if (play_success_count == 0) {
+                            byte[] cmd_bytes = new byte[8]; // <P0M200>
+                            cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;    //"Cmd_Play_Node [P]"
+                            cmd_bytes[2] = 0x31;                    cmd_bytes[3] = mode_b;
+                            cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                            cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
+                            mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                        }
+                        if (play_success_count == 1) {
+                            byte[] cmd_bytes = new byte[8]; // <P0M200>
+                            cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;    //"Cmd_Play_Node [P]"
+                            cmd_bytes[2] = 0x32;                    cmd_bytes[3] = mode_b;
+                            cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                            cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
+                            mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                        }
+                        if (play_success_count == 2) {
+                            byte[] cmd_bytes = new byte[8]; // <P0M200>
+                            cmd_bytes[0] = 0x3C;                    cmd_bytes[1] = 0x50;    //"Cmd_Play_Node [P]"
+                            cmd_bytes[2] = 0x33;                    cmd_bytes[3] = mode_b;
+                            cmd_bytes[4] = cmd_play_node_time;                    cmd_bytes[5] = 0x00;
+                            cmd_bytes[6] = 0x00;                    cmd_bytes[7] = 0x3E;
+                            mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                        }
+                    }
+                }
+
+                if (node_number.equals("1")) {
+                    if (node_SF.equals("s")){
+                        master.setBackgroundResource(R.drawable.orange_circle_button_on);
+                        byte[] cmd_bytes = new byte[8];
+                        cmd_bytes[0] = 0x3C;
+                        cmd_bytes[1] = 0x50;
+                        cmd_bytes[2] = 0x30;
+                        cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                        cmd_bytes[4] = cmd_play_node_time;
+                        cmd_bytes[5] = 0x00;
+                        cmd_bytes[6] = 0x00;
+                        cmd_bytes[7] = 0x3E;
+                        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                        play_success_count++;
+                    }
+                    if (node_SF.equals("f")){
+                        System.out.println("Node1 Time Over");
+                        //play_fail_count++;
+                    }
+                }
+
+                if (node_number.equals("2")) {
+                        if (node_SF.equals("s")){
+                            master.setBackgroundResource(R.drawable.orange_circle_button_on);
+                            byte[] cmd_bytes = new byte[8];
+                            cmd_bytes[0] = 0x3C;
+                            cmd_bytes[1] = 0x50;
+                            cmd_bytes[2] = 0x30;
+                            cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                            cmd_bytes[4] = cmd_play_node_time;
+                            cmd_bytes[5] = 0x00;
+                            cmd_bytes[6] = 0x00;
+                            cmd_bytes[7] = 0x3E;
+                            mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                            play_success_count++;
+                        }
+                        if (node_SF.equals("f")){
+                            System.out.println("Node1 Time Over");
+                            //play_fail_count++;
+                        }
+                }
+
+                if (node_number.equals("3")) {
+                    if (node_SF.equals("s")){
+                        master.setBackgroundResource(R.drawable.orange_circle_button_on);
+                        byte[] cmd_bytes = new byte[8];
+                        cmd_bytes[0] = 0x3C;
+                        cmd_bytes[1] = 0x50;
+                        cmd_bytes[2] = 0x30;
+                        cmd_bytes[3] = mode_b;    // This byte is 'DO' and mode Push only 0x10(0001), if Dual mode is (byte) 0x90(1001)
+                        cmd_bytes[4] = 0x02;
+                        cmd_bytes[5] = 0x00;
+                        cmd_bytes[6] = 0x00;
+                        cmd_bytes[7] = 0x3E;
+                        mBluetoothLeService.writeCharacteristic(getWriteGattCharacteristic(), cmd_bytes);
+                        play_success_count++;
+                    }
+                    if (node_SF.equals("f")){
+                        System.out.println("Node1 Time Over");
+                        //play_fail_count++;
+                    }
+                }
+
+                break;
+
+        }
+
+        /*
         if (node_COMMAND.equals("c")) {
             if (node_number.equals("0")){
                 //if (node_SF.equals("s")){
