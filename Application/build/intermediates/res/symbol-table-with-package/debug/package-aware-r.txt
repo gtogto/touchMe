@@ -763,6 +763,8 @@ drawable linie_albastra_lr
 drawable linie_albastra_v
 drawable logo_icon
 drawable navigation_empty_icon
+drawable networking_image1
+drawable networking_image2
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -969,6 +971,15 @@ id nodeBtn6
 id nodeBtn7
 id nodeBtn8
 id nodeBtn9
+id nodetxt1
+id nodetxt2
+id nodetxt3
+id nodetxt4
+id nodetxt5
+id nodetxt6
+id nodetxt7
+id nodetxt8
+id nodetxt9
 id none
 id normal
 id notification_background

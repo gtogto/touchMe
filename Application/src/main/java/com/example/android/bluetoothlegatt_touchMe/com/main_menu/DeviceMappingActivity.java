@@ -68,6 +68,9 @@ public class DeviceMappingActivity extends Activity {
     int standardSize_X, standardSize_Y;
     float density;
 
+    private TextView node1, node2, node3, node4, node5, node6, node7, node8, node9;
+    private TextView Bnode1, Bnode2, Bnode3, Bnode4, Bnode5, Bnode6, Bnode7, Bnode8, Bnode9;
+
     private Button master, nodeBtn1, nodeBtn2, nodeBtn3, nodeBtn4, nodeBtn5, nodeBtn6, nodeBtn7, nodeBtn8, nodeBtn9;
 
 
@@ -167,6 +170,10 @@ public class DeviceMappingActivity extends Activity {
 
         TextView setup_txt = (TextView)findViewById(R.id.setup_txt);
 
+        node1 = (TextView)findViewById(R.id.nodetxt1);        node2 = (TextView)findViewById(R.id.nodetxt2);        node3 = (TextView)findViewById(R.id.nodetxt3);
+        node4 = (TextView)findViewById(R.id.nodetxt4);        node5 = (TextView)findViewById(R.id.nodetxt5);        node6 = (TextView)findViewById(R.id.nodetxt6);
+        node7 = (TextView)findViewById(R.id.nodetxt7);        node8 = (TextView)findViewById(R.id.nodetxt8);        node9 = (TextView)findViewById(R.id.nodetxt9);
+
         nodeBtn1 = (Button)findViewById(R.id.nodeBtn1);        nodeBtn2 = (Button)findViewById(R.id.nodeBtn2);        nodeBtn3 = (Button)findViewById(R.id.nodeBtn3);
         nodeBtn4 = (Button)findViewById(R.id.nodeBtn4);        nodeBtn5 = (Button)findViewById(R.id.nodeBtn5);        nodeBtn6 = (Button)findViewById(R.id.nodeBtn6);
         nodeBtn7 = (Button)findViewById(R.id.nodeBtn7);        nodeBtn8 = (Button)findViewById(R.id.nodeBtn8);        nodeBtn9 = (Button)findViewById(R.id.nodeBtn9);
@@ -182,67 +189,87 @@ public class DeviceMappingActivity extends Activity {
                 Toast.makeText(DeviceMappingActivity.this, "No have scan node !", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
-                nodeBtn1.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                node1.setVisibility(View.VISIBLE);
+                nodeBtn1.setText("node 1 100%");
                 break;
             case 2:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);
+                nodeBtn1.setText("node 1 100%");                nodeBtn2.setText("node 2 95%");
                 break;
             case 3:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);                nodeBtn3.setVisibility(View.VISIBLE);
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);                node3.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");
                 break;
             case 4:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
-                nodeBtn4.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);
+                nodeBtn3.setVisibility(View.VISIBLE);                nodeBtn4.setVisibility(View.VISIBLE);
+
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);
+                node3.setVisibility(View.VISIBLE);                node4.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");                nodeBtn4.setText("80%");
+
                 break;
             case 5:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
-                nodeBtn4.setVisibility(View.VISIBLE);
-                nodeBtn5.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);                nodeBtn5.setVisibility(View.VISIBLE);
+
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);                node3.setVisibility(View.VISIBLE);
+                node4.setVisibility(View.VISIBLE);                node5.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");
+                nodeBtn4.setText("80%");                nodeBtn5.setText("90%");
+
                 break;
             case 6:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
-                nodeBtn4.setVisibility(View.VISIBLE);
-                nodeBtn5.setVisibility(View.VISIBLE);
-                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);                nodeBtn5.setVisibility(View.VISIBLE);                nodeBtn6.setVisibility(View.VISIBLE);
+
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);                node3.setVisibility(View.VISIBLE);
+                node4.setVisibility(View.VISIBLE);                node5.setVisibility(View.VISIBLE);                node6.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");
+                nodeBtn4.setText("80%");                nodeBtn5.setText("90%");                nodeBtn6.setText("85%");
+
                 break;
             case 7:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
-                nodeBtn4.setVisibility(View.VISIBLE);
-                nodeBtn5.setVisibility(View.VISIBLE);
-                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);                nodeBtn5.setVisibility(View.VISIBLE);                nodeBtn6.setVisibility(View.VISIBLE);
                 nodeBtn7.setVisibility(View.VISIBLE);
+
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);                node3.setVisibility(View.VISIBLE);
+                node4.setVisibility(View.VISIBLE);                node5.setVisibility(View.VISIBLE);                node6.setVisibility(View.VISIBLE);
+                node7.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");
+                nodeBtn4.setText("80%");                nodeBtn5.setText("90%");                nodeBtn6.setText("85%");                nodeBtn7.setText("100%");
+
                 break;
             case 8:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
-                nodeBtn4.setVisibility(View.VISIBLE);
-                nodeBtn5.setVisibility(View.VISIBLE);
-                nodeBtn6.setVisibility(View.VISIBLE);
-                nodeBtn7.setVisibility(View.VISIBLE);
-                nodeBtn8.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);                nodeBtn5.setVisibility(View.VISIBLE);                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);                nodeBtn8.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");                nodeBtn4.setText("80%");
+                nodeBtn5.setText("90%");                nodeBtn6.setText("85%");                nodeBtn7.setText("100%");                nodeBtn8.setText("75%");
+
                 break;
             case 9:
-                nodeBtn1.setVisibility(View.VISIBLE);
-                nodeBtn2.setVisibility(View.VISIBLE);
-                nodeBtn3.setVisibility(View.VISIBLE);
-                nodeBtn4.setVisibility(View.VISIBLE);
-                nodeBtn5.setVisibility(View.VISIBLE);
-                nodeBtn6.setVisibility(View.VISIBLE);
-                nodeBtn7.setVisibility(View.VISIBLE);
-                nodeBtn8.setVisibility(View.VISIBLE);
-                nodeBtn9.setVisibility(View.VISIBLE);
+                nodeBtn1.setVisibility(View.VISIBLE);                nodeBtn2.setVisibility(View.VISIBLE);                nodeBtn3.setVisibility(View.VISIBLE);
+                nodeBtn4.setVisibility(View.VISIBLE);                nodeBtn5.setVisibility(View.VISIBLE);                nodeBtn6.setVisibility(View.VISIBLE);
+                nodeBtn7.setVisibility(View.VISIBLE);                nodeBtn8.setVisibility(View.VISIBLE);                nodeBtn9.setVisibility(View.VISIBLE);
+
+                node1.setVisibility(View.VISIBLE);                node2.setVisibility(View.VISIBLE);                node3.setVisibility(View.VISIBLE);
+                node4.setVisibility(View.VISIBLE);                node5.setVisibility(View.VISIBLE);                node6.setVisibility(View.VISIBLE);
+                node7.setVisibility(View.VISIBLE);                node8.setVisibility(View.VISIBLE);                node9.setVisibility(View.VISIBLE);
+
+                nodeBtn1.setText("100%");                nodeBtn2.setText("95%");                nodeBtn3.setText("95%");
+                nodeBtn4.setText("80%");                nodeBtn5.setText("90%");                nodeBtn6.setText("85%");
+                nodeBtn7.setText("100%");                nodeBtn8.setText("75%");                nodeBtn9.setText("55%");
+
                 break;
         }
 
