@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "B:\\touchMe-master\\touchMe-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
+                {
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values\\template-styles.xml",
+                    "from": {
+                        "startLines": "24,20,22,27,29,34",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "768,651,713,849,878,1075",
+                        "endLines": "24,20,22,27,32,39",
+                        "endColumns": "51,60,53,27,12,12",
+                        "endOffsets": "815,707,762,872,1069,1348"
+                    },
+                    "to": {
+                        "startLines": "372,1758,1785,1793,1950,1954",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "24494,116913,118467,119192,130706,130902",
+                        "endLines": "372,1758,1785,1793,1953,1959",
+                        "endColumns": "50,59,52,26,12,12",
+                        "endOffsets": "24540,116968,118515,119214,130897,131175"
+                    }
+                },
                 {
                     "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\values\\values.xml",
                     "from": {
@@ -78,22 +97,37 @@
                     }
                 },
                 {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values\\base-strings.xml",
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "18,19",
-                        "startColumns": "4,4",
-                        "startOffsets": "647,700",
-                        "endLines": "18,28",
-                        "endColumns": "52,13",
-                        "endOffsets": "695,971"
+                        "startLines": "35,39,40,15,20,21,23,43,42,16,17,18,44,30,31,32,33,19,37,38,36,22,26,25,27,41",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1605,1811,1874,685,953,1001,1113,2045,1979,752,797,862,2121,1414,1463,1518,1561,909,1711,1758,1645,1055,1255,1197,1329,1931",
+                        "endColumns": "39,62,56,66,47,53,82,75,65,44,64,46,55,48,54,42,42,43,46,52,65,57,73,57,59,47",
+                        "endOffsets": "1640,1869,1926,747,996,1050,1191,2116,2040,792,857,904,2172,1458,1513,1556,1599,948,1753,1806,1706,1108,1324,1250,1384,1974"
                     },
                     "to": {
-                        "startLines": "319,327",
-                        "startColumns": "4,4",
-                        "startOffsets": "20839,21497",
-                        "endLines": "319,336",
-                        "endColumns": "52,13",
-                        "endOffsets": "20887,21768"
+                        "startLines": "82,317,318,321,324,325,326,337,338,339,340,341,342,343,344,345,346,347,353,354,357,358,359,360,361,362",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5609,20719,20782,21037,21312,21360,21414,21773,21849,21915,21960,22025,22072,22128,22177,22232,22275,22318,23177,23224,23401,23467,23525,23599,23657,23717",
+                        "endColumns": "39,62,56,66,47,53,82,75,65,44,64,46,55,48,54,42,42,43,46,52,65,57,73,57,59,47",
+                        "endOffsets": "5644,20777,20834,21099,21355,21409,21492,21844,21910,21955,22020,22067,22123,22172,22227,22270,22313,22357,23219,23272,23462,23520,23594,23652,23712,23760"
+                    }
+                },
+                {
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values\\template-dimens.xml",
+                    "from": {
+                        "startLines": "28,24,23,22,21,20,29",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "959,880,836,791,748,706,1029",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "1024,918,875,831,786,743,1092"
+                    },
+                    "to": {
+                        "startLines": "214,218,219,220,221,222,246",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "14486,14779,14822,14866,14911,14954,16427",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "14551,14817,14861,14906,14949,14991,16490"
                     }
                 },
                 {
@@ -111,40 +145,6 @@
                         "startOffsets": "4114,112148,112324,112446,112708,112903",
                         "endColumns": "88,65,121,60,65,66",
                         "endOffsets": "4198,112209,112441,112502,112769,112965"
-                    }
-                },
-                {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values\\template-dimens.xml",
-                    "from": {
-                        "startLines": "28,24,23,22,21,20,29",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "959,880,836,791,748,706,1029",
-                        "endColumns": "69,42,43,44,42,41,67",
-                        "endOffsets": "1024,918,875,831,786,743,1092"
-                    },
-                    "to": {
-                        "startLines": "214,218,219,220,221,222,246",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "14486,14779,14822,14866,14911,14954,16427",
-                        "endColumns": "69,42,43,44,42,41,67",
-                        "endOffsets": "14551,14817,14861,14906,14949,14991,16490"
-                    }
-                },
-                {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "90,149",
-                        "endColumns": "57,55",
-                        "endOffsets": "143,200"
-                    },
-                    "to": {
-                        "startLines": "157,158",
-                        "startColumns": "4,4",
-                        "startOffsets": "10702,10760",
-                        "endColumns": "57,55",
-                        "endOffsets": "10755,10811"
                     }
                 },
                 {
@@ -184,39 +184,39 @@
                     }
                 },
                 {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values\\template-styles.xml",
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "24,20,22,27,29,34",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "768,651,713,849,878,1075",
-                        "endLines": "24,20,22,27,32,39",
-                        "endColumns": "51,60,53,27,12,12",
-                        "endOffsets": "815,707,762,872,1069,1348"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "88,146",
+                        "endColumns": "57,55",
+                        "endOffsets": "141,197"
                     },
                     "to": {
-                        "startLines": "372,1758,1785,1793,1950,1954",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "24494,116913,118467,119192,130706,130902",
-                        "endLines": "372,1758,1785,1793,1953,1959",
-                        "endColumns": "50,59,52,26,12,12",
-                        "endOffsets": "24540,116968,118515,119214,130897,131175"
+                        "startLines": "157,158",
+                        "startColumns": "4,4",
+                        "startOffsets": "10702,10760",
+                        "endColumns": "57,55",
+                        "endOffsets": "10755,10811"
                     }
                 },
                 {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values\\strings.xml",
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values\\base-strings.xml",
                     "from": {
-                        "startLines": "35,39,40,15,20,21,23,43,42,16,17,18,44,30,31,32,33,19,37,38,36,22,26,25,27,41",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1605,1811,1874,685,953,1001,1113,2045,1979,752,797,862,2121,1414,1463,1518,1561,909,1711,1758,1645,1055,1255,1197,1329,1931",
-                        "endColumns": "39,62,56,66,47,53,82,75,65,44,64,46,55,48,54,42,42,43,46,52,65,57,73,57,59,47",
-                        "endOffsets": "1640,1869,1926,747,996,1050,1191,2116,2040,792,857,904,2172,1458,1513,1556,1599,948,1753,1806,1706,1108,1324,1250,1384,1974"
+                        "startLines": "18,19",
+                        "startColumns": "4,4",
+                        "startOffsets": "647,700",
+                        "endLines": "18,28",
+                        "endColumns": "52,13",
+                        "endOffsets": "695,971"
                     },
                     "to": {
-                        "startLines": "82,317,318,321,324,325,326,337,338,339,340,341,342,343,344,345,346,347,353,354,357,358,359,360,361,362",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5609,20719,20782,21037,21312,21360,21414,21773,21849,21915,21960,22025,22072,22128,22177,22232,22275,22318,23177,23224,23401,23467,23525,23599,23657,23717",
-                        "endColumns": "39,62,56,66,47,53,82,75,65,44,64,46,55,48,54,42,42,43,46,52,65,57,73,57,59,47",
-                        "endOffsets": "5644,20777,20834,21099,21355,21409,21492,21844,21910,21955,22020,22067,22123,22172,22227,22270,22313,22357,23219,23272,23462,23520,23594,23652,23712,23760"
+                        "startLines": "319,327",
+                        "startColumns": "4,4",
+                        "startOffsets": "20839,21497",
+                        "endLines": "319,336",
+                        "endColumns": "52,13",
+                        "endOffsets": "20887,21768"
                     }
                 }
             ]

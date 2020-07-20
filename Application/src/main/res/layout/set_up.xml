@@ -441,9 +441,8 @@ Applications for Health care use to BLE modules
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="50dp"
-                    android:text="시나리오"
-                    android:textSize="30sp">
-                </RadioButton>
+                    android:text="그룹"
+                    android:textSize="30sp"></RadioButton>
             </RadioGroup>
         </LinearLayout>
 

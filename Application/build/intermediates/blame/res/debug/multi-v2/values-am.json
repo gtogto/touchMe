@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
+            "outputFile": "B:\\touchMe-master\\touchMe-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
                     "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\values-am\\values-am.xml",

@@ -495,7 +495,7 @@ public class SetupActivity extends Activity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), "여 자", Toast.LENGTH_SHORT).show();
-                Toast tMsg = Toast.makeText(SetupActivity.this, "  시 나 리 오  ", Toast.LENGTH_SHORT);
+                Toast tMsg = Toast.makeText(SetupActivity.this, "  그   룹  ", Toast.LENGTH_SHORT);
                 tMsg.setGravity(Gravity.CENTER, 0, 0);
                 LinearLayout view = (LinearLayout) tMsg.getView();
                 tMsg.show();

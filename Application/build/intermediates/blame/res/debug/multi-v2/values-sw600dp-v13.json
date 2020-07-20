@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "B:\\touchMe-master\\touchMe-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\66f12a7200af14e0f85c231d9d9cbd07\\appcompat-v7-27.1.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
@@ -33,24 +33,7 @@
                     }
                 },
                 {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
-                    "from": {
-                        "startLines": "20,21",
-                        "startColumns": "4,4",
-                        "startOffsets": "656,724",
-                        "endColumns": "67,67",
-                        "endOffsets": "719,787"
-                    },
-                    "to": {
-                        "startLines": "18,19",
-                        "startColumns": "4,4",
-                        "startOffsets": "1170,1238",
-                        "endColumns": "67,67",
-                        "endOffsets": "1233,1301"
-                    }
-                },
-                {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
                     "from": {
                         "startLines": "18",
                         "startColumns": "4",
@@ -66,6 +49,23 @@
                         "endLines": "29",
                         "endColumns": "12",
                         "endOffsets": "1791"
+                    }
+                },
+                {
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
+                    "from": {
+                        "startLines": "20,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "656,724",
+                        "endColumns": "67,67",
+                        "endOffsets": "719,787"
+                    },
+                    "to": {
+                        "startLines": "18,19",
+                        "startColumns": "4,4",
+                        "startOffsets": "1170,1238",
+                        "endColumns": "67,67",
+                        "endOffsets": "1233,1301"
                     }
                 }
             ]

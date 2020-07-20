@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\touch_Me_BLE\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "B:\\touchMe-master\\touchMe-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\6931bc3fe5868b0ab5606c1192ce8d93\\support-compat-27.1.1\\res\\values-v21\\values-v21.xml",
@@ -61,6 +61,25 @@
                     }
                 },
                 {
+                    "source": "B:\\touchMe-master\\touchMe-master\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
+                    "from": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "677",
+                        "endLines": "21",
+                        "endColumns": "12",
+                        "endOffsets": "753"
+                    },
+                    "to": {
+                        "startLines": "283",
+                        "startColumns": "4",
+                        "startOffsets": "20732",
+                        "endLines": "284",
+                        "endColumns": "12",
+                        "endOffsets": "20808"
+                    }
+                },
+                {
                     "source": "C:\\Users\\calic\\.gradle\\caches\\transforms-2\\files-2.1\\e445618099ce43d4d038d61d6cf09951\\design-27.1.1\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5",
@@ -77,25 +96,6 @@
                         "endLines": "166,228",
                         "endColumns": "12,96",
                         "endOffsets": "12780,17216"
-                    }
-                },
-                {
-                    "source": "E:\\touch_Me_BLE\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
-                    "from": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "677",
-                        "endLines": "21",
-                        "endColumns": "12",
-                        "endOffsets": "753"
-                    },
-                    "to": {
-                        "startLines": "283",
-                        "startColumns": "4",
-                        "startOffsets": "20732",
-                        "endLines": "284",
-                        "endColumns": "12",
-                        "endOffsets": "20808"
                     }
                 }
             ]
