@@ -31,6 +31,7 @@ This application is a vehicle application that controls the ambient lighting in 
 	@ Divice distance
   * Report & Analysis
 	@ Graph
+	@ Analysis
   * Run 
 	@ Play Node
 
